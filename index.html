@@ -161,7 +161,7 @@
             box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
         }
 
-        /* Hero Section - Enlarged */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(144, 238, 144, 0.05), rgba(255, 165, 0, 0.05));
             padding: 180px 0 120px;
@@ -231,7 +231,6 @@
             transform: translateY(-3px);
         }
 
-        /* Enlarged Hero Image */
         .hero-image {
             position: relative;
             display: flex;
@@ -253,7 +252,7 @@
             transform: perspective(1000px) rotateY(-5deg);
         }
 
-        /* Stats Section - Auto-scrolling */
+        /* Stats Section */
         .stats {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
@@ -304,6 +303,7 @@
             position: relative;
             padding-bottom: 20px;
             width: 100%;
+            touch-action: pan-y;
         }
 
         .stats-grid {
@@ -311,7 +311,7 @@
             gap: 1rem;
             padding: 0 1rem;
             white-space: nowrap;
-            animation: scrollStats 30s linear infinite;
+            animation: scrollStats 25s linear infinite;
             will-change: transform;
         }
 
@@ -336,6 +336,18 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             flex-shrink: 0;
             white-space: normal;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .stat-item:hover {
@@ -1055,7 +1067,7 @@
             }
 
             .stat-label {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .cta-section h2 {
@@ -1109,16 +1121,20 @@
 
             .stat-item {
                 min-width: 160px;
-                padding: 1rem 0.8rem;
+                padding: 1.2rem 1rem;
             }
 
             .stat-number {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .stat-icon {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 margin-bottom: 0.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.95rem;
             }
 
             .problem-list li {
@@ -1160,15 +1176,15 @@
 
             .stat-item {
                 min-width: 140px;
-                padding: 0.8rem 0.6rem;
+                padding: 1rem 0.8rem;
             }
 
             .stat-number {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
 
             .stat-label {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -1195,7 +1211,6 @@
             transform: translateY(0);
         }
 
-        /* Floating Elements */
         .floating {
             animation: float 6s ease-in-out infinite;
         }
@@ -1266,8 +1281,8 @@
             background-clip: text;
         }
 
-                .text-gradients {
-            background: linear-gradient(135deg,  rgb(233, 232, 231), lightgreen);
+        .text-gradients {
+            background: linear-gradient(135deg, rgb(233, 232, 231), lightgreen);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1312,14 +1327,13 @@
         <div class="nav-container">
             <div class="logo-container">
                 <img src="images/dasmedhub-logo.png" alt="DAS medhub Logo" class="logo-img">
-                
             </div>
             <ul class="nav-menu">
-                <li><a href="#home"><!--<i class="fas fa-home"></i>/--> Home</a></li>
-                <li><a href="#features"><!--<i class="fas fa-star"></i>/--> Features</a></li>
-                <li><a href="#how-it-works"><!--<i class="fas fa-cogs"></i>/--> Our Solution</a></li>
-                <li><a href="#stakeholders"><!--<i class="fas fa-user-md"></i>/--> Services </a></li>
-                <li><a href="#testimonials"><!--<i class="fas fa-comment"></i>/--> Testimonials</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">Our Solution</a></li>
+                <li><a href="#stakeholders">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
             </ul>
             <a href="#download" class="cta-button"><i class="fas fa-download"></i>Get App</a>
             <button class="mobile-menu-toggle hidden"><i class="fas fa-bars"></i></button>
@@ -1329,12 +1343,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <ul>
-                <li><a href="#home"><!--<i class="fas fa-home"></i>/--> Home</a></li>
-                <li><a href="#features"><!--<i class="fas fa-star"></i>/--> Features</a></li>
-                <li><a href="#how-it-works"><!--<i class="fas fa-cogs"></i>/--> Our Solution</a></li>
-                <li><a href="#stakeholders"><!--<i class="fas fa-user-md"></i>/--> Services </a></li>
-                <li><a href="#testimonials"><!--<i class="fas fa-comment"></i>/--> Testimonials</a></li>
-            <li><a href="#download" class="cta-button"><!--<i class="fas fa-download"></i>/-->Get App</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">Our Solution</a></li>
+            <li><a href="#stakeholders">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#download" class="cta-button">Get App</a></li>
         </ul>
     </div>
 
@@ -1343,7 +1357,10 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="animate-on-scroll"><span class="text-gradient">Connecting Patients, Accelerating Healing</span></h1>
-                <p class="animate-on-scroll">An AI-powered healthcare platform built to make quality care accessible for all. Instantly assess symptoms, consult with verified doctors, and order medications — all from your smartphone, anytime, anywhere.</p>
+                <p class="animate-on-scroll"><b>Welcome to Smarter, Simpler Healthcare </b><br>
+Our AI-powered platform brings quality healthcare right to your fingertips.
+Easily check your symptoms, consult certified doctors, book appointments with trusted hospitals, and get your medications delivered all from your phone.<br>
+No long waits. No hassle. Just reliable care, anytime, anywhere.</p>
                 <div class="hero-buttons animate-on-scroll">
                     <a href="https://site.dasmedhub.com/" class="cta-button"><i class="fas fa-rocket"></i> Get Started Today</a>
                     <a href="#features" class="app-store-btn">
@@ -1358,83 +1375,86 @@
         </div>
     </section>
 
-   <!-- Stats Section -->
-<section class="stats">
-    <div class="stats-container">
-        <div class="stats-header animate-on-scroll">
-            <h2>Transforming Healthcare Across Africa and Beyond</h2>
-            <p>Our platform is making a measurable difference in healthcare access and outcomes</p>
-        </div>
-        
-        <div class="stats-scroll-container">
-            <div class="stats-grid animate-on-scroll">
-                <!-- First Set of Stats -->
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Patients Served</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-user-md"></i></div>
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Verified Doctors</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Availability</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-                    <div class="stat-number">1.2K</div>
-                    <div class="stat-label">Hospitals Connected</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-pills"></i></div>
-                    <div class="stat-number">5K+</div>
-                    <div class="stat-label">Prescriptions Filled</div>
-                </div>
-                
-                <!-- Duplicated Set for Continuous Scroll -->
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Patients Served</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-user-md"></i></div>
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Verified Doctors</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Availability</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-                    <div class="stat-number">1.2K</div>
-                    <div class="stat-label">Hospitals Connected</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-pills"></i></div>
-                    <div class="stat-number">5K+</div>
-                    <div class="stat-label">Prescriptions Filled</div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stats-header animate-on-scroll">
+                <h2>Transforming Healthcare Across Africa and Beyond</h2>
+                <p>Our platform is making a measurable difference in healthcare access and outcomes</p>
+            </div>
+            
+            <div class="stats-scroll-container">
+                <div class="stats-grid animate-on-scroll">
+                    <!-- First Set of Stats -->
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Patients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Verified Doctors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
+                        <div class="stat-number">1.2K</div>
+                        <div class="stat-label">Hospitals Connected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-pills"></i></div>
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">Prescriptions Filled</div>
+                    </div>
+                    <!-- Duplicated Set for Continuous Scroll -->
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Patients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Verified Doctors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
+                        <div class="stat-number">1.2K</div>
+                        <div class="stat-label">Hospitals Connected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-pills"></i></div>
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">Prescriptions Filled</div>
+                    </div>
                 </div>
             </div>
+            <div class="scroll-indicator animate-on-scroll">
+                <span>Swipe to see more</span>
+                <i class="fas fa-arrows-alt-h"></i>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Problem Section -->
     <section class="problem">
@@ -1673,7 +1693,6 @@
             <div class="footer-about">
                 <div class="footer-logo">
                     <img src="images/dasmedhub-logo.png" alt="DAS medhub Logo" class="footer-logo-img">
-                    
                 </div>
                 <p>AI-powered healthcare platform that bridges the gap between patients and quality healthcare.</p>
                 <div class="social-links">
@@ -1711,7 +1730,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 DAS medhub. All rights reserved. | Connecting Patients, Accelerating Healing</p>
+            <p>© 2025 DAS medhub. All rights reserved. | Connecting Patients, Accelerating Healing</p>
         </div>
     </footer>
 
@@ -1726,8 +1745,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    
-                    // Close mobile menu if open
                     document.querySelector('.mobile-menu').classList.remove('active');
                 }
             });
@@ -1747,7 +1764,6 @@
             });
         }, observerOptions);
 
-        // Observe all elements with animation class
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
@@ -1784,7 +1800,6 @@
             }
         }
 
-        // Initialize mobile menu
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
 
@@ -1814,78 +1829,42 @@
             el.style.animationDelay = `${Math.random() * 2}s`;
         });
 
-        // Pause stats animation on hover
+        // Stats scrolling with pause on hover/touch
         const statsGrid = document.querySelector('.stats-grid');
-        if (statsGrid) {
-            statsGrid.addEventListener('mouseenter', () => {
+        const statsContainer = document.querySelector('.stats-scroll-container');
+
+        if (statsGrid && statsContainer) {
+            // Pause on hover
+            statsContainer.addEventListener('mouseenter', () => {
                 statsGrid.style.animationPlayState = 'paused';
             });
             
-            statsGrid.addEventListener('mouseleave', () => {
+            statsContainer.addEventListener('mouseleave', () => {
                 statsGrid.style.animationPlayState = 'running';
             });
-        }
 
-        // Improved stats scrolling for mobile
-        function setupStatsScrolling() {
-            const statsContainer = document.querySelector('.stats-scroll-container');
-            const statsGrid = document.querySelector('.stats-grid');
-            
-            if (!statsContainer || !statsGrid) return;
-            
-            if (window.innerWidth <= 768) {
-                // For mobile, we'll use a different approach
-                statsGrid.style.animation = 'none';
-                
-                let scrollAmount = 0;
-                const scrollStep = 1;
-                const scrollInterval = setInterval(() => {
-                    statsContainer.scrollLeft += scrollStep;
-                    scrollAmount += scrollStep;
-                    
-                    // Reset scroll position when reaching the end
-                    if (scrollAmount >= statsGrid.scrollWidth - statsContainer.clientWidth) {
-                        setTimeout(() => {
-                            statsContainer.scrollTo({
-                                left: 0,
-                                behavior: 'smooth'
-                            });
-                            scrollAmount = 0;
-                        }, 1000);
-                    }
-                }, 30);
-                
-                // Pause on hover/touch
-                statsContainer.addEventListener('mouseenter', () => {
-                    clearInterval(scrollInterval);
-                });
-                
-                statsContainer.addEventListener('mouseleave', () => {
-                    scrollAmount = statsContainer.scrollLeft;
-                    setInterval(() => {
-                        statsContainer.scrollLeft += scrollStep;
-                        scrollAmount += scrollStep;
-                        
-                        if (scrollAmount >= statsGrid.scrollWidth - statsContainer.clientWidth) {
-                            setTimeout(() => {
-                                statsContainer.scrollTo({
-                                    left: 0,
-                                    behavior: 'smooth'
-                                });
-                                scrollAmount = 0;
-                            }, 1000);
-                        }
-                    }, 30);
-                });
-            } else {
-                // For desktop, use CSS animation
-                statsGrid.style.animation = 'scrollStats 30s linear infinite';
+            // Pause on touch
+            let touchTimeout;
+            statsContainer.addEventListener('touchstart', () => {
+                statsGrid.style.animationPlayState = 'paused';
+                clearTimeout(touchTimeout);
+            });
+
+            statsContainer.addEventListener('touchend', () => {
+                touchTimeout = setTimeout(() => {
+                    statsGrid.style.animationPlayState = 'running';
+                }, 1000);
+            });
+
+            // Ensure continuous scrolling on all screen sizes
+            function setupStatsScrolling() {
+                statsGrid.style.animation = 'scrollStats 25s linear infinite';
+                statsGrid.style.animationPlayState = 'running';
             }
-        }
 
-        // Initialize stats scrolling
-        setupStatsScrolling();
-        window.addEventListener('resize', setupStatsScrolling);
+            setupStatsScrolling();
+            window.addEventListener('resize', setupStatsScrolling);
+        }
     </script>
 </body>
 </html>
