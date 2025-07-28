@@ -167,6 +167,7 @@
             padding: 180px 0 120px;
             position: relative;
             overflow: hidden;
+            margin-top: -60px; /* Adjust for fixed nav */
         }
 
         .hero-container {
@@ -194,6 +195,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .hero p {
@@ -201,6 +203,7 @@
             color: var(--text-light);
             margin-bottom: 2.5rem;
             line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .hero-buttons {
@@ -1357,10 +1360,15 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="animate-on-scroll"><span class="text-gradient">Connecting Patients, Accelerating Healing</span></h1>
-                <p class="animate-on-scroll"><b>Welcome to Smarter, Simpler Healthcare </b><br>
-Our AI-powered platform brings quality healthcare right to your fingertips.
-Easily check your symptoms, consult certified doctors, book appointments with trusted hospitals, and get your medications delivered all from your phone.<br>
-No long waits. No hassle. Just reliable care, anytime, anywhere.</p>
+                <!-- <p class="animate-on-scroll"><b>Your Care Begins with a Simple Conversation</b><br>-->
+At <b>DAS medhub</b>  our human-like AI avatar chats with you to gather your symptoms in a conversational, natural and human-like manner.
+
+You're then instantly connected to certified doctors, hospitals, and pharmacists, each receiving a pre-filled summary of your health details with your consent.
+<br>
+<br>
+✅ Streamlined triaging<br>
+✅ Quick, accurate diagnosis<br>
+✅ Seamless care coordination<br>
                 <div class="hero-buttons animate-on-scroll">
                     <a href="https://site.dasmedhub.com/" class="cta-button"><i class="fas fa-rocket"></i> Get Started Today</a>
                     <a href="#features" class="app-store-btn">
@@ -1676,7 +1684,7 @@ No long waits. No hassle. Just reliable care, anytime, anywhere.</p>
                         <div>Google Play</div>
                     </div>
                 </a>
-                <a href="#" class="download-btn">
+                <a href="https://site.dasmedhub.com/" class="download-btn">
                     <i class="fas fa-globe"></i>
                     <div class="download-btn-text">
                         <small>Access via</small>
@@ -1730,7 +1738,7 @@ No long waits. No hassle. Just reliable care, anytime, anywhere.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 DAS medhub. All rights reserved. | Connecting Patients, Accelerating Healing</p>
+            <p>© 2025 DAS medhub | Connecting Patients, Accelerating Healing | All rights reserved. </p>
         </div>
     </footer>
 
@@ -1815,9 +1823,18 @@ No long waits. No hassle. Just reliable care, anytime, anywhere.</p>
         });
 
         // Simulate download button functionality
-        document.querySelectorAll('.download-btn, .cta-button').forEach(btn => {
+        document.querySelectorAll('.download-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                if (btn.getAttribute('href') === '#' || btn.getAttribute('href') === '#download') {
+                if (btn.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Thank you for your interest! The DAS medhub app will be available for download soon. Please check back later.');
+                }
+            });
+        });
+
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (btn.getAttribute('href') === '#download') {
                     e.preventDefault();
                     alert('Thank you for your interest! The DAS medhub app will be available for download soon. Please check back later.');
                 }
