@@ -963,6 +963,127 @@
             font-size: 0.85rem;
         }
 
+        /* Waiting List Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary-orange);
+        }
+
+        .modal h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .modal p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal input {
+            padding: 0.8rem;
+            border: 1px solid rgba(144, 238, 144, 0.2);
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .modal input:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 5px rgba(144, 238, 144, 0.3);
+        }
+
+        .modal button[type="submit"] {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .modal button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+        }
+
+        .modal .success-message,
+        .modal .error-message {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .modal .success-message {
+            color: var(--primary-green);
+            display: none;
+        }
+
+        .modal .error-message {
+            color: #e74c3c;
+            display: none;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             :root {
@@ -1080,6 +1201,18 @@
             .cta-section p {
                 font-size: 1rem;
             }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal p {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1161,6 +1294,23 @@
 
             .download-btn-text small {
                 font-size: 0.6rem;
+            }
+
+            .modal-content {
+                padding: 1.2rem;
+                width: 95%;
+            }
+
+            .modal h2 {
+                font-size: 1.3rem;
+            }
+
+            .modal p {
+                font-size: 0.85rem;
+            }
+
+            .modal input, .modal button[type="submit"] {
+                font-size: 0.9rem;
             }
         }
 
@@ -1355,13 +1505,29 @@
         </ul>
     </div>
 
+    <!-- Waiting List Modal -->
+    <div class="modal" id="waiting-list-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Join the DAS medhub Waiting List</h2>
+            <p>Thank you for your interest! The app is coming soon. Join our waiting list to be notified when it's available.</p>
+            <form id="waiting-list-form">
+                <input type="email" name="Email" placeholder="Enter your email address" required>
+                <input type="tel" name="WhatsApp" placeholder="Enter your WhatsApp number (optional)">
+                <button type="submit">Join Waiting List</button>
+                <p class="success-message" id="success-message">Successfully joined the waiting list!</p>
+                <p class="error-message" id="error-message">An error occurred. Please try again.</p>
+            </form>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="animate-on-scroll"><span class="text-gradient">Connecting Patients, Accelerating Healing</span></h1>
-                <!-- <p class="animate-on-scroll"><b>Your Care Begins with a Simple Conversation</b><br>-->
-At <b>DAS medhub</b>  our human-like AI avatar chats with you to gather your symptoms in a conversational, natural and human-like manner.
+                <p class="animate-on-scroll"><b>Your Care Begins with a Simple Conversation</b><br>
+At <b>DAS medhub</b> our human-like AI avatar chats with you to gather your symptoms in a conversational, natural and human-like manner.
 
 You're then instantly connected to certified doctors, hospitals, and pharmacists, each receiving a pre-filled summary of your health details with your consent.
 <br>
@@ -1369,6 +1535,7 @@ You're then instantly connected to certified doctors, hospitals, and pharmacists
 ✅ Streamlined triaging<br>
 ✅ Quick, accurate diagnosis<br>
 ✅ Seamless care coordination<br>
+                </p>
                 <div class="hero-buttons animate-on-scroll">
                     <a href="https://site.dasmedhub.com/" class="cta-button"><i class="fas fa-rocket"></i> Get Started Today</a>
                     <a href="#features" class="app-store-btn">
@@ -1670,14 +1837,14 @@ You're then instantly connected to certified doctors, hospitals, and pharmacists
             <h2 class="animate-on-scroll">Ready to Transform <span class="text-gradients">Healthcare?</span></h2>
             <p class="animate-on-scroll">Join thousands of users already experiencing better healthcare access with DAS medhub. Download our app and start your journey to better health today.</p>
             <div class="download-buttons animate-on-scroll">
-                <a href="#" class="download-btn">
+                <a href="#" class="download-btn" data-modal="waiting-list-modal">
                     <i class="fab fa-apple"></i>
                     <div class="download-btn-text">
                         <small>Download on the</small>
                         <div>App Store</div>
                     </div>
                 </a>
-                <a href="#" class="download-btn">
+                <a href="#" class="download-btn" data-modal="waiting-list-modal">
                     <i class="fab fa-google-play"></i>
                     <div class="download-btn-text">
                         <small>Get it on</small>
@@ -1738,7 +1905,7 @@ You're then instantly connected to certified doctors, hospitals, and pharmacists
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 DAS medhub | Connecting Patients, Accelerating Healing | All rights reserved. </p>
+            <p>© 2025 DAS medhub | Connecting Patients, Accelerating Healing | All rights reserved.</p>
         </div>
     </footer>
 
@@ -1822,22 +1989,79 @@ You're then instantly connected to certified doctors, hospitals, and pharmacists
             });
         });
 
-        // Simulate download button functionality
-        document.querySelectorAll('.download-btn').forEach(btn => {
+        // Modal functionality
+        const modal = document.getElementById('waiting-list-modal');
+        const modalClose = document.querySelector('.modal-close');
+        const waitingListForm = document.getElementById('waiting-list-form');
+        const errorMessage = document.getElementById('error-message');
+        const successMessage = document.getElementById('success-message');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwI3-qxc-Ugc65VBZ3xRx01CrpkLy4IL1ILHO7UgEuVeAWymIRIBjTZRtRrywZ-xMg/exec'; // Replace with your Google Apps Script Web App URL
+
+        // Open modal for download buttons and CTA button
+        document.querySelectorAll('.download-btn[data-modal], .cta-button').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (btn.getAttribute('href') === '#') {
                     e.preventDefault();
-                    alert('Thank you for your interest! The DAS medhub app will be available for download soon. Please check back later.');
+                    modal.style.display = 'flex';
                 }
             });
         });
 
-        document.querySelectorAll('.cta-button').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                if (btn.getAttribute('href') === '#download') {
-                    e.preventDefault();
-                    alert('Thank you for your interest! The DAS medhub app will be available for download soon. Please check back later.');
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            waitingListForm.reset();
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'none';
+                waitingListForm.reset();
+            }
+        });
+
+        // Form submission
+        waitingListForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            // Basic email validation
+            const email = waitingListForm.querySelector('input[name="Email"]').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Submit form data to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(waitingListForm)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    successMessage.style.display = 'block';
+                    waitingListForm.reset();
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                        errorMessage.style.display = 'none';
+                        successMessage.style.display = 'none';
+                    }, 2000);
+                } else {
+                    throw new Error(data.error || 'Failed to submit to Google Sheets');
                 }
+            })
+            .catch(error => {
+                errorMessage.textContent = 'Error: ' + error.message;
+                errorMessage.style.display = 'block';
             });
         });
 
