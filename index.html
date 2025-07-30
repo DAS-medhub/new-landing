@@ -161,6 +161,7 @@
             box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
         }
 
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(144, 238, 144, 0.05), rgba(255, 165, 0, 0.05));
@@ -195,15 +196,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .hero p {
-            font-size: 1.05rem;
+            font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
             line-height: 1.6;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;;
         }
 
         .hero-buttons {
@@ -1509,13 +1510,13 @@
     <div class="modal" id="waiting-list-modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <h2>Join the DAS medhub Waiting List</h2>
+            <h2>Join Our Waiting List</h2>
             <p>Thank you for your interest! The app is coming soon. Join our waiting list to be notified when it's available.</p>
             <form id="waiting-list-form">
                 <input type="email" name="Email" placeholder="Enter your email address" required>
                 <input type="tel" name="WhatsApp" placeholder="Enter your WhatsApp number (optional)">
                 <button type="submit">Join Waiting List</button>
-                <p class="success-message" id="success-message">Successfully joined the waiting list!</p>
+                <p class="success-message" id="success-message">Successfully joined the waiting list!</Successfully></p>
                 <p class="error-message" id="error-message">An error occurred. Please try again.</p>
             </form>
         </div>
@@ -1527,17 +1528,13 @@
             <div class="hero-content">
                 <h1 class="animate-on-scroll"><span class="text-gradient">Connecting Patients, Accelerating Healing</span></h1>
                 <p class="animate-on-scroll"><b>Your Care Begins with a Simple Conversation</b><br>
-At <b>DAS medhub</b> our human-like AI avatar chats with you to gather your symptoms in a conversational, natural and human-like manner.
+At <b>DAS medhub</b>, we simplify your journey to better health with intuitive, AI-driven symptom assessment that feels like a conversation with a trusted friend.
 
-You're then instantly connected to certified doctors, hospitals, and pharmacists, each receiving a pre-filled summary of your health details with your consent.
-<br>
-<br>
-✅ Streamlined triaging<br>
-✅ Quick, accurate diagnosis<br>
-✅ Seamless care coordination<br>
+With your permission, we instantly connect you to certified doctors, hospitals, and pharmacists, providing them with a concise summary of your health details to ensure swift, personalized care.
+
                 </p>
                 <div class="hero-buttons animate-on-scroll">
-                    <a href="https://site.dasmedhub.com/" class="cta-button"><i class="fas fa-rocket"></i> Get Started Today</a>
+                   <a href="#" class="cta-button" data-modal="waiting-list-modal"><i class="fas fa-rocket"></i> Get Started Today</a>
                     <a href="#features" class="app-store-btn">
                         <i class="fas fa-info-circle"></i>
                         Learn More
