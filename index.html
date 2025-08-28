@@ -125,7 +125,7 @@
         .nav-menu a:hover {
             color: var(--primary-orange);
         }
-        .cta-button {
+        .cta-button, .cta-buttons {
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             color: white;
             padding: 0.9rem 1.8rem;
@@ -239,6 +239,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
        
         .stats::before {
@@ -279,6 +280,7 @@
             overflow: hidden;
             position: relative;
             padding-bottom: 20px;
+            border-radius: 20px;
             width: 100%;
             touch-action: pan-y;
         }
@@ -1212,14 +1214,26 @@
            
             .hero p {
                 font-size: 1rem;
-                font-weight: 400;
+                font-weight: 300;
             }
            
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            .cta-button, .app-store-btn {
+             .app-store-btn {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .cta-button{
+                width: 120px;
+                text-align: center;
+                justify-content: center;
+            }
+
+        .cta-buttons{
                 width: 100%;
                 text-align: center;
                 justify-content: center;
@@ -1806,7 +1820,7 @@ At <b>DAS medhub</b>, we simplify your journey to better health with intuitive, 
 With your permission, we instantly connect you to certified doctors, hospitals, and pharmacists, providing them with a concise summary of your health details to ensure swift, personalized care.
                 </p>
                 <div class="hero-buttons animate-on-scroll">
-                   <a href="#" class="cta-button" data-modal="waiting-list-modal"><i class="fas fa-rocket"></i> Join Our Waiting List</a>
+                   <a href="#" class="cta-buttons" data-modal="waiting-list-modal"><i class="fas fa-rocket"></i> Join Our Waiting List</a>
                     <a href="https://models.dasmedhub.com/" class="app-store-btn">
                        <i class="fas fa-brain"></i>
                         Try Our AI Models
