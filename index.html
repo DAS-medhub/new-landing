@@ -2266,7 +2266,7 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
             modal.style.display = 'flex';
         });
         // Open modal for download buttons and CTA button
-        document.querySelectorAll('.download-btn[data-modal], .cta-button').forEach(btn => {
+        document.querySelectorAll('.download-btn[data-modal], .cta-buttons').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (btn.getAttribute('href') === '#') {
                     e.preventDefault();
