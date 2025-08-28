@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -17,10 +17,10 @@
         }
 
         :root {
-            --primary-green: #90EE90;
-            --primary-orange: #FFA500;
-            --dark-green: #32CD32;
-            --dark-orange: #FF8C00;
+            --primary-green: #00be64;
+            --primary-orange: #fd9150;
+            --dark-green: #008c4b;
+            --dark-orange: #ca7440;
             --text-dark: #2c3e50;
             --text-light: #7f8c8d;
             --white: #ffffff;
@@ -41,45 +41,47 @@
             scroll-behavior: smooth;
         }
 
-        /* Container Styles */
+        /* Improved Container Styles */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
         }
 
-        /* Section Titles */
+        /* Enhanced Section Titles */
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-light);
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
         }
 
-        /* Navigation */
+        /* Navigation Improvements */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(144, 238, 144, 0.1);
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(0, 190, 100, 0.1);
             transition: var(--transition);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -94,29 +96,30 @@
         }
 
         .logo-img {
-            height: 40px;
-            width: auto;
+            height: 42px;
+            width: 180px;
         }
 
         .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 600;
             color: var(--primary-orange);
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-menu a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 500;
+            font-weight: 700;
             transition: color 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            font-size: 1.1rem;
         }
 
         .nav-menu a::after {
@@ -141,57 +144,56 @@
         .cta-button {
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(253, 145, 80, 0.2);
             border: none;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             white-space: nowrap;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(253, 145, 80, 0.3);
         }
 
-
-        /* Hero Section */
+        /* Hero Section Improvements */
         .hero {
-            background: linear-gradient(135deg, rgba(144, 238, 144, 0.05), rgba(255, 165, 0, 0.05));
-            padding: 180px 0 120px;
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.08), rgba(253, 145, 80, 0.08));
+            padding: 200px 0 140px;
             position: relative;
             overflow: hidden;
-            margin-top: -60px; /* Adjust for fixed nav */
+            margin-top: -60px;
         }
 
         .hero-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 4rem;
+            gap: 5rem;
             padding: 0 2rem;
             position: relative;
             z-index: 2;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
         }
 
         .hero h1 {
-            font-size: 3.0rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.1;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -200,25 +202,25 @@
         }
 
         .hero p {
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-            font-family: 'Poppins', sans-serif;;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .app-store-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             background: var(--text-dark);
             color: white;
             text-decoration: none;
@@ -226,7 +228,7 @@
             font-weight: 600;
             transition: var(--transition);
             border: 2px solid var(--text-dark);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .app-store-btn:hover {
@@ -240,26 +242,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 500px;
+            min-height: 550px;
         }
 
         .phone-mockup {
             width: 100%;
-            max-width: 455px;
-            height: 350px;
+            max-width: 550px;
+            height: auto;
             border-radius: 40px;
             box-shadow: var(--box-shadow);
-            transform: perspective(1000px) rotateY(-15deg);
+            transform: perspective(1000px) rotateY(-10deg);
             transition: var(--transition);
         }
 
         .phone-mockup:hover {
-            transform: perspective(1000px) rotateY(-5deg);
+            transform: perspective(1000px) rotateY(0deg);
         }
 
-        /* Stats Section */
+        /* Stats Section Improvements */
         .stats {
-            padding: 100px 0;
+            padding: 120px 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             color: white;
             position: relative;
@@ -278,7 +280,7 @@
         }
 
         .stats-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
@@ -287,20 +289,22 @@
 
         .stats-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .stats-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
+            font-family: 'Poppins', sans-serif;
         }
 
         .stats-header p {
-            font-size: 1.1rem;
-            max-width: 700px;
+            font-size: 1.2rem;
+            max-width: 800px;
             margin: 0 auto;
             opacity: 0.9;
+            line-height: 1.7;
         }
 
         .stats-scroll-container {
@@ -313,10 +317,10 @@
 
         .stats-grid {
             display: inline-flex;
-            gap: 1rem;
-            padding: 0 1rem;
+            gap: 1.5rem;
+            padding: 0 1.5rem;
             white-space: nowrap;
-            animation: scrollStats 25s linear infinite;
+            animation: scrollStats 30s linear infinite;
             will-change: transform;
         }
 
@@ -330,11 +334,11 @@
         }
 
         .stat-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
             border-radius: var(--border-radius-lg);
-            padding: 1.5rem 1.2rem;
-            min-width: 200px;
+            padding: 2rem 1.5rem;
+            min-width: 220px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
@@ -357,19 +361,19 @@
 
         .stat-item:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.18);
         }
 
         .stat-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
             color: white;
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             background: linear-gradient(135deg, white, #f0f0f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -377,13 +381,13 @@
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             font-weight: 500;
             white-space: normal;
         }
 
-        /* Features Section */
+        /* Features Section Improvements */
         .features {
             padding: var(--section-padding) 0;
             background: white;
@@ -391,18 +395,18 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .feature-card {
             background: white;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 2rem;
             border-radius: var(--border-radius-lg);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(144, 238, 144, 0.2);
+            border: 1px solid rgba(0, 190, 100, 0.2);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -410,36 +414,37 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(144, 238, 144, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 190, 100, 0.15);
             border-color: var(--primary-green);
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            border-radius: 16px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
             color: white;
-            box-shadow: 0 5px 15px rgba(144, 238, 144, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 190, 100, 0.3);
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
         }
 
         .feature-card p {
             color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
         }
 
         .feature-link {
@@ -451,12 +456,12 @@
             gap: 8px;
             margin-top: auto;
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .feature-link i {
             transition: var(--transition);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .feature-link:hover {
@@ -467,7 +472,7 @@
             transform: translateX(5px);
         }
 
-        /* Problem Section */
+        /* Problem Section Improvements */
         .problem {
             padding: var(--section-padding) 0;
             background: var(--light-bg);
@@ -476,21 +481,23 @@
         .problem-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
         .problem-text h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
         }
 
         .problem-text p {
             color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
 
         .problem-list {
@@ -500,14 +507,14 @@
         .problem-list li {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+            padding: 1.2rem;
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .problem-list li:hover {
@@ -517,7 +524,7 @@
 
         .problem-list li i {
             color: var(--primary-orange);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             min-width: 24px;
             padding-top: 2px;
         }
@@ -525,7 +532,7 @@
         .problem-visual {
             position: relative;
             height: 100%;
-            min-height: 400px;
+            min-height: 450px;
             border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--box-shadow);
@@ -544,16 +551,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(144, 238, 144, 0.7), rgba(255, 165, 0, 0.7));
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.7), rgba(253, 145, 80, 0.7));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* How It Works */
+        /* How It Works Improvements */
         .how-it-works {
             padding: var(--section-padding) 0;
             background: white;
@@ -561,19 +569,19 @@
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
         .step {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 2rem;
             border-radius: var(--border-radius-lg);
             background: var(--light-bg);
             position: relative;
             transition: var(--transition);
-            border: 1px solid rgba(144, 238, 144, 0.2);
+            border: 1px solid rgba(0, 190, 100, 0.2);
         }
 
         .step:hover {
@@ -583,34 +591,35 @@
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.3rem;
+            margin: 0 auto 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
-            box-shadow: 0 5px 15px rgba(144, 238, 144, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 190, 100, 0.3);
         }
 
         .step h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
         }
 
         .step p {
             color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
-        /* Stakeholders */
+        /* Stakeholders Improvements */
         .stakeholders {
             padding: var(--section-padding) 0;
             background: var(--light-bg);
@@ -618,102 +627,103 @@
 
         .stakeholders-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
         .stakeholder-card {
             background: white;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 2rem;
             border-radius: var(--border-radius-lg);
             text-align: center;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(144, 238, 144, 0.2);
+            border: 1px solid rgba(0, 190, 100, 0.2);
         }
 
         .stakeholder-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(144, 238, 144, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 190, 100, 0.15);
         }
 
         .stakeholder-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            margin: 0 auto 2rem;
+            font-size: 2.2rem;
             color: white;
-            box-shadow: 0 5px 15px rgba(144, 238, 144, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 190, 100, 0.3);
         }
 
         .stakeholder-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
         }
 
         .stakeholder-card p {
             color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
-        /* Testimonials */
+        /* Testimonials Improvements */
         .testimonials {
             padding: var(--section-padding) 0;
             background: white;
         }
 
         .testimonials-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
         .testimonial-card {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius-lg);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(144, 238, 144, 0.2);
+            border: 1px solid rgba(0, 190, 100, 0.2);
         }
 
         .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(144, 238, 144, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 190, 100, 0.15);
         }
 
         .testimonial-content {
             font-style: italic;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 2rem;
+            line-height: 1.7;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .testimonial-content::before {
             content: '"';
-            font-size: 3rem;
-            color: rgba(144, 238, 144, 0.2);
+            font-size: 4rem;
+            color: rgba(0, 190, 100, 0.2);
             position: absolute;
-            top: -15px;
-            left: -5px;
+            top: -20px;
+            left: -10px;
             line-height: 1;
             z-index: 0;
         }
@@ -721,12 +731,12 @@
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--primary-green);
@@ -735,21 +745,22 @@
         .author-info h4 {
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .author-info p {
             color: var(--text-light);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .rating {
             color: var(--primary-orange);
-            margin-top: 3px;
-            font-size: 0.9rem;
+            margin-top: 5px;
+            font-size: 1rem;
         }
 
-        /* CTA Section */
+        /* CTA Section Improvements */
         .cta-section {
             padding: var(--section-padding) 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
@@ -770,7 +781,7 @@
         }
 
         .cta-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
@@ -778,32 +789,33 @@
         }
 
         .cta-section h2 {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             line-height: 1.3;
+            font-family: 'Poppins', sans-serif;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .download-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .download-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.8rem 1.2rem;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
             background: rgba(255, 255, 255, 0.15);
             color: white;
             text-decoration: none;
@@ -812,7 +824,7 @@
             transition: var(--transition);
             border: 2px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(5px);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .download-btn:hover {
@@ -823,70 +835,70 @@
         }
 
         .download-btn i {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         .download-btn-text {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .download-btn-text small {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             opacity: 0.8;
         }
 
-        /* Footer */
+        /* Footer Improvements */
         footer {
             background: var(--text-dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .footer-logo-img {
-            height: 40px;
+            height: 45px;
             width: auto;
         }
 
         .footer-logo-text {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: white;
         }
 
         .footer-about p {
             opacity: 0.7;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
         }
 
         .social-links {
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
         }
 
         .social-link {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
@@ -895,7 +907,7 @@
             transition: var(--transition);
             color: white;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .social-link:hover {
@@ -904,10 +916,11 @@
         }
 
         .footer-links h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             color: white;
+            font-family: 'Poppins', sans-serif;
         }
 
         .footer-links ul {
@@ -915,7 +928,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.7rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
@@ -925,13 +938,13 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .footer-links a i {
             width: 18px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
@@ -941,31 +954,31 @@
         .footer-contact p {
             display: flex;
             align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
             opacity: 0.7;
-            line-height: 1.6;
-            font-size: 0.9rem;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
         .footer-contact i {
             margin-top: 3px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
+            padding-top: 3rem;
+            margin-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-bottom p {
             opacity: 0.6;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
-        /* Waiting List Modal */
+        /* Improved Waiting List Modal - Made more enticing */
         .modal {
             display: none;
             position: fixed;
@@ -973,27 +986,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 2000;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         .modal-content {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
             padding: 2rem;
             border-radius: var(--border-radius-lg);
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
-            box-shadow: var(--box-shadow);
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
             position: relative;
-            animation: slideIn 0.3s ease-out;
+            animation: slideIn 0.5s ease-out;
+            text-align: center;
         }
 
         @keyframes slideIn {
             from {
-                transform: translateY(-50px);
+                transform: translateY(-100px);
                 opacity: 0;
             }
             to {
@@ -1004,12 +1020,12 @@
 
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1.5rem;
+            right: 1.5rem;
             background: none;
             border: none;
-            font-size: 1.5rem;
-            color: var(--text-dark);
+            font-size: 1.8rem;
+            color: var(--text-light);
             cursor: pointer;
             transition: var(--transition);
         }
@@ -1018,17 +1034,28 @@
             color: var(--primary-orange);
         }
 
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
         .modal h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Poppins', sans-serif;
         }
 
         .modal p {
             color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .modal form {
@@ -1037,19 +1064,20 @@
             gap: 1rem;
         }
 
-        .modal input {
+        .modal input, .modal select {
             padding: 0.8rem;
-            border: 1px solid rgba(144, 238, 144, 0.2);
+            border: 1px solid rgba(0, 190, 100, 0.3);
             border-radius: var(--border-radius);
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-dark);
             outline: none;
             transition: var(--transition);
+            background: white;
         }
 
-        .modal input:focus {
+        .modal input:focus, .modal select:focus {
             border-color: var(--primary-green);
-            box-shadow: 0 0 5px rgba(144, 238, 144, 0.3);
+            box-shadow: 0 0 8px rgba(0, 190, 100, 0.4);
         }
 
         .modal button[type="submit"] {
@@ -1061,18 +1089,18 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .modal button[type="submit"]:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(253, 145, 80, 0.3);
         }
 
         .modal .success-message,
         .modal .error-message {
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
             text-align: center;
         }
 
@@ -1086,19 +1114,19 @@
             display: none;
         }
 
-        /* Responsive Design */
+        /* Responsive Design Improvements */
         @media (max-width: 1024px) {
             :root {
                 --section-padding: 80px;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
                 text-align: center;
             }
             
@@ -1108,17 +1136,17 @@
             
             .hero-image {
                 order: -1;
-                margin-bottom: 2rem;
-                min-height: 400px;
+                margin-bottom: 3rem;
+                min-height: 450px;
             }
             
             .problem-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 4rem;
             }
             
             .problem-visual {
-                min-height: 300px;
+                min-height: 350px;
             }
         }
 
@@ -1146,20 +1174,20 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .section-subtitle {
-                font-size: 1rem;
-                margin-bottom: 2rem;
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
             }
             
             .hero-buttons {
@@ -1180,16 +1208,16 @@
             }
 
             .stats-header h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .stat-item {
-                min-width: 180px;
-                padding: 1.2rem 1rem;
+                min-width: 200px;
+                padding: 1.5rem 1.2rem;
             }
 
             .stat-number {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .stat-label {
@@ -1197,23 +1225,23 @@
             }
 
             .cta-section h2 {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
 
             .cta-section p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .modal-content {
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             .modal h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .modal p {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
 
@@ -1227,8 +1255,8 @@
             }
             
             .hero h1 {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
             }
             
             .hero-buttons {
@@ -1243,18 +1271,90 @@
             }
             
             .feature-card, .stakeholder-card, .testimonial-card {
-                padding: 1.5rem 1rem;
+                padding: 2rem 1.5rem;
             }
             
             .feature-icon, .stakeholder-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .stats {
-                padding: 60px 0;
+                padding: 80px 0;
+            }
+
+            .stat-item {
+                min-width: 180px;
+                padding: 1.5rem 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
+
+            .problem-list li {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .download-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .download-btn i {
+                font-size: 1.2rem;
+            }
+
+            .download-btn-text small {
+                font-size: 0.7rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                width: 95%;
+            }
+
+            .modal h2 {
+                font-size: 1.6rem;
+            }
+
+            .modal p {
+                font-size: 0.95rem;
+            }
+
+            .modal input, .modal button[type="submit"], .modal select {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .steps, .stakeholders-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
             }
 
             .stat-item {
@@ -1263,83 +1363,11 @@
             }
 
             .stat-number {
-                font-size: 1.6rem;
-            }
-
-            .stat-icon {
                 font-size: 1.8rem;
-                margin-bottom: 0.8rem;
             }
 
             .stat-label {
                 font-size: 0.95rem;
-            }
-
-            .problem-list li {
-                padding: 0.8rem;
-                font-size: 0.9rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .download-btn {
-                padding: 0.7rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            .download-btn i {
-                font-size: 1rem;
-            }
-
-            .download-btn-text small {
-                font-size: 0.6rem;
-            }
-
-            .modal-content {
-                padding: 1.2rem;
-                width: 95%;
-            }
-
-            .modal h2 {
-                font-size: 1.3rem;
-            }
-
-            .modal p {
-                font-size: 0.85rem;
-            }
-
-            .modal input, .modal button[type="submit"] {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .steps, .stakeholders-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-item {
-                min-width: 140px;
-                padding: 1rem 0.8rem;
-            }
-
-            .stat-number {
-                font-size: 1.4rem;
-            }
-
-            .stat-label {
-                font-size: 0.9rem;
             }
         }
 
@@ -1358,7 +1386,7 @@
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
         }
 
         .animate-on-scroll.animated {
@@ -1367,7 +1395,7 @@
         }
 
         .floating {
-            animation: float 6s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
         }
 
         @keyframes float {
@@ -1375,7 +1403,7 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-15px);
             }
         }
 
@@ -1386,7 +1414,7 @@
             left: 0;
             right: 0;
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             z-index: 999;
             transform: translateY(-150%);
@@ -1404,16 +1432,16 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .mobile-menu a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 1.1rem;
             display: block;
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
@@ -1422,7 +1450,7 @@
         }
 
         .mobile-menu .cta-button {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             text-align: center;
             display: block;
             width: 100%;
@@ -1450,13 +1478,13 @@
         /* Scroll indicator for stats */
         .scroll-indicator {
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
         }
 
         .scroll-indicator i {
@@ -1507,17 +1535,224 @@
         </ul>
     </div>
 
-    <!-- Waiting List Modal -->
+    <!-- Waiting List Modal - Enticing Design -->
     <div class="modal" id="waiting-list-modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <h2>Join Our Waiting List</h2>
-            <p>Thank you for your interest! The app is coming soon. Join our waiting list to be notified when it's available.</p>
+            <i class="fas fa-rocket modal-icon"></i>
+            <h2>Join the DAS medhub Revolution!</h2>
+            <p>Be the first to experience AI-powered healthcare that connects you to doctors, hospitals, and pharmacies instantly. Sign up now and get early access notifications, exclusive updates, and priority support when we launch!</p>
             <form id="waiting-list-form">
+                <input type="text" name="Name" placeholder="Enter your name" required>
                 <input type="email" name="Email" placeholder="Enter your email address" required>
                 <input type="tel" name="WhatsApp" placeholder="Enter your WhatsApp number (optional)">
-                <button type="submit">Join Waiting List</button>
-                <p class="success-message" id="success-message">Successfully joined the waiting list!</Successfully></p>
+                <select name="Country" required>
+                    <option value="">Select your country</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cabo Verde">Cabo Verde</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czechia">Czechia</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="East Timor">East Timor</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Eswatini">Eswatini</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guinea-Bissau">Guinea-Bissau</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Korea, North">Korea, North</option>
+                    <option value="Korea, South">Korea, South</option>
+                    <option value="Kosovo">Kosovo</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Micronesia">Micronesia</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montenegro">Montenegro</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Namibia">Namibia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="North Macedonia">North Macedonia</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau">Palau</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                    <option value="Saint Lucia">Saint Lucia</option>
+                    <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                    <option value="Samoa">Samoa</option>
+                    <option value="San Marino">San Marino</option>
+                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Sierra Leone">Sierra Leone</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Solomon Islands">Solomon Islands</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Sudan">South Sudan</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tajikistan">Tajikistan</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Vatican City">Vatican City</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                </select>
+                <select name="UseCase" required>
+                    <option value="">Select your use case</option>
+                    <option value="User/Patient">User/Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Pharmacist">Pharmacist</option>
+                    <option value="Hospital">Hospital</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit">Secure Your Spot Now!</button>
+                <p class="success-message" id="success-message">Successfully joined the waiting list! 🚀</p>
                 <p class="error-message" id="error-message">An error occurred. Please try again.</p>
             </form>
         </div>
@@ -1995,6 +2230,11 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
         const successMessage = document.getElementById('success-message');
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwI3-qxc-Ugc65VBZ3xRx01CrpkLy4IL1ILHO7UgEuVeAWymIRIBjTZRtRrywZ-xMg/exec'; // Replace with your Google Apps Script Web App URL
 
+        // Show modal on page load for waiting list prompt
+        window.addEventListener('load', () => {
+            modal.style.display = 'flex';
+        });
+
         // Open modal for download buttons and CTA button
         document.querySelectorAll('.download-btn[data-modal], .cta-button').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -2029,11 +2269,30 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
             errorMessage.style.display = 'none';
             successMessage.style.display = 'none';
 
-            // Basic email validation
-            const email = waitingListForm.querySelector('input[name="Email"]').value;
+            // Basic validation
+            const name = waitingListForm.querySelector('input[name="Name"]').value.trim();
+            const email = waitingListForm.querySelector('input[name="Email"]').value.trim();
+            const country = waitingListForm.querySelector('select[name="Country"]').value;
+            const useCase = waitingListForm.querySelector('select[name="UseCase"]').value;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name) {
+                errorMessage.textContent = 'Please enter your name.';
+                errorMessage.style.display = 'block';
+                return;
+            }
             if (!emailRegex.test(email)) {
                 errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            if (!country) {
+                errorMessage.textContent = 'Please select your country.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            if (!useCase) {
+                errorMessage.textContent = 'Please select your use case.';
                 errorMessage.style.display = 'block';
                 return;
             }
@@ -2097,7 +2356,7 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
 
             // Ensure continuous scrolling on all screen sizes
             function setupStatsScrolling() {
-                statsGrid.style.animation = 'scrollStats 25s linear infinite';
+                statsGrid.style.animation = 'scrollStats 30s linear infinite';
                 statsGrid.style.animationPlayState = 'running';
             }
 
