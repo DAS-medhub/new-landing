@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAS medhub Blog - Digital Health Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #00be64;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #fd9150;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00be64;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #00a055;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #00be64;
+            color: #00be64;
+        }
+        
+        .btn-outline:hover {
+            background-color: #00be64;
+            color: white;
+        }
+        
+        body.dark-mode .btn {
+            background-color: #00a055;
+            color: #fff;
+        }
+        
+        body.dark-mode .btn-outline {
+            border-color: #00be64;
+            color: #00be64;
+        }
+        
+        body.dark-mode .btn-outline:hover {
+            background-color: #00be64;
+            color: #000;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s;
+        }
+        
+        body.dark-mode header {
+            background-color: #2c2c2c;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-img {
+            height: 42px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00be64;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        body.dark-mode nav a {
+            color: #f0f0f0;
+        }
+        
+        nav a:hover {
+            color: #00be64;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section Improvements */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 190, 100, 0.2);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            display: flex;
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .blog-posts {
+            flex: 2;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        body.dark-mode .post-card {
+            background: #2c2c2c;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        body.dark-mode .post-card:hover {
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+        }
+        
+        .post-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .post-card:hover .post-image img {
+            transform: scale(1.05);
+        }
+        
+        .post-content {
+            padding: 20px;
+        }
+        
+        .post-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        body.dark-mode .post-content h3 {
+            color: #f0f0f0;
+        }
+        
+        .post-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        body.dark-mode .post-excerpt {
+            color: #ccc;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        body.dark-mode .post-meta {
+            color: #aaa;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #e8f5f0;
+            color: #00be64;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+        }
+        
+        body.dark-mode .category-tag {
+            background-color: #003d22;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            flex: 1;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .sidebar-widget {
+            background: #2c2c2c;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00be64;
+            color: #333;
+        }
+        
+        body.dark-mode .sidebar-widget h3 {
+            color: #f0f0f0;
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 10px;
+        }
+        
+        .categories-list a {
+            display: block;
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            color: #333;
+        }
+        
+        body.dark-mode .categories-list a {
+            background: #3a3a3a;
+            color: #f0f0f0;
+        }
+        
+        .categories-list a:hover {
+            background: #00be64;
+            color: white;
+        }
+        
+        .categories-list a.active {
+            background: #00be64;
+            color: white;
+        }
+        
+        /* Load More Button */
+        .load-more {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0 20px;
+            transition: background-color 0.3s;
+        }
+        
+        body.dark-mode footer {
+            background: #111;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+        .footer-logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #00be64;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-column a:hover {
+            color: #fd9150;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #444;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        body.dark-mode .social-icons a {
+            background: #555;
+        }
+        
+        .social-icons a:hover {
+            background: #00be64;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #ccc;
+        }
+        
+        /* Individual Blog Page */
+        .blog-article {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        body.dark-mode .blog-article {
+            background: #2c2c2c;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        body.dark-mode .theme-toggle {
+            color: #f0f0f0;
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+        }
+        
+        .article-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        body.dark-mode .article-header h1 {
+            color: #f0f0f0;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        body.dark-mode .article-meta {
+            color: #aaa;
+        }
+        
+        .article-image {
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-content h2 {
+            margin: 25px 0 15px;
+            color: #00be64;
+        }
+        
+        body.dark-mode .article-content h2 {
+            color: #00be64;
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        body.dark-mode .article-content p {
+            color: #ddd;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #00be64;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        body.dark-mode .article-content blockquote {
+            color: #bbb;
+        }
+        
+        .back-to-blog {
+            margin: 30px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .article-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="images/dasmedhub-logo.png" alt="DAS medhub Logo" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#" class="active">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>DAS medhub Blog</h1>
+            <p>Insights on Digital Health, AI, and Accessible Care</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Blog Posts Section -->
+        <section class="blog-posts">
+            <div class="posts-grid">
+                <!-- Blog Post 1 -->
+                <article class="post-card" data-category="ai">
+                    <div class="post-image">
+                        <img src="images/AI in health.jpg" alt="AI in African Healthcare">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">AI in Healthcare</span>
+                        <h3>How AI is Transforming Healthcare in Africa</h3>
+                        <p class="post-excerpt">Discover how artificial intelligence is revolutionizing medical diagnosis, treatment planning, and healthcare delivery across African nations, making quality care more accessible than ever before.</p>
+                        <a href="#ai-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>June 15, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="post-card" data-category="language">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Breaking Language Barriers">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Digital Health Access</span>
+                        <h3>Breaking Language Barriers in Digital Health</h3>
+                        <p class="post-excerpt">Explore how multilingual AI interfaces are helping overcome language obstacles in healthcare, ensuring patients receive critical medical information in their native tongue.</p>
+                        <a href="#language-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>July 3, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="post-card" data-category="telemedicine">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Telemedicine Bridging Gap">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Telemedicine</span>
+                        <h3>From Rural to Urban: How Telemedicine is Bridging the Gap</h3>
+                        <p class="post-excerpt">Learn how telemedicine platforms are connecting remote communities with specialized healthcare providers in urban centers, reducing healthcare disparities across geographical boundaries.</p>
+                        <a href="#telemedicine-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>August 12, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="post-card" data-category="ai">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Diagnostics">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">AI in Healthcare</span>
+                        <h3>AI-Powered Diagnostics: Revolutionizing Early Detection</h3>
+                        <p class="post-excerpt">How machine learning algorithms are enhancing diagnostic accuracy and enabling early detection of diseases in resource-limited settings.</p>
+                        <a href="#ai-diagnostics-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>September 5, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="post-card" data-category="innovation">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mobile Health">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Medical Innovations</span>
+                        <h3>Mobile Health: Reaching the Unreachable</h3>
+                        <p class="post-excerpt">The role of mobile technology in expanding healthcare access to remote and underserved communities across developing regions.</p>
+                        <a href="#mobile-health-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>September 18, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="post-card" data-category="patient-stories">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Patient Journey">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Patient Stories</span>
+                        <h3>A Patient's Journey: From Diagnosis to Recovery</h3>
+                        <p class="post-excerpt">Follow Maria's healthcare journey in rural Kenya and how digital health solutions made quality care accessible despite geographical challenges.</p>
+                        <a href="#patient-journey-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>October 2, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional Blog Post 7 -->
+                <article class="post-card" data-category="blockchain">
+                    <div class="post-image">
+                        <img src="images/blockchain in healthcare.jpeg" alt="Blockchain in Healthcare">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Medical Innovations</span>
+                        <h3>The Role of Blockchain in Healthcare Data Security</h3>
+                        <p class="post-excerpt">Exploring how blockchain technology is enhancing the security and privacy of patient data in digital health systems.</p>
+                        <a href="#blockchain-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>November 15, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional Blog Post 8 -->
+                <article class="post-card" data-category="mental-health">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mental Health Support">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">Digital Health Access</span>
+                        <h3>Mental Health Support Through Digital Platforms</h3>
+                        <p class="post-excerpt">How online tools and AI are providing accessible mental health resources to communities facing stigma and limited services.</p>
+                        <a href="#mental-health-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>December 5, 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional Blog Post 9 -->
+                <article class="post-card" data-category="ai">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Personalized Medicine">
+                    </div>
+                    <div class="post-content">
+                        <span class="category-tag">AI in Healthcare</span>
+                        <h3>AI and Personalized Medicine: Tailoring Treatments</h3>
+                        <p class="post-excerpt">The impact of AI on creating customized treatment plans based on individual genetic and lifestyle data.</p>
+                        <a href="#personalized-medicine-article" class="btn read-more-btn">Read More</a>
+                        <div class="post-meta">
+                            <span>DAS medhub Team</span>
+                            <span>January 10, 2024</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <button id="loadMoreBtn" class="btn">Load More Articles</button>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="categories-list">
+                    <li><a href="#" class="active" data-filter="all">All Topics</a></li>
+                    <li><a href="#" data-filter="ai">AI in Healthcare</a></li>
+                    <li><a href="#" data-filter="language">Digital Health Access</a></li>
+                    <li><a href="#" data-filter="patient-stories">Patient Stories</a></li>
+                    <li><a href="#" data-filter="innovation">Medical Innovations</a></li>
+                    <li><a href="#" data-filter="telemedicine">Telemedicine</a></li>
+                    <li><a href="#" data-filter="blockchain">Blockchain</a></li>
+                    <li><a href="#" data-filter="mental-health">Mental Health</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>About DAS medhub</h3>
+                <p>DAS medhub is a digital health platform that connects patients and accelerates healing in underserved communities with AI-powered, multilingual, and affordable digital health solutions.</p>
+                <a href="https://www.dasmedhub.com/" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest in digital health and healthcare innovation.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px;">
+                    <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Blog Articles Content (Initially Hidden) -->
+    <div id="blog-articles" style="display: none;">
+        <!-- AI in Africa Article -->
+        <article id="ai-article" class="container blog-article" style="display: none;">
+            <button class="theme-toggle" id="theme-toggle-ai"><i class="fas fa-moon"></i></button>
+            <div class="article-header">
+                <h1>How AI is Transforming Healthcare in Africa</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-user"></i> DAS medhub Team</span>
+                    <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="AI in African Healthcare">
+            </div>
+            
+            <div class="article-content">
+                <p>Artificial Intelligence is no longer a futuristic concept in African healthcare—it's happening now, and it's transforming how medical services are delivered across the continent. From remote diagnostics to personalized treatment plans, AI is helping overcome longstanding challenges in healthcare access and quality.</p>
+                
+                <h2>The Current Healthcare Landscape in Africa</h2>
+                <p>Africa faces unique healthcare challenges, including a shortage of medical professionals, limited infrastructure in rural areas, and high disease burdens. According to the World Health Organization, the continent bears 24% of the global disease burden but has access to only 3% of the world's health workers.</p>
+                
+                <p>This disparity creates critical gaps in healthcare delivery, particularly in remote and underserved communities. However, AI technologies are beginning to bridge these gaps in innovative ways.</p>
+                
+                <h2>AI-Powered Diagnostic Tools</h2>
+                <p>One of the most significant applications of AI in African healthcare is in diagnostics. Companies like DAS medhub are developing AI systems that can analyze medical images with accuracy rivaling human experts. These tools are particularly valuable in regions with limited access to radiologists and other specialists.</p>
+                
+                <blockquote>
+                    "In our pilot program in Kenya, AI-assisted diagnosis reduced waiting times for radiology reports from two weeks to just 24 hours, dramatically improving patient outcomes." - Dr. Amina Juma, Chief Medical Officer at DAS medhub
+                </blockquote>
+                
+                <p>These diagnostic AI systems can detect conditions ranging from tuberculosis and malaria to breast cancer and eye diseases, often using nothing more than a smartphone camera and a custom algorithm.</p>
+                
+                <h2>Predictive Analytics for Disease Outbreaks</h2>
+                <p>AI is also proving invaluable in predicting and tracking disease outbreaks across Africa. By analyzing patterns in healthcare data, weather information, and population movements, AI systems can forecast potential outbreaks of diseases like cholera, malaria, and Ebola.</p>
+                
+                <p>These predictive models enable health authorities to allocate resources more effectively and implement preventive measures before outbreaks become widespread. During the COVID-19 pandemic, several African countries used AI-powered tools to predict case surges and plan hospital capacity accordingly.</p>
+                
+                <h2>Challenges and Considerations</h2>
+                <p>Despite the promising applications, AI healthcare solutions in Africa face several challenges:</p>
+                
+                <ul>
+                    <li>Data scarcity and quality issues</li>
+                    <li>Limited digital infrastructure in rural areas</li>
+                    <li>Regulatory and ethical considerations</li>
+                    <li>Need for culturally appropriate solutions</li>
+                </ul>
+                
+                <p>Addressing these challenges requires collaboration between technology developers, healthcare providers, governments, and local communities.</p>
+                
+                <h2>The Future of AI in African Healthcare</h2>
+                <p>The potential for AI to transform healthcare in Africa is immense. As technology becomes more accessible and affordable, we can expect to see even more innovative applications, from AI-assisted surgery to personalized medicine based on genetic data.</p>
+                
+                <p>At DAS medhub, we're committed to developing AI solutions that are not only technologically advanced but also culturally relevant and accessible to all Africans, regardless of their location or economic status.</p>
+                
+                <p>The future of healthcare in Africa is digital, and AI is leading the way toward a healthier continent for all.</p>
+            </div>
+            
+            <div class="back-to-blog">
+                <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+        </article>
+
+        <!-- Language Barriers Article -->
+        <article id="language-article" class="container blog-article" style="display: none;">
+            <button class="theme-toggle" id="theme-toggle-language"><i class="fas fa-moon"></i></button>
+            <div class="article-header">
+                <h1>Breaking Language Barriers in Digital Health</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-user"></i> DAS medhub Team</span>
+                    <span><i class="far fa-calendar"></i> July 3, 2023</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                </div>
+            </div>
+            
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Breaking Language Barriers">
+            </div>
+            
+            <div class="article-content">
+                <p>Language should never be a barrier to quality healthcare. Yet, across multilingual regions of Africa and other diverse areas, patients often struggle to communicate their symptoms and understand medical advice due to language differences. Digital health solutions are now addressing this critical challenge through innovative technologies.</p>
+                
+                <h2>The Scale of the Language Barrier Problem</h2>
+                <p>Africa is home to over 2,000 distinct languages, with countries like Nigeria having more than 500 languages spoken within their borders. This linguistic diversity creates significant challenges in healthcare settings, where precise communication can be a matter of life and death.</p>
+                
+                <p>Traditional solutions like human interpreters are expensive, not always available, and can compromise patient privacy. Digital solutions offer a scalable alternative that respects both linguistic diversity and patient confidentiality.</p>
+                
+                <h2>Multilingual AI Interfaces in Healthcare</h2>
+                <p>At DAS medhub, we've developed AI-powered interfaces that can understand and respond in multiple African languages. Our system currently supports Swahili, Hausa, Yoruba, Zulu, Amharic, and several other languages, with more being added regularly.</p>
+                
+                <p>These interfaces allow patients to:</p>
+                
+                <ul>
+                    <li>Describe symptoms in their native language</li>
+                    <li>Receive medical information in a language they understand</li>
+                    <li>Access educational materials translated and culturally adapted</li>
+                    <li>Navigate healthcare systems with language support</li>
+                </ul>
+                
+                <blockquote>
+                    "When my grandmother was able to receive diabetes education in Yoruba for the first time, it transformed how she managed her condition. She finally understood what she needed to do." - Chinedu O., Lagos, Nigeria
+                </blockquote>
+                
+                <h2>How Multilingual AI Works</h2>
+                <p>Our language technology combines several advanced AI components:</p>
+                
+                <ol>
+                    <li><strong>Speech Recognition:</strong> Converts spoken language into text, even with accents and dialect variations</li>
+                    <li><strong>Natural Language Processing:</strong> Understands the meaning behind words and phrases</li>
+                    <li><strong>Machine Translation:</strong> Accurately translates medical terminology while preserving meaning</li>
+                    <li><strong>Speech Synthesis:</strong> Converts text back into natural-sounding speech in the target language</li>
+                </ol>
+                
+                <p>What makes our system unique is its specialized training on medical terminology and its understanding of cultural contexts that affect how people describe health issues.</p>
+                
+                <h2>Case Study: Maternal Health in Rural Tanzania</h2>
+                <p>In a pilot program in rural Tanzania, we implemented our multilingual AI system in clinics serving expectant mothers. Previously, healthcare workers struggled to communicate with patients who spoke local dialects not widely understood outside their communities.</p>
+                
+                <p>After implementation:</p>
+                
+                <ul>
+                    <li>Patient comprehension of prenatal instructions improved by 67%</li>
+                    <li>Missed appointments decreased by 42%</li>
+                    <li>Patient satisfaction scores increased dramatically</li>
+                </ul>
+                
+                <p>The system was particularly effective at explaining complex concepts like nutrition requirements and warning signs during pregnancy in terms that made sense to the local community.</p>
+                
+                <h2>Challenges in Implementation</h2>
+                <p>Developing effective multilingual health interfaces presents several challenges:</p>
+                
+                <ul>
+                    <li>Many languages lack standardized medical terminology</li>
+                    <li>Cultural concepts of health and illness vary significantly</li>
+                    <li>Low literacy rates require alternative communication methods</li>
+                    <li>Technical limitations in areas with poor internet connectivity</li>
+                </ul>
+                
+                <p>We address these challenges through close collaboration with local communities, healthcare providers, and linguists to ensure our solutions are both technically sound and culturally appropriate.</p>
+                
+                <h2>The Future of Multilingual Digital Health</h2>
+                <p>As technology advances, we're working toward even more sophisticated solutions, including real-time translation during telemedicine consultations and AI that can understand non-verbal communication cues across cultures.</p>
+                
+                <p>Our vision is a healthcare system where no one is excluded due to language barriers, and every patient can access quality care in a language they understand and trust.</p>
+            </div>
+            
+            <div class="back-to-blog">
+                <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+        </article>
+
+<!-- Telemedicine Article -->
+<article id="telemedicine-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-telemedicine"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>From Rural to Urban: How Telemedicine is Bridging the Gap</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> August 12, 2023</span>
+            <span><i class="far fa-clock"></i> 6 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Telemedicine Bridging Gap">
+    </div>
+    
+    <div class="article-content">
+        <p>Telemedicine is revolutionizing healthcare delivery by connecting patients in remote areas with specialists in urban centers. This technology is particularly vital in regions with vast geographical challenges, such as many parts of Africa, where access to specialized care can mean traveling hundreds of kilometers. By leveraging digital platforms, telemedicine eliminates the need for physical travel, reducing costs and time while improving health outcomes. In countries like Kenya and Nigeria, where rural populations constitute a significant portion of the demographic, telemedicine has become a lifeline, enabling timely interventions that prevent minor issues from escalating into major health crises.</p>
+        
+        <h2>The Rural-Urban Healthcare Divide</h2>
+        <p>In many developing countries, healthcare resources are heavily concentrated in urban areas, leaving rural populations underserved. According to the World Health Organization, over 50% of the global population lives in rural areas, yet these regions often have less than 25% of the available healthcare professionals. Patients frequently delay seeking care due to high travel costs, long distances, and time constraints, leading to worsened health outcomes. For instance, chronic conditions like diabetes or hypertension often go unmanaged in rural settings, resulting in complications. Telemedicine addresses this divide by bringing expert consultations directly to patients’ locations, ensuring timely diagnosis and treatment.</p>
+        
+        <h2>How Telemedicine Works</h2>
+        <p>Modern telemedicine platforms utilize video conferencing, secure messaging, and digital health records to facilitate seamless remote consultations. At DAS medhub, our platform integrates artificial intelligence (AI) for initial triage, which assesses patient symptoms and prioritizes cases for specialists, ensuring efficient use of their time. Patients can access consultations through smartphones, tablets, or computers, making healthcare more accessible. Key features include real-time video calls, file-sharing capabilities for medical images like X-rays or MRIs, and integration with wearable devices that monitor vital signs such as heart rate or blood pressure. These tools collectively enable comprehensive care delivery without the need for in-person visits.</p>
+        
+        <blockquote>
+            "Telemedicine saved my life. I could consult a cardiologist from my village without traveling to the city." - Samuel K., Rural Ghana
+        </blockquote>
+        
+        <p>In addition to consultations, telemedicine platforms often provide follow-up care plans and prescription services, streamlining the patient experience. For example, patients can receive e-prescriptions that are fulfilled by local pharmacies or delivered directly to their homes.</p>
+        
+        <h2>Impact on Healthcare Disparities</h2>
+        <p>Studies demonstrate that telemedicine reduces hospital admissions by 30% in chronic disease management, as patients receive consistent monitoring and timely interventions. In our programs at DAS medhub, we’ve observed a 50% increase in follow-up appointment adherence in rural areas, significantly improving patient outcomes. Telemedicine also empowers local healthcare workers by providing access to specialist consultations, enhancing their ability to manage complex cases. This collaborative approach not only bridges geographical gaps but also reduces the burden on urban healthcare facilities.</p>
+        
+        <h2>Challenges and Solutions</h2>
+        <p>Despite its promise, telemedicine faces challenges such as unreliable internet connectivity and limited digital literacy in rural communities. To address these, DAS medhub has developed offline-capable apps that store data locally and sync when connectivity is available. Additionally, we’ve implemented community training programs to improve digital literacy, teaching patients and local health workers how to use telemedicine platforms effectively. Partnerships with local governments and NGOs further support infrastructure development, such as satellite internet in remote areas.</p>
+        
+        <h2>The Future of Telemedicine</h2>
+        <p>The future of telemedicine is bright, with advancements like 5G technology promising faster, more reliable connections for real-time consultations. Artificial intelligence will continue to enhance diagnostic accuracy and personalize care plans. Emerging technologies, such as virtual reality consultations and remote surgery guidance through augmented reality, are on the horizon, poised to make telemedicine even more immersive and effective. As these innovations unfold, telemedicine will play an increasingly critical role in creating equitable healthcare systems worldwide.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- AI Diagnostics Article -->
+<article id="ai-diagnostics-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-ai-diagnostics"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>AI-Powered Diagnostics: Revolutionizing Early Detection</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> September 5, 2023</span>
+            <span><i class="far fa-clock"></i> 5 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="AI Diagnostics">
+    </div>
+    
+    <div class="article-content">
+        <p>Machine learning is transforming diagnostic processes, enabling faster and more accurate detection of diseases, particularly in areas with limited medical expertise. By analyzing vast datasets, AI systems can identify patterns and anomalies that might be missed by human practitioners, leading to earlier interventions and better patient outcomes. This is especially critical in low-resource settings, where access to skilled diagnosticians is often scarce.</p>
+        
+        <h2>The Need for Better Diagnostics</h2>
+        <p>In resource-limited settings, misdiagnosis rates can be as high as 30%, often due to a lack of specialized training or diagnostic tools. For instance, diseases like malaria or tuberculosis require precise identification, yet many rural clinics lack the necessary equipment or expertise. AI-powered diagnostics address this gap by providing automated analysis of medical images, lab results, and patient data, offering a cost-effective and scalable solution.</p>
+        
+        <h2>AI in Action</h2>
+        <p>At DAS medhub, our AI tools can detect malaria from blood smears with 95% accuracy, surpassing many human microscopists in both speed and consistency. These tools use convolutional neural networks to analyze microscopic images, identifying parasites in seconds. Similar applications exist in radiology, where AI detects abnormalities in X-rays or MRIs, and in dermatology, where it identifies skin cancers from photographs. These advancements enable healthcare providers to focus on treatment rather than time-consuming diagnostic processes.</p>
+        
+        <blockquote>
+            "AI diagnostics have doubled our clinic's capacity to screen for tuberculosis." - Dr. Elena M., South Africa
+        </blockquote>
+        
+        <p>Beyond image analysis, AI systems integrate with electronic health records to provide holistic patient assessments, flagging potential issues based on historical data and current symptoms.</p>
+        
+        <h2>Benefits for Early Detection</h2>
+        <p>Early detection is critical for improving survival rates in cancers and infectious diseases. AI enables large-scale screening programs in remote areas using portable devices like smartphones or handheld ultrasound machines. For example, community health workers can use AI-powered apps to screen for diabetic retinopathy, a leading cause of blindness, without requiring an ophthalmologist on-site. This democratizes access to diagnostics and reduces the burden on overburdened healthcare systems.</p>
+        
+        <h2>Ethical Considerations</h2>
+        <p>Ensuring ethical AI deployment is paramount. At DAS medhub, we train our AI models on diverse datasets to minimize bias, ensuring they perform accurately across different populations. We also prioritize transparency, providing healthcare providers with clear explanations of AI-generated diagnoses. Regulatory compliance and patient consent are strictly adhered to, maintaining trust in these technologies.</p>
+        
+        <h2>Future Prospects</h2>
+        <p>The integration of AI with genomics and wearable devices will create comprehensive diagnostic systems that monitor health in real time. For instance, AI could analyze genetic profiles to predict disease risks or use data from smartwatches to detect early signs of heart conditions. These advancements will shift healthcare toward proactive, preventive models, reducing the incidence of advanced-stage diseases and improving global health outcomes.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- Mobile Health Article -->
+<article id="mobile-health-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-mobile-health"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>Mobile Health: Reaching the Unreachable</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> September 18, 2023</span>
+            <span><i class="far fa-clock"></i> 4 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mobile Health">
+    </div>
+    
+    <div class="article-content">
+        <p>Mobile technology is democratizing healthcare access, allowing services to reach even the most remote communities through smartphones and apps. With the global proliferation of mobile devices, mobile health (mHealth) has emerged as a powerful tool to deliver health education, diagnostics, and treatment support to populations previously out of reach.</p>
+        
+        <h2>The Rise of mHealth</h2>
+        <p>In many African countries, mobile penetration exceeds 80%, making smartphones a viable platform for healthcare delivery. mHealth apps provide health education, medication reminders, and basic diagnostic tools, empowering communities with limited access to clinics. For example, SMS-based campaigns have been used to promote maternal health, delivering prenatal care tips to expectant mothers in rural areas.</p>
+        
+        <h2>Key Applications</h2>
+        <p>mHealth is versatile, supporting applications like medication adherence apps, which send reminders to patients with chronic conditions, and remote monitoring systems that track vital signs through connected devices. At DAS medhub, our mHealth solutions include voice-based interfaces for low-literacy users and multilingual support to cater to diverse populations. These apps also integrate with local health systems, ensuring continuity of care.</p>
+        
+        <blockquote>
+            "Our mHealth program has increased vaccination rates by 40% in hard-to-reach areas." - Health Worker, Ethiopia
+        </blockquote>
+        
+        <p>Other features include teleconsultation capabilities and community health worker tools that streamline data collection and reporting, enhancing the efficiency of outreach programs.</p>
+        
+        <h2>Impact on Underserved Communities</h2>
+        <p>Mobile health reduces the need for travel, saving time and money for patients in remote areas. It also empowers individuals with self-management tools, such as apps that track blood sugar levels for diabetics or provide mental health exercises. By enabling early intervention and consistent care, mHealth improves health outcomes and reduces disparities between urban and rural populations.</p>
+        
+        <h2>Challenges</h2>
+        <p>Challenges like data privacy, network coverage, and device affordability persist. To address these, DAS medhub is developing offline-capable apps and partnering with telecom providers to subsidize data costs for health-related services. Additionally, robust encryption ensures patient data remains secure, addressing privacy concerns.</p>
+        
+        <h2>Looking Ahead</h2>
+        <p>The advent of 5G and the Internet of Things (IoT) will enhance mHealth with real-time data streaming and AI-driven insights. For example, IoT-enabled wearables could transmit continuous health data to providers, enabling proactive interventions. As mobile technology evolves, mHealth will continue to bridge the gap between underserved communities and quality healthcare.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- Patient Journey Article -->
+<article id="patient-journey-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-patient-journey"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>A Patient's Journey: From Diagnosis to Recovery</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> October 2, 2023</span>
+            <span><i class="far fa-clock"></i> 5 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Patient Journey">
+    </div>
+    
+    <div class="article-content">
+        <p>Follow Maria’s story as she navigates healthcare challenges in rural Kenya, aided by digital solutions from DAS medhub. Her journey illustrates how technology can transform lives by providing access to care in areas where traditional healthcare is scarce.</p>
+        
+        <h2>The Initial Symptoms</h2>
+        <p>Maria, a 45-year-old farmer in rural Kenya, experienced persistent fatigue and abdominal pain. With the nearest clinic over 100 kilometers away, accessing a doctor was a logistical and financial challenge. Delays in seeking care exacerbated her condition, a common issue in regions with limited healthcare infrastructure.</p>
+        
+        <h2>Digital Diagnosis</h2>
+        <p>Using the DAS medhub mobile app, Maria accessed an AI-assisted preliminary diagnosis tool. By answering a series of questions about her symptoms in her local language, Swahili, she received a preliminary assessment suggesting a possible gastrointestinal issue. The app then connected her to a telemedicine specialist in Nairobi, who conducted a video consultation to confirm the diagnosis and recommend tests.</p>
+        
+        <blockquote>
+            "I never thought I could see a doctor without leaving home." - Maria
+        </blockquote>
+        
+        <p>The app’s user-friendly interface and multilingual support made it accessible even for those with limited digital literacy, ensuring Maria could navigate the process with ease.</p>
+        
+        <h2>Treatment and Recovery</h2>
+        <p>Following her diagnosis, Maria received a treatment plan that included medication delivered to her village through a local pharmacy partnered with DAS medhub. The app also provided remote monitoring tools, allowing her to track her symptoms and share updates with her doctor. Regular follow-up consultations ensured her condition was managed effectively, leading to a full recovery within months.</p>
+        
+        <h2>Lessons Learned</h2>
+        <p>Maria’s experience highlights the power of digital tools to bridge healthcare gaps, but it also underscores the importance of human connection. While technology facilitated her diagnosis and treatment, the empathy and guidance of her telemedicine specialist were crucial to her trust in the process.</p>
+        
+        <h2>Inspiring Change</h2>
+        <p>Maria’s story is a testament to the transformative potential of accessible digital health. By empowering patients and connecting them to care, platforms like DAS medhub are reshaping healthcare delivery in underserved regions, inspiring broader adoption of these technologies.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- Blockchain Article -->
+<article id="blockchain-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-blockchain"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>The Role of Blockchain in Healthcare Data Security</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> November 15, 2023</span>
+            <span><i class="far fa-clock"></i> 5 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="images/blockchain in healthcare.jpeg" alt="Blockchain in Healthcare">
+    </div>
+    
+    <div class="article-content">
+        <p>Blockchain technology is emerging as a game-changer for securing sensitive healthcare data in an increasingly digital world. By providing a decentralized, tamper-proof system for storing and sharing patient information, blockchain ensures data integrity and enhances patient trust in digital healthcare platforms.</p>
+        
+        <h2>Understanding Blockchain in Healthcare</h2>
+        <p>Blockchain operates as a decentralized ledger, where data is stored across multiple nodes, making it nearly impossible to alter without consensus. In healthcare, this translates to secure storage of patient records, ensuring they remain tamper-proof and accessible only to authorized parties. Patients can control who accesses their data through cryptographic keys, enhancing privacy.</p>
+        
+        <h2>Key Benefits</h2>
+        <p>Blockchain prevents data breaches by eliminating single points of failure, a common vulnerability in centralized systems. It also enables secure data sharing between providers, streamlining care coordination. For example, a patient’s medical history can be shared securely between a rural clinic and an urban specialist without risking data exposure. Additionally, blockchain empowers patients by giving them ownership of their health data.</p>
+        
+        <blockquote>
+            "Blockchain has reduced our data breach incidents by 70%." - IT Director, DAS medhub
+        </blockquote>
+        
+        <p>Applications extend beyond patient records to include supply chain tracking for medications, ensuring authenticity and preventing counterfeit drugs, and secure storage of research data for clinical trials.</p>
+        
+        <h2>Implementation Challenges</h2>
+        <p>Integrating blockchain with existing healthcare systems poses technical challenges, including interoperability with legacy platforms. Regulatory compliance, such as adherence to HIPAA or GDPR, also requires careful navigation. DAS medhub addresses these by developing standardized protocols and partnering with regulatory bodies to ensure compliance.</p>
+        
+        <h2>Case Studies</h2>
+        <p>In pilot programs, blockchain has streamlined insurance claims by providing transparent, verifiable records, reducing fraud and processing times. It has also facilitated secure sharing of research data, enabling collaborative studies without compromising patient privacy. These successes demonstrate blockchain’s potential to transform healthcare operations.</p>
+        
+        <h2>Future Outlook</h2>
+        <p>Combined with AI, blockchain will create robust, patient-centric health ecosystems. AI can analyze blockchain-secured data to provide personalized insights, while blockchain ensures the data remains secure and trustworthy. As adoption grows, blockchain will become a cornerstone of digital healthcare, fostering trust and efficiency.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- Mental Health Article -->
+<article id="mental-health-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-mental-health"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>Mental Health Support Through Digital Platforms</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> December 5, 2023</span>
+            <span><i class="far fa-clock"></i> 4 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mental Health Support">
+    </div>
+    
+    <div class="article-content">
+        <p>Digital platforms are breaking down barriers to mental health care, providing anonymous, accessible support to those in need. In a world where mental health issues are on the rise, these technologies offer a scalable solution to reach individuals who face stigma or lack access to traditional therapy.</p>
+        
+        <h2>The Mental Health Crisis</h2>
+        <p>Globally, mental health disorders affect over 970 million people, yet stigma and a shortage of therapists limit access to care, particularly in underserved areas. In many regions, cultural perceptions discourage seeking help, and rural communities often lack mental health professionals. Digital platforms address these challenges by offering discreet, convenient support.</p>
+        
+        <h2>Digital Solutions</h2>
+        <p>Apps like those developed by DAS medhub provide AI-powered chatbots for immediate support, virtual therapy sessions with licensed professionals, and mood-tracking tools to monitor mental health trends. These platforms support multiple languages and include features like crisis intervention hotlines and community forums, fostering a sense of connection for users.</p>
+        
+        <blockquote>
+            "The app helped me manage anxiety without judgment." - Anonymous User
+        </blockquote>
+        
+        <p>Voice-based interfaces and gamified exercises make these tools accessible to users with varying levels of digital literacy, ensuring inclusivity.</p>
+        
+        <h2>Effectiveness</h2>
+        <p>Studies show that digital interventions can reduce symptoms of anxiety and depression by 25-30%. For example, cognitive behavioral therapy (CBT) delivered through apps has proven effective for managing mild to moderate symptoms, making it a valuable tool for early intervention. These platforms also enable continuous monitoring, allowing providers to adjust treatment plans as needed.</p>
+        
+        <h2>Ethical Concerns</h2>
+        <p>Data privacy is a critical concern in digital mental health care. DAS medhub employs end-to-end encryption and anonymized data storage to protect user information. Professional oversight ensures that AI-driven tools complement, rather than replace, human therapists, maintaining the quality of care.</p>
+        
+        <h2>Path Forward</h2>
+        <p>Hybrid models combining digital and in-person care will dominate the future of mental health support. By integrating virtual therapy with community-based interventions, these models offer comprehensive care that addresses both accessibility and personalization. As technology advances, digital platforms will continue to make mental health support more equitable and effective.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+<!-- Personalized Medicine Article -->
+<article id="personalized-medicine-article" class="container blog-article" style="display: none;">
+    <button class="theme-toggle" id="theme-toggle-personalized-medicine"><i class="fas fa-moon"></i></button>
+    <div class="article-header">
+        <h1>AI and Personalized Medicine: Tailoring Treatments</h1>
+        <div class="article-meta">
+            <span><i class="far fa-user"></i> DAS medhub Team</span>
+            <span><i class="far fa-calendar"></i> January 10, 2024</span>
+            <span><i class="far fa-clock"></i> 5 min read</span>
+        </div>
+    </div>
+    
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="AI Personalized Medicine">
+    </div>
+    
+    <div class="article-content">
+        <p>Artificial intelligence is enabling treatments customized to individual patients, improving efficacy and reducing side effects. By moving away from one-size-fits-all approaches, personalized medicine leverages AI to tailor interventions based on a patient’s unique profile, revolutionizing healthcare delivery.</p>
+        
+        <h2>The Era of One-Size-Fits-All Ends</h2>
+        <p>Traditional medicine often relies on standardized protocols that may not account for individual variations in genetics, lifestyle, or environment. This can lead to suboptimal treatment outcomes or adverse reactions. AI-driven personalized medicine analyzes these factors to create tailored treatment plans, ensuring better compatibility and effectiveness.</p>
+        
+        <h2>AI’s Role</h2>
+        <p>Machine learning processes vast datasets, including genomic profiles, medical histories, and lifestyle data, to predict how patients will respond to specific treatments. For example, in oncology, AI can identify which chemotherapy drugs are most likely to succeed based on a tumor’s genetic markers. At DAS medhub, our AI systems integrate with electronic health records to provide real-time treatment recommendations.</p>
+        
+        <blockquote>
+            "Personalized plans have improved patient outcomes by 35%." - Dr. James L.
+        </blockquote>
+        
+        <p>Applications extend to pharmacology, where AI optimizes drug dosages, and chronic disease management, where it tailors lifestyle interventions to improve adherence and outcomes.</p>
+        
+        <h2>Benefits</h2>
+        <p>Personalized medicine reduces trial-and-error in treatment, lowering healthcare costs and minimizing side effects. Patients are more likely to adhere to treatments that are tailored to their needs, leading to better health outcomes. For example, AI-driven plans for diabetes management have reduced hospital readmissions by optimizing insulin regimens.</p>
+        
+        <h2>Challenges</h2>
+        <p>Data privacy remains a significant challenge, as personalized medicine relies on sensitive patient information. DAS medhub employs robust encryption and anonymization techniques to protect data. Equitable access to advanced technologies is another concern, which we address through partnerships with NGOs to subsidize costs in low-income regions.</p>
+        
+        <h2>Future Vision</h2>
+        <p>The future of personalized medicine lies in real-time treatment adjustments based on continuous monitoring. Wearable devices and IoT integration will provide ongoing data streams, allowing AI to refine treatment plans dynamically. This proactive approach will transform healthcare into a predictive, patient-centric model, improving lives worldwide.</p>
+    </div>
+    
+    <div class="back-to-blog">
+        <a href="#" class="btn btn-outline back-to-list"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/dasmedhub-logo.png" alt="DAS medhub Logo" class="footer-logo-img">
+                </div>
+                    <p>Making quality healthcare accessible and affordable for all through innovative digital solutions.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/DASmedhub/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/dasmedhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/das-medhub"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> dasmedhub@outlook.com</p>
+                    <p><i class="fas fa-phone"></i> +233 542-181-017</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Global Digital Health Network</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 DAS medhub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterLinks = document.querySelectorAll('.categories-list a');
+            const postCards = document.querySelectorAll('.post-card');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            const backToBlogBtns = document.querySelectorAll('.back-to-list');
+            const blogArticles = document.getElementById('blog-articles');
+            const blogPostsSection = document.querySelector('.blog-posts');
+            const newsletterForm = document.getElementById('newsletter-form');
+            const sidebar = document.querySelector('.sidebar');
+            
+            let visiblePosts = 3;
+            
+            // Initialize with 3 posts visible
+            updateVisiblePosts();
+            
+            // Filter functionality
+            filterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active class
+                    filterLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    postCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Load More functionality
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    visiblePosts += 3;
+                    updateVisiblePosts();
+                });
+            }
+            
+            function updateVisiblePosts() {
+                postCards.forEach((card, index) => {
+                    if (index < visiblePosts) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Hide load more button if all posts are visible
+                if (visiblePosts >= postCards.length) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'block';
+                }
+            }
+            
+            // Read More functionality
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetArticle = document.querySelector(targetId);
+                    
+                    if (targetArticle) {
+                        blogPostsSection.style.display = 'none';
+                        sidebar.style.display = 'none';
+                        blogArticles.style.display = 'block';
+                        document.querySelectorAll('.blog-article').forEach(article => {
+                            article.style.display = 'none';
+                        });
+                        targetArticle.style.display = 'block';
+                        
+                        // Scroll to the article
+                        window.scrollTo({
+                            top: targetArticle.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to Blog functionality
+            backToBlogBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    blogArticles.style.display = 'none';
+                    blogPostsSection.style.display = 'block';
+                    sidebar.style.display = 'block';
+                    
+                    // Hide all articles
+                    document.querySelectorAll('.blog-article').forEach(article => {
+                        article.style.display = 'none';
+                    });
+                    
+                    // Scroll back to blog section
+                    window.scrollTo({
+                        top: blogPostsSection.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Newsletter form submission
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // In a real application, you would send this to a server
+                    alert(`Thank you for subscribing with ${email}! You'll receive our updates soon.`);
+                    this.reset();
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const nav = document.querySelector('nav ul');
+                    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+
+            // Theme toggle for each article
+            const themeToggles = document.querySelectorAll('.theme-toggle');
+            themeToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    const icon = this.querySelector('i');
+                    if (document.body.classList.contains('dark-mode')) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
