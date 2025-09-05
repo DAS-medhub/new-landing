@@ -38,6 +38,121 @@
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
+        /* User Journey Modal */
+        .journey-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5s ease-out;
+        }
+        .journey-content {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: scaleIn 0.5s ease-out;
+        }
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .journey-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .journey-content p {
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+        }
+        .journey-options {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .journey-option {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius-lg);
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            box-shadow: var(--box-shadow);
+        }
+        .journey-option:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 40px rgba(253, 145, 80, 0.2);
+        }
+        .journey-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        .journey-option h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+        .journey-option p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        .skip-option {
+            margin-top: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .skip-option:hover {
+            color: var(--primary-orange);
+        }
+        /* Patient/Professional specific sections */
+        .patient-specific, .professional-specific {
+            display: none;
+        }
+        .patient-mode .patient-specific {
+            display: block;
+        }
+        .professional-mode .professional-specific {
+            display: block;
+        }
         /* Improved Container Styles */
         .container {
             max-width: 1280px;
@@ -241,7 +356,7 @@
             overflow: hidden;
             border-radius: 10px;
         }
-       
+     
         .stats::before {
             content: '';
             position: absolute;
@@ -594,10 +709,68 @@
             margin-bottom: 1.2rem;
             color: var(--text-dark);
             font-family: 'Poppins', sans-serif;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .stakeholder-card p {
             color: var(--text-light);
             line-height: 1.7;
+            font-size: 1rem;
+        }
+        /* Professional Benefits Section */
+        .professional-benefits {
+            padding: var(--section-padding) 0;
+            background: white;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 190, 100, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 190, 100, 0.15);
+            border-color: var(--primary-green);
+        }
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 190, 100, 0.3);
+        }
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+        .benefit-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
             font-size: 1rem;
         }
         /* Testimonials Improvements */
@@ -741,6 +914,7 @@
         }
         .download-btn i {
             font-size: 1.4rem;
+            flex-shrink: 0;
         }
         .download-btn-text {
             display: flex;
@@ -986,33 +1160,33 @@
             :root {
                 --section-padding: 80px;
             }
-           
+         
             .hero h1 {
                 font-size: 3rem;
             }
-           
+         
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
                 text-align: center;
             }
-           
+         
             .hero-buttons {
                 justify-content: center;
             }
-           
+         
             .hero-image {
                 order: -1;
                 margin-top: 100px;
                 margin-bottom: 0;
                 min-height: 550px;
             }
-           
+         
             .problem-content {
                 grid-template-columns: 1fr;
                 gap: 4rem;
             }
-           
+         
             .problem-visual {
                 min-height: 350px;
             }
@@ -1021,11 +1195,11 @@
             :root {
                 --section-padding: 70px;
             }
-           
+         
             .nav-menu {
                 display: none;
             }
-           
+         
             .mobile-menu-toggle {
                 display: block !important;
                 background: none;
@@ -1035,44 +1209,44 @@
                 cursor: pointer;
                 padding: 0.5rem;
             }
-           
+         
             .hero {
                 padding: 150px 0 80px;
             }
-           
+         
             .hero h1 {
                 font-size: 2.5rem;
                 font-weight: 600;
             }
-           
+         
             .hero p {
                 font-size: 1.1rem;
                 font-weight: 400;
             }
-           
+         
             .section-title {
                 font-size: 2.5rem;
                 font-weight: 600;
             }
-           
+         
             .section-subtitle {
                 font-size: 1.1rem;
                 font-weight: 400;
                 margin-bottom: 3rem;
             }
-           
+         
             .hero-buttons {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
             }
-           
+         
             .download-buttons {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
             }
-           
+         
             .footer-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -1196,27 +1370,44 @@
                 font-size: 0.85rem;
                 font-weight: 400;
             }
+            /* Journey modal responsive */
+            .journey-content {
+                padding: 2rem;
+            }
+            .journey-content h2 {
+                font-size: 2rem;
+            }
+            .journey-content p {
+                font-size: 1rem;
+            }
+            .journey-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .journey-option {
+                min-width: 100%;
+            }
         }
         @media (max-width: 576px) {
             :root {
                 --section-padding: 60px;
             }
-           
+         
             .hero {
                 padding: 130px 0 60px;
             }
-           
+         
             .hero h1 {
                 font-size: 2rem;
                 font-weight: 600;
                 margin-bottom: 1.5rem;
             }
-           
+         
             .hero p {
                 font-size: 1rem;
                 font-weight: 300;
             }
-           
+         
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
@@ -1226,23 +1417,21 @@
                 text-align: center;
                 justify-content: center;
             }
-
             .cta-button{
                 width: 120px;
                 text-align: center;
                 justify-content: center;
             }
-
         .cta-buttons{
                 width: 100%;
                 text-align: center;
                 justify-content: center;
             }
-           
+         
             .feature-card, .stakeholder-card, .testimonial-card {
                 padding: 2rem 1.5rem;
             }
-           
+         
             .feature-icon, .stakeholder-icon {
                 width: 60px;
                 height: 60px;
@@ -1396,6 +1585,24 @@
             .footer-bottom p {
                 font-size: 0.8rem;
                 font-weight: 400;
+            }
+            /* Journey modal responsive */
+            .journey-content {
+                padding: 1.5rem;
+            }
+            .journey-content h2 {
+                font-size: 1.8rem;
+            }
+            .journey-option {
+                padding: 1.5rem 1rem;
+            }
+            .journey-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            .journey-option h3 {
+                font-size: 1.3rem;
             }
         }
         @media (max-width: 400px) {
@@ -1560,6 +1767,27 @@
     </style>
 </head>
 <body>
+    <!-- User Journey Selection Modal -->
+    <div class="journey-modal" id="journey-modal">
+        <div class="journey-content">
+            <h2>Welcome to DAS medhub</h2>
+            <p>Please select how you'd like to experience our platform:</p>
+            <div class="journey-options">
+                <div class="journey-option" data-journey="patient">
+                    <div class="journey-icon"><i class="fas fa-user-injured"></i></div>
+                    <h3>I'm a Patient</h3>
+                    <p>Looking for healthcare assistance and medical support</p>
+                </div>
+                <div class="journey-option" data-journey="professional">
+                    <div class="journey-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>I'm a Professional</h3>
+                    <p>Exploring healthcare solutions for my practice or organization</p>
+                </div>
+            </div>
+            <div class="skip-option" id="skip-journey">Continue without selecting</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -1704,7 +1932,7 @@
                     <option value="Lithuania">Lithuania</option>
                     <option value="Luxembourg">Luxembourg</option>
                     <option value="Madagascar">Madagascar</option>
-                    <option value="Malawi">Malawi</option>
+                    <option value="Malawi">Malawi</div>
                     <option value="Malaysia">Malaysia</option>
                     <option value="Maldives">Maldives</option>
                     <option value="Mali">Mali</option>
@@ -1748,7 +1976,7 @@
                     <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
                     <option value="Saint Lucia">Saint Lucia</option>
                     <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
-                    <option value="Samoa">Samoa</option>
+                    <option value="Samora">Samora</option>
                     <option value="San Marino">San Marino</option>
                     <option value="Sao Tome and Principe">Sao Tome and Principe</option>
                     <option value="Saudi Arabia">Saudi Arabia</option>
@@ -1772,7 +2000,7 @@
                     <option value="Syria">Syria</option>
                     <option value="Taiwan">Taiwan</option>
                     <option value="Tajikistan">Tajikistan</option>
-                    <option value="Tanzania">Tanzania</option>
+                    <option value="Tazania">Tanzania</option>
                     <option value="Thailand">Thailand</option>
                     <option value="Togo">Togo</option>
                     <option value="Tonga">Tonga</option>
@@ -1832,111 +2060,261 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
             </div>
         </div>
     </section>
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stats-header animate-on-scroll">
-                <h2>Transforming Healthcare Across Africa and Beyond</h2>
-                <p>Our platform is making a measurable difference in healthcare access and outcomes</p>
+    <!-- Patient-specific content -->
+    <div class="patient-specific">
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stats-header animate-on-scroll">
+                    <h2>Transforming Healthcare Across Africa and Beyond</h2>
+                    <p>Our platform is making a measurable difference in healthcare access and outcomes</p>
+                </div>
+             
+                <div class="stats-scroll-container">
+                    <div class="stats-grid animate-on-scroll">
+                        <!-- First Set of Stats -->
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Patients Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Verified Doctors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Availability</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-procedures"></i></div>
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Hospitals Connected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-pills"></i></div>
+                            <div class="stat-number">5K+</div>
+                            <div class="stat-label">Prescriptions Filled</div>
+                        </div>
+                        <!-- Duplicated Set for Continuous Scroll -->
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Patients Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Verified Doctors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Availability</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-procedures"></i></div>
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Hospitals Connected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-pills"></i></div>
+                            <div class="stat-number">5K+</div>
+                            <div class="stat-label">Prescriptions Filled</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator animate-on-scroll">
+                    <span>Swipe to see more</span>
+                    <i class="fas fa-arrows-alt-h"></i>
+                </div>
             </div>
-           
-            <div class="stats-scroll-container">
-                <div class="stats-grid animate-on-scroll">
-                    <!-- First Set of Stats -->
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <div class="stat-number">50K+</div>
-                        <div class="stat-label">Patients Served</div>
+        </section>
+        <!-- Problem Section -->
+        <section class="problem">
+            <div class="container">
+                <div class="problem-content">
+                    <div class="problem-text animate-on-scroll">
+                        <h2>Healthcare Challenges</h2>
+                        <p>Despite progress in healthcare, many Countries still face significant barriers to quality medical services. Our platform addresses these systemic issues:</p>
+                        <ul class="problem-list">
+                            <li><i class="fas fa-exclamation-triangle"></i> Delayed diagnosis and treatment due to lack of early symptom assessment</li>
+                            <li><i class="fas fa-hospital-user"></i> Overcrowded hospitals without proper triaging mechanisms</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Limited access to health professionals in rural areas</li>
+                            <li><i class="fas fa-file-medical"></i> Fragmented health records across care providers</li>
+                            <li><i class="fas fa-pills"></i> Unsafe self-medication without professional supervision</li>
+                            <li><i class="fas fa-language"></i> Language and literacy barriers in healthcare</li>
+                        </ul>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Verified Doctors</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Availability</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-                        <div class="stat-number">1.2K</div>
-                        <div class="stat-label">Hospitals Connected</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-pills"></i></div>
-                        <div class="stat-number">5K+</div>
-                        <div class="stat-label">Prescriptions Filled</div>
-                    </div>
-                    <!-- Duplicated Set for Continuous Scroll -->
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <div class="stat-number">50K+</div>
-                        <div class="stat-label">Patients Served</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Verified Doctors</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Availability</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-                        <div class="stat-number">1.2K</div>
-                        <div class="stat-label">Hospitals Connected</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-pills"></i></div>
-                        <div class="stat-number">5K+</div>
-                        <div class="stat-label">Prescriptions Filled</div>
+                    <div class="problem-visual animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Healthcare in Africa" class="problem-image">
+                        <div class="image-overlay">
+                            <i class="fas fa-bridge"></i> Bridging the Gap
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator animate-on-scroll">
-                <span>Swipe to see more</span>
-                <i class="fas fa-arrows-alt-h"></i>
-            </div>
-        </div>
-    </section>
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <div class="problem-content">
-                <div class="problem-text animate-on-scroll">
-                    <h2>Healthcare Challenges</h2>
-                    <p>Despite progress in healthcare, many Countries still face significant barriers to quality medical services. Our platform addresses these systemic issues:</p>
-                    <ul class="problem-list">
-                        <li><i class="fas fa-exclamation-triangle"></i> Delayed diagnosis and treatment due to lack of early symptom assessment</li>
-                        <li><i class="fas fa-hospital-user"></i> Overcrowded hospitals without proper triaging mechanisms</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Limited access to health professionals in rural areas</li>
-                        <li><i class="fas fa-file-medical"></i> Fragmented health records across care providers</li>
-                        <li><i class="fas fa-pills"></i> Unsafe self-medication without professional supervision</li>
-                        <li><i class="fas fa-language"></i> Language and literacy barriers in healthcare</li>
-                    </ul>
+        </section>
+    </div>
+    <!-- Professional-specific content -->
+    <div class="professional-specific">
+        <!-- Stats Section for Professionals -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stats-header animate-on-scroll">
+                    <h2>Empowering Healthcare Professionals</h2>
+                    <p>Our platform helps medical professionals deliver better care more efficiently</p>
                 </div>
-                <div class="problem-visual animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Healthcare in Africa" class="problem-image">
-                    <div class="image-overlay">
-                        <i class="fas fa-bridge"></i> Bridging the Gap
+             
+                <div class="stats-scroll-container">
+                    <div class="stats-grid animate-on-scroll">
+                        <!-- First Set of Stats -->
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Medical Professionals</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Time Saved on Consultations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat-number">65%</div>
+                            <div class="stat-label">Increase in Patient Capacity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-file-medical-alt"></i></div>
+                            <div class="stat-number">12K+</div>
+                            <div class="stat-label">Medical Records Managed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-hospital"></i></div>
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Healthcare Facilities Connected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-brain"></i></div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Diagnostic Accuracy</div>
+                        </div>
+                        <!-- Duplicated Set for Continuous Scroll -->
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Medical Professionals</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Time Saved on Consultations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat-number">65%</div>
+                            <div class="stat-label">Increase in Patient Capacity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-file-medical-alt"></i></div>
+                            <div class="stat-number">12K+</div>
+                            <div class="stat-label">Medical Records Managed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-hospital"></i></div>
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Healthcare Facilities Connected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-brain"></i></div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Diagnostic Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator animate-on-scroll">
+                    <span>Swipe to see more</span>
+                    <i class="fas fa-arrows-alt-h"></i>
+                </div>
+            </div>
+        </section>
+        <!-- Problem Section for Professionals -->
+        <section class="problem">
+            <div class="container">
+                <div class="problem-content">
+                    <div class="problem-text animate-on-scroll">
+                        <h2>Challenges for Healthcare Providers</h2>
+                        <p>Medical professionals face unique challenges in today's healthcare environment. Our platform helps address these issues:</p>
+                        <ul class="problem-list">
+                            <li><i class="fas fa-clock"></i> Time-consuming patient intake and assessment processes</li>
+                            <li><i class="fas fa-file-medical"></i> Incomplete patient information at time of consultation</li>
+                            <li><i class="fas fa-users"></i> Difficulty managing patient flow and appointment scheduling</li>
+                            <li><i class="fas fa-prescription"></i> Challenges in prescription management and tracking</li>
+                            <li><i class="fas fa-chart-line"></i> Limited tools for patient progress monitoring and follow-up</li>
+                            <li><i class="fas fa-language"></i> Communication barriers with patients from diverse backgrounds</li>
+                        </ul>
+                    </div>
+                    <div class="problem-visual animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Healthcare Professionals" class="problem-image">
+                        <div class="image-overlay">
+                            <i class="fas fa-tools"></i> Professional Solutions
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- Professional Benefits Section -->
+        <section class="professional-benefits">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">How <span class="text-gradient">DAS medhub</span> Benefits Healthcare Professionals</h2>
+                <p class="section-subtitle animate-on-scroll">Our platform is designed to streamline workflows, enhance patient care, and expand your practice</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI-Assisted Diagnostics</h3>
+                        <p>Leverage our advanced AI models for preliminary assessments, allowing you to focus on complex cases and treatment planning.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-calendar-check"></i></div>
+                        <h3>Smart Scheduling</h3>
+                        <p>Automated appointment management with AI-powered triage to prioritize urgent cases and optimize your daily schedule.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-file-medical-alt"></i></div>
+                        <h3>Digital Health Records</h3>
+                        <p>Access comprehensive patient histories, AI-generated summaries, and treatment plans in one secure, centralized platform.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-comment-medical"></i></div>
+                        <h3>Seamless Communication</h3>
+                        <p>Integrated messaging and video consultation tools to connect with patients and collaborate with other healthcare providers.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Practice Analytics</h3>
+                        <p>Gain insights into your practice performance, patient outcomes, and operational efficiency with detailed analytics dashboards.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>HIPAA Compliant Platform</h3>
+                        <p>Ensure patient data security and regulatory compliance with our enterprise-grade security measures and protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
@@ -2184,6 +2562,42 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
         </div>
     </footer>
     <script>
+        // User journey selection functionality
+        const journeyModal = document.getElementById('journey-modal');
+        const journeyOptions = document.querySelectorAll('.journey-option');
+        const skipJourney = document.getElementById('skip-journey');
+        
+        // Show journey modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            journeyModal.style.display = 'flex';
+            
+            // Check if user has already made a selection
+            const userJourney = localStorage.getItem('userJourney');
+            if (userJourney) {
+                journeyModal.style.display = 'none';
+                document.body.classList.add(userJourney + '-mode');
+            }
+        });
+        
+        // Handle journey selection
+        journeyOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const journeyType = this.getAttribute('data-journey');
+                localStorage.setItem('userJourney', journeyType);
+                document.body.classList.add(journeyType + '-mode');
+                journeyModal.style.display = 'none';
+                
+                // Scroll to top after selection
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        // Handle skip option
+        skipJourney.addEventListener('click', function() {
+            journeyModal.style.display = 'none';
+            localStorage.setItem('userJourney', 'default');
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2227,7 +2641,7 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-       
+     
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
         });
@@ -2245,11 +2659,11 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
         // Add hover effects to cards
-        document.querySelectorAll('.feature-card, .stakeholder-card, .testimonial-card').forEach(card => {
+        document.querySelectorAll('.feature-card, .stakeholder-card, .testimonial-card, .benefit-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px)';
             });
-           
+         
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0)';
             });
@@ -2263,7 +2677,10 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwI3-qxc-Ugc65VBZ3xRx01CrpkLy4IL1ILHO7UgEuVeAWymIRIBjTZRtRrywZ-xMg/exec'; // Replace with your Google Apps Script Web App URL
         // Show modal on page load for waiting list prompt
         window.addEventListener('load', () => {
-            modal.style.display = 'flex';
+            // Only show waiting list modal if user hasn't made a selection
+            if (!localStorage.getItem('userJourney')) {
+                modal.style.display = 'flex';
+            }
         });
         // Open modal for download buttons and CTA button
         document.querySelectorAll('.download-btn[data-modal], .cta-buttons').forEach(btn => {
@@ -2357,7 +2774,7 @@ With your permission, we instantly connect you to certified doctors, hospitals, 
             statsContainer.addEventListener('mouseenter', () => {
                 statsGrid.style.animationPlayState = 'paused';
             });
-           
+         
             statsContainer.addEventListener('mouseleave', () => {
                 statsGrid.style.animationPlayState = 'running';
             });
