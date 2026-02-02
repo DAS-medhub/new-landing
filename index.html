@@ -162,24 +162,24 @@
             outline-offset: 4px;
         }
 
-        /* Navigation - Glassmorphism Enhancement */
+        /* Navigation - Glassmorphism Enhancement - IMPROVED */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(226, 232, 240, 0.6);
             z-index: 1000;
-            padding: var(--space-4) 0;
+            padding: var(--space-3) 0;
             transition: all var(--transition-base);
         }
 
         nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             box-shadow: var(--shadow-md);
-            padding: var(--space-3) 0;
+            padding: var(--space-2) 0;
         }
 
         .nav-container {
@@ -189,6 +189,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 64px;
         }
 
         .logo-container {
@@ -197,6 +198,7 @@
             gap: var(--space-3);
             text-decoration: none;
             transition: transform var(--transition-fast);
+            z-index: 1001;
         }
 
         .logo-container:hover {
@@ -273,6 +275,7 @@
             position: relative;
             overflow: hidden;
             isolation: isolate;
+            min-height: 44px; /* Better touch target */
         }
 
         .btn::before {
@@ -336,32 +339,42 @@
             font-size: var(--text-base);
         }
 
+        /* IMPROVED: Mobile Menu Toggle - Better alignment */
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
             color: var(--text-primary);
-            font-size: var(--text-xl);
+            font-size: var(--text-2xl);
             cursor: pointer;
             padding: var(--space-2);
             border-radius: var(--radius-md);
             transition: all var(--transition-fast);
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
         }
 
         .mobile-menu-toggle:hover {
             background: var(--bg-secondary);
         }
 
-        /* Mobile Menu - Slide Over */
+        .mobile-menu-toggle[aria-expanded="true"] {
+            color: var(--primary-orange);
+        }
+
+        /* Mobile Menu - Enhanced with better alignment */
         .mobile-menu-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 998;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 999;
             opacity: 0;
             visibility: hidden;
-            transition: all var(--transition-base);
+            transition: all var(--transition-slow);
         }
 
         .mobile-menu-overlay.active {
@@ -373,15 +386,17 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 80%;
-            max-width: 400px;
+            width: 85%;
+            max-width: 380px;
             height: 100vh;
             background: var(--bg-primary);
-            z-index: 999;
-            padding: var(--space-8) var(--space-6);
+            z-index: 1000;
+            padding: var(--space-16) var(--space-6) var(--space-8);
             box-shadow: var(--shadow-2xl);
-            transition: right var(--transition-slow);
+            transition: right var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .mobile-menu.active {
@@ -394,8 +409,8 @@
             right: var(--space-4);
             background: var(--bg-secondary);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: var(--radius-full);
             font-size: var(--text-xl);
             color: var(--text-secondary);
@@ -404,6 +419,7 @@
             align-items: center;
             justify-content: center;
             transition: all var(--transition-fast);
+            z-index: 1002;
         }
 
         .mobile-menu-close:hover {
@@ -416,8 +432,9 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: var(--space-2);
+            gap: var(--space-1);
             margin-top: var(--space-8);
+            flex: 1;
         }
 
         .mobile-menu a {
@@ -426,14 +443,15 @@
             font-weight: 500;
             font-size: var(--text-lg);
             display: block;
-            padding: var(--space-4) 0;
-            border-bottom: 1px solid var(--border-light);
+            padding: var(--space-4) var(--space-4);
+            border-radius: var(--radius-lg);
             transition: all var(--transition-fast);
         }
 
         .mobile-menu a:hover {
             color: var(--primary-orange);
-            padding-left: var(--space-2);
+            background: var(--bg-secondary);
+            padding-left: var(--space-6);
         }
 
         .mobile-menu .btn {
@@ -441,13 +459,13 @@
             width: 100%;
         }
 
-        /* Journey Modal - Enhanced Design */
+        /* Journey Modal - Enhanced with 3rd option */
         .journey-modal {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            z-index: 3000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            z-index: 2000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -466,7 +484,7 @@
             background: white;
             padding: var(--space-10) var(--space-8);
             border-radius: var(--radius-2xl);
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
             text-align: center;
             box-shadow: var(--shadow-2xl);
@@ -492,7 +510,7 @@
             color: var(--text-secondary);
             margin-bottom: var(--space-10);
             font-size: var(--text-lg);
-            max-width: 55ch;
+            max-width: 60ch;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.7;
@@ -500,7 +518,7 @@
 
         .journey-options {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-6);
             margin-bottom: var(--space-8);
         }
@@ -514,6 +532,9 @@
             border: 2px solid transparent;
             position: relative;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .journey-option:hover {
@@ -526,6 +547,12 @@
         .journey-option:focus-visible {
             outline: 3px solid var(--primary-orange);
             outline-offset: 2px;
+        }
+
+        .journey-option.selected {
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.05), rgba(253, 145, 80, 0.05));
+            border-color: var(--primary-green);
+            box-shadow: var(--shadow-glow);
         }
 
         .journey-icon {
@@ -560,6 +587,7 @@
             font-size: var(--text-sm);
             margin: 0;
             line-height: 1.6;
+            flex: 1;
         }
 
         .skip-option {
@@ -575,25 +603,60 @@
             border-radius: var(--radius-full);
             transition: all var(--transition-fast);
             border: 1px solid transparent;
+            background: var(--bg-secondary);
         }
 
         .skip-option:hover {
             color: var(--text-primary);
-            background: var(--bg-secondary);
+            background: var(--bg-tertiary);
             border-color: var(--border-light);
+            transform: translateY(-2px);
         }
 
-        /* Patient/Professional Modes */
+        /* Patient/Professional Modes - Enhanced with General User Mode */
         .patient-specific, .professional-specific {
             display: none;
         }
 
-        .patient-mode .patient-specific {
+        .patient-mode .patient-specific,
+        .professional-mode .professional-specific,
+        .general-user-mode .patient-specific,
+        .general-user-mode .professional-specific {
             display: block;
         }
 
-        .professional-mode .professional-specific {
+        .general-user-mode .patient-specific::before,
+        .general-user-mode .professional-specific::before {
+            content: '';
             display: block;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+            margin: var(--space-8) 0;
+        }
+
+        .general-user-mode .section-header:first-child {
+            position: relative;
+            padding-top: var(--space-8);
+        }
+
+        .general-user-mode .section-header:first-child::before {
+            content: 'For Patients';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            padding: var(--space-1) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .general-user-mode .professional-specific .section-header:first-child::before {
+            content: 'For Healthcare Providers';
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
         }
 
         /* Hero Section - Enhanced with Mesh Gradient */
@@ -771,6 +834,7 @@
             text-align: center;
             max-width: 720px;
             margin: 0 auto var(--space-16);
+            position: relative;
         }
 
         .section-label {
@@ -1838,6 +1902,12 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: var(--space-12);
             }
+            
+            .journey-options {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto var(--space-8);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1847,8 +1917,6 @@
 
             .mobile-menu-toggle {
                 display: flex;
-                align-items: center;
-                justify-content: center;
             }
 
             .hero {
@@ -1875,10 +1943,6 @@
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: var(--space-8);
-            }
-
-            .journey-options {
-                grid-template-columns: 1fr;
             }
 
             .phone-mockup {
@@ -1921,6 +1985,15 @@
 
             .modal-content {
                 padding: var(--space-6);
+            }
+            
+            .mobile-menu {
+                width: 100%;
+                max-width: none;
+            }
+            
+            .journey-content {
+                padding: var(--space-6) var(--space-4);
             }
         }
 
@@ -1971,14 +2044,14 @@
 </head>
 <body>
 
-    <!-- Journey Selection Modal -->
+    <!-- Journey Selection Modal - ENHANCED with 3 options -->
     <div class="journey-modal active" id="journey-modal" role="dialog" aria-modal="true" aria-labelledby="journey-title">
         <div class="journey-content">
             <h2 id="journey-title">Welcome to <span class="text-gradient">DAS medhub</span></h2>
             <p>Personalize your experience by selecting your role. We'll tailor the content to match your healthcare needs.</p>
             
             <div class="journey-options">
-                <button class="journey-option" data-journey="patient" type="button">
+                <button class="journey-option" data-journey="patient" type="button" aria-label="Select Patient Mode">
                     <div class="journey-icon">
                         <i class="fas fa-user-injured" aria-hidden="true"></i>
                     </div>
@@ -1986,18 +2059,26 @@
                     <p>Seeking healthcare assistance, symptom checking, and medical support</p>
                 </button>
 
-                <button class="journey-option" data-journey="professional" type="button">
+                <button class="journey-option" data-journey="professional" type="button" aria-label="Select Healthcare Provider Mode">
                     <div class="journey-icon">
                         <i class="fas fa-user-md" aria-hidden="true"></i>
                     </div>
                     <h3>I'm a Provider</h3>
                     <p>Healthcare professional exploring solutions for my practice</p>
                 </button>
+
+                <button class="journey-option" data-journey="general" type="button" aria-label="Select General User Mode">
+                    <div class="journey-icon">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                    </div>
+                    <h3>Explore Both</h3>
+                    <p>View features for both patients and healthcare providers</p>
+                </button>
             </div>
 
             <button class="skip-option" id="skip-journey" type="button">
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                Continue as User (Skip Selection)
+                Skip and continue as General User
             </button>
         </div>
     </div>
@@ -2019,7 +2100,7 @@
             
             <a href="#download" class="btn btn-primary">Get Started</a>
             
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -2030,7 +2111,7 @@
     
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-        <button class="mobile-menu-close" aria-label="Close menu">
+        <button class="mobile-menu-close" aria-label="Close menu" id="mobile-menu-close">
             <i class="fas fa-times"></i>
         </button>
         <ul role="menubar">
@@ -2070,200 +2151,16 @@
                     <label for="country" class="required">Country</label>
                     <select id="country" name="Country" required aria-label="Country">
                         <option value="" disabled selected>Select your country</option>
-                        <option value="Afghanistan">Afghanistan</option>
-                        <option value="Albania">Albania</option>
-                        <option value="Algeria">Algeria</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="Angola">Angola</option>
-                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Armenia">Armenia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Azerbaijan">Azerbaijan</option>
-                        <option value="Bahamas">Bahamas</option>
-                        <option value="Bahrain">Bahrain</option>
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="Barbados">Barbados</option>
-                        <option value="Belarus">Belarus</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Belize">Belize</option>
-                        <option value="Benin">Benin</option>
-                        <option value="Bhutan">Bhutan</option>
-                        <option value="Bolivia">Bolivia</option>
-                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                        <option value="Botswana">Botswana</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Brunei">Brunei</option>
-                        <option value="Bulgaria">Bulgaria</option>
-                        <option value="Burkina Faso">Burkina Faso</option>
-                        <option value="Burundi">Burundi</option>
-                        <option value="Cabo Verde">Cabo Verde</option>
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="Cameroon">Cameroon</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Central African Republic">Central African Republic</option>
-                        <option value="Chad">Chad</option>
-                        <option value="Chile">Chile</option>
-                        <option value="China">China</option>
-                        <option value="Colombia">Colombia</option>
-                        <option value="Comoros">Comoros</option>
-                        <option value="Congo">Congo</option>
-                        <option value="Costa Rica">Costa Rica</option>
-                        <option value="Croatia">Croatia</option>
-                        <option value="Cuba">Cuba</option>
-                        <option value="Cyprus">Cyprus</option>
-                        <option value="Czechia">Czechia</option>
-                        <option value="Denmark">Denmark</option>
-                        <option value="Djibouti">Djibouti</option>
-                        <option value="Dominica">Dominica</option>
-                        <option value="Dominican Republic">Dominican Republic</option>
-                        <option value="East Timor">East Timor</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="El Salvador">El Salvador</option>
-                        <option value="Equatorial Guinea">Equatorial Guinea</option>
-                        <option value="Eritrea">Eritrea</option>
-                        <option value="Estonia">Estonia</option>
-                        <option value="Eswatini">Eswatini</option>
-                        <option value="Ethiopia">Ethiopia</option>
-                        <option value="Fiji">Fiji</option>
-                        <option value="Finland">Finland</option>
-                        <option value="France">France</option>
-                        <option value="Gabon">Gabon</option>
-                        <option value="Gambia">Gambia</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Greece">Greece</option>
-                        <option value="Grenada">Grenada</option>
-                        <option value="Guatemala">Guatemala</option>
-                        <option value="Guinea">Guinea</option>
-                        <option value="Guinea-Bissau">Guinea-Bissau</option>
-                        <option value="Guyana">Guyana</option>
-                        <option value="Haiti">Haiti</option>
-                        <option value="Honduras">Honduras</option>
-                        <option value="Hungary">Hungary</option>
-                        <option value="Iceland">Iceland</option>
-                        <option value="India">India</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Iran">Iran</option>
-                        <option value="Iraq">Iraq</option>
-                        <option value="Ireland">Ireland</option>
-                        <option value="Israel">Israel</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Jamaica">Jamaica</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Jordan">Jordan</option>
-                        <option value="Kazakhstan">Kazakhstan</option>
-                        <option value="Kenya">Kenya</option>
-                        <option value="Kiribati">Kiribati</option>
-                        <option value="Korea, North">Korea, North</option>
-                        <option value="Korea, South">Korea, South</option>
-                        <option value="Kosovo">Kosovo</option>
-                        <option value="Kuwait">Kuwait</option>
-                        <option value="Kyrgyzstan">Kyrgyzstan</option>
-                        <option value="Laos">Laos</option>
-                        <option value="Latvia">Latvia</option>
-                        <option value="Lebanon">Lebanon</option>
-                        <option value="Lesotho">Lesotho</option>
-                        <option value="Liberia">Liberia</option>
-                        <option value="Libya">Libya</option>
-                        <option value="Liechtenstein">Liechtenstein</option>
-                        <option value="Lithuania">Lithuania</option>
-                        <option value="Luxembourg">Luxembourg</option>
-                        <option value="Madagascar">Madagascar</option>
-                        <option value="Malawi">Malawi</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Maldives">Maldives</option>
-                        <option value="Mali">Mali</option>
-                        <option value="Malta">Malta</option>
-                        <option value="Marshall Islands">Marshall Islands</option>
-                        <option value="Mauritania">Mauritania</option>
-                        <option value="Mauritius">Mauritius</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Micronesia">Micronesia</option>
-                        <option value="Moldova">Moldova</option>
-                        <option value="Monaco">Monaco</option>
-                        <option value="Mongolia">Mongolia</option>
-                        <option value="Montenegro">Montenegro</option>
-                        <option value="Morocco">Morocco</option>
-                        <option value="Mozambique">Mozambique</option>
-                        <option value="Myanmar">Myanmar</option>
-                        <option value="Namibia">Namibia</option>
-                        <option value="Nauru">Nauru</option>
-                        <option value="Nepal">Nepal</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="New Zealand">New Zealand</option>
-                        <option value="Nicaragua">Nicaragua</option>
-                        <option value="Niger">Niger</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="North Macedonia">North Macedonia</option>
-                        <option value="Norway">Norway</option>
-                        <option value="Oman">Oman</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="Palau">Palau</option>
-                        <option value="Panama">Panama</option>
-                        <option value="Papua New Guinea">Papua New Guinea</option>
-                        <option value="Paraguay">Paraguay</option>
-                        <option value="Peru">Peru</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Poland">Poland</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Qatar">Qatar</option>
-                        <option value="Romania">Romania</option>
-                        <option value="Russia">Russia</option>
-                        <option value="Rwanda">Rwanda</option>
-                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                        <option value="Saint Lucia">Saint Lucia</option>
-                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
-                        <option value="Samoa">Samoa</option>
-                        <option value="San Marino">San Marino</option>
-                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                        <option value="Saudi Arabia">Saudi Arabia</option>
-                        <option value="Senegal">Senegal</option>
-                        <option value="Serbia">Serbia</option>
-                        <option value="Seychelles">Seychelles</option>
-                        <option value="Sierra Leone">Sierra Leone</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Slovakia">Slovakia</option>
-                        <option value="Slovenia">Slovenia</option>
-                        <option value="Solomon Islands">Solomon Islands</option>
-                        <option value="Somalia">Somalia</option>
-                        <option value="South Africa">South Africa</option>
-                        <option value="South Sudan">South Sudan</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Sri Lanka">Sri Lanka</option>
-                        <option value="Sudan">Sudan</option>
-                        <option value="Suriname">Suriname</option>
-                        <option value="Sweden">Sweden</option>
-                        <option value="Switzerland">Switzerland</option>
-                        <option value="Syria">Syria</option>
-                        <option value="Taiwan">Taiwan</option>
-                        <option value="Tajikistan">Tajikistan</option>
-                        <option value="Tanzania">Tanzania</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="Togo">Togo</option>
-                        <option value="Tonga">Tonga</option>
-                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                        <option value="Tunisia">Tunisia</option>
-                        <option value="Turkey">Turkey</option>
-                        <option value="Turkmenistan">Turkmenistan</option>
-                        <option value="Tuvalu">Tuvalu</option>
-                        <option value="Uganda">Uganda</option>
-                        <option value="Ukraine">Ukraine</option>
-                        <option value="United Arab Emirates">United Arab Emirates</option>
-                        <option value="United Kingdom">United Kingdom</option>
                         <option value="United States">United States</option>
-                        <option value="Uruguay">Uruguay</option>
-                        <option value="Uzbekistan">Uzbekistan</option>
-                        <option value="Vanuatu">Vanuatu</option>
-                        <option value="Vatican City">Vatican City</option>
-                        <option value="Venezuela">Venezuela</option>
-                        <option value="Vietnam">Vietnam</option>
-                        <option value="Yemen">Yemen</option>
-                        <option value="Zambia">Zambia</option>
-                        <option value="Zimbabwe">Zimbabwe</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Germany">Germany</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -2844,7 +2741,7 @@
     </footer>
 
     <script>
-        // Journey Selection Logic - Enhanced with Patient Default
+        // Enhanced Journey Selection Logic with General User Mode
         const journeyModal = document.getElementById('journey-modal');
         const journeyOptions = document.querySelectorAll('.journey-option');
         const skipJourney = document.getElementById('skip-journey');
@@ -2856,21 +2753,46 @@
         if (savedJourney) {
             document.body.classList.add(savedJourney + '-mode');
             journeyModal.classList.remove('active');
+            
+            // Mark selected option
+            journeyOptions.forEach(option => {
+                if (option.getAttribute('data-journey') === savedJourney) {
+                    option.classList.add('selected');
+                }
+            });
         }
         
         // Handle journey selection
         function selectJourney(journeyType) {
-            localStorage.setItem('userJourney', journeyType);
-            document.body.classList.add(journeyType + '-mode');
-            journeyModal.classList.remove('active');
+            // Remove all mode classes
+            document.body.classList.remove('patient-mode', 'professional-mode', 'general-user-mode');
             
-            // Show waiting list modal after a brief delay for better UX
-            setTimeout(() => {
-                if (!localStorage.getItem('waitingListShown')) {
-                    openModal(waitingListModal);
-                    localStorage.setItem('waitingListShown', 'true');
+            // Add selected mode
+            document.body.classList.add(journeyType + '-mode');
+            
+            // Store selection
+            localStorage.setItem('userJourney', journeyType);
+            
+            // Update UI to show selected option
+            journeyOptions.forEach(option => {
+                option.classList.remove('selected');
+                if (option.getAttribute('data-journey') === journeyType) {
+                    option.classList.add('selected');
                 }
-            }, 800);
+            });
+            
+            // Close modal with smooth transition
+            setTimeout(() => {
+                journeyModal.classList.remove('active');
+                
+                // Show waiting list modal after a brief delay for better UX
+                if (!localStorage.getItem('waitingListShown')) {
+                    setTimeout(() => {
+                        openModal(waitingListModal);
+                        localStorage.setItem('waitingListShown', 'true');
+                    }, 800);
+                }
+            }, 300);
         }
         
         journeyOptions.forEach(option => {
@@ -2889,15 +2811,15 @@
             });
         });
         
-        // Skip button now defaults to patient mode with clear UI indication
+        // Skip button now defaults to general user mode (shows both)
         skipJourney.addEventListener('click', () => {
-            // Default to patient mode when skipping
-            selectJourney('patient');
-            // Store that user skipped explicitly but defaulted to patient
+            // Default to general user mode when skipping
+            selectJourney('general');
+            // Store that user skipped explicitly but defaulted to general
             localStorage.setItem('journeySkipped', 'true');
         });
 
-        // Navigation scroll effect - Enhanced
+        // Enhanced Navigation scroll effect
         const navbar = document.getElementById('navbar');
         let lastScroll = 0;
         
@@ -2913,17 +2835,19 @@
             lastScroll = currentScroll;
         });
 
-        // Mobile menu toggle - Enhanced
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        // Enhanced Mobile menu toggle - Fixed alignment
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
         
         function openMobileMenu() {
             mobileMenuToggle.setAttribute('aria-expanded', 'true');
             mobileMenu.classList.add('active');
             mobileMenuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            // Focus trap for accessibility
+            setTimeout(() => mobileMenuClose.focus(), 100);
         }
         
         function closeMobileMenu() {
@@ -2931,6 +2855,7 @@
             mobileMenu.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
             document.body.style.overflow = '';
+            mobileMenuToggle.focus();
         }
         
         mobileMenuToggle.addEventListener('click', openMobileMenu);
@@ -2940,6 +2865,13 @@
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close mobile menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
         });
 
         // Modal functionality - Enhanced
@@ -2954,7 +2886,7 @@
             // Focus trap
             const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
             if (focusableElements.length) {
-                focusableElements[0].focus();
+                setTimeout(() => focusableElements[0].focus(), 100);
             }
         }
         
@@ -3111,10 +3043,13 @@
         // Smooth scroll for anchor links - Enhanced
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
-                    const headerOffset = 100;
+                    const headerOffset = 80;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
@@ -3134,6 +3069,17 @@
             el.addEventListener('touchend', function() {
                 this.style.transform = '';
             });
+        });
+        
+        // Initialize - Check if user has already made a selection
+        document.addEventListener('DOMContentLoaded', () => {
+            if (savedJourney) {
+                // User already made a choice
+                console.log('User previously selected:', savedJourney);
+            } else {
+                // First time visitor
+                console.log('First time visitor - showing journey modal');
+            }
         });
     </script>
 </body>
