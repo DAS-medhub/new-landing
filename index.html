@@ -4,40 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAS medhub - Connecting Patients, Accelerating Healing</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Design System Variables */
+        /* Design System - Enhanced */
         :root {
-            /* Colors */
+            /* Brand Colors */
             --primary-green: #00be64;
             --primary-orange: #fd9150;
             --dark-green: #00994d;
             --dark-orange: #e67e22;
+            
+            /* Neutral Scale - Refined */
             --text-primary: #0f172a;
             --text-secondary: #475569;
-            --text-tertiary: #94a3b8;
+            --text-tertiary: #64748b;
+            --text-muted: #94a3b8;
             --bg-primary: #ffffff;
             --bg-secondary: #f8fafc;
             --bg-tertiary: #f1f5f9;
             --border-light: #e2e8f0;
             --border-medium: #cbd5e1;
             
-            /* Spacing Scale (8px base) */
-            --space-1: 0.25rem;  /* 4px */
-            --space-2: 0.5rem;   /* 8px */
-            --space-3: 0.75rem;  /* 12px */
-            --space-4: 1rem;     /* 16px */
-            --space-6: 1.5rem;   /* 24px */
-            --space-8: 2rem;     /* 32px */
-            --space-12: 3rem;    /* 48px */
-            --space-16: 4rem;    /* 64px */
-            --space-24: 6rem;    /* 96px */
-            --space-32: 8rem;    /* 128px */
+            /* Spacing Scale - 8px grid, enhanced */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
             
-            /* Typography Scale (Fluid) */
+            /* Typography - Fluid type scale */
             --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
             --text-sm: clamp(0.875rem, 0.9vw, 1rem);
             --text-base: clamp(1rem, 1vw, 1.125rem);
@@ -47,39 +53,45 @@
             --text-3xl: clamp(1.875rem, 2.5vw, 2.5rem);
             --text-4xl: clamp(2.25rem, 3vw, 3rem);
             --text-5xl: clamp(2.5rem, 4vw, 3.5rem);
+            --text-6xl: clamp(3rem, 5vw, 4rem);
             
             /* Layout */
             --max-width: 1280px;
-            --radius-sm: 8px;
+            --radius-sm: 6px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
+            --radius-2xl: 32px;
             --radius-full: 9999px;
             
-            /* Shadows (Soft, layered) */
+            /* Shadows - Layered, sophisticated */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
             --shadow-glow: 0 0 20px rgba(0, 190, 100, 0.15);
+            --shadow-glow-orange: 0 0 20px rgba(253, 145, 80, 0.15);
             
             /* Transitions */
-            --transition-fast: 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
-            --transition-base: 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
-            --transition-slow: 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* Reset & Base */
-        * {
+        /* Reset & Base - Enhanced */
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -100,11 +112,12 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             overflow-x: hidden;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
         }
 
         /* Typography Utilities */
         .text-gradient {
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -115,6 +128,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .font-display {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
         }
 
         /* Layout Container */
@@ -131,10 +149,10 @@
             }
         }
 
-        /* Focus Visible (Accessibility) */
+        /* Focus Visible - Enhanced Accessibility */
         :focus-visible {
             outline: 2px solid var(--primary-green);
-            outline-offset: 2px;
+            outline-offset: 3px;
             border-radius: var(--radius-sm);
         }
 
@@ -144,14 +162,14 @@
             outline-offset: 4px;
         }
 
-        /* Navigation */
+        /* Navigation - Glassmorphism Enhancement */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px) saturate(180%);
-            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(226, 232, 240, 0.6);
             z-index: 1000;
             padding: var(--space-4) 0;
@@ -178,10 +196,15 @@
             align-items: center;
             gap: var(--space-3);
             text-decoration: none;
+            transition: transform var(--transition-fast);
+        }
+
+        .logo-container:hover {
+            transform: scale(1.02);
         }
 
         .logo-img {
-            height: 40px;
+            height: 42px;
             width: auto;
             object-fit: contain;
         }
@@ -190,8 +213,10 @@
             font-family: 'Poppins', sans-serif;
             font-size: var(--text-xl);
             font-weight: 700;
-            color: var(--primary-orange);
-            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-menu {
@@ -206,7 +231,7 @@
             color: var(--text-secondary);
             font-weight: 500;
             font-size: var(--text-sm);
-            transition: color var(--transition-fast);
+            transition: all var(--transition-fast);
             position: relative;
             padding: var(--space-2) 0;
         }
@@ -214,10 +239,10 @@
         .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -2px;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 2.5px;
             background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
             transition: width var(--transition-base);
             border-radius: var(--radius-full);
@@ -231,7 +256,7 @@
             width: 100%;
         }
 
-        /* Buttons */
+        /* Buttons - Enhanced */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -247,17 +272,32 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            isolation: isolate;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform var(--transition-slow);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             color: white;
-            box-shadow: 0 4px 14px 0 rgba(253, 145, 80, 0.25);
+            box-shadow: 0 4px 14px 0 rgba(253, 145, 80, 0.3), 0 4px 14px 0 rgba(0, 190, 100, 0.2);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px 0 rgba(253, 145, 80, 0.35);
+            box-shadow: 0 8px 25px 0 rgba(253, 145, 80, 0.4), 0 8px 25px 0 rgba(0, 190, 100, 0.3);
         }
 
         .btn-primary:active {
@@ -274,18 +314,26 @@
             border-color: var(--primary-orange);
             color: var(--primary-orange);
             background: rgba(253, 145, 80, 0.05);
+            transform: translateY(-1px);
         }
 
         .btn-ghost {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-base);
         }
 
         .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-large {
+            padding: var(--space-4) var(--space-8);
+            font-size: var(--text-base);
         }
 
         .mobile-menu-toggle {
@@ -297,30 +345,71 @@
             cursor: pointer;
             padding: var(--space-2);
             border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
         }
 
-        /* Mobile Menu */
-        .mobile-menu {
+        .mobile-menu-toggle:hover {
+            background: var(--bg-secondary);
+        }
+
+        /* Mobile Menu - Slide Over */
+        .mobile-menu-overlay {
             position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: var(--space-6);
-            box-shadow: var(--shadow-lg);
-            z-index: 999;
-            transform: translateY(-100%);
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 998;
             opacity: 0;
             visibility: hidden;
-            transition: all var(--transition-slow);
-            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            transition: all var(--transition-base);
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--bg-primary);
+            z-index: 999;
+            padding: var(--space-8) var(--space-6);
+            box-shadow: var(--shadow-2xl);
+            transition: right var(--transition-slow);
+            overflow-y: auto;
         }
 
         .mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--bg-secondary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .mobile-menu-close:hover {
+            background: var(--border-light);
+            color: var(--text-primary);
+            transform: rotate(90deg);
         }
 
         .mobile-menu ul {
@@ -328,6 +417,7 @@
             display: flex;
             flex-direction: column;
             gap: var(--space-2);
+            margin-top: var(--space-8);
         }
 
         .mobile-menu a {
@@ -336,26 +426,27 @@
             font-weight: 500;
             font-size: var(--text-lg);
             display: block;
-            padding: var(--space-3) 0;
+            padding: var(--space-4) 0;
             border-bottom: 1px solid var(--border-light);
-            transition: color var(--transition-fast);
+            transition: all var(--transition-fast);
         }
 
         .mobile-menu a:hover {
             color: var(--primary-orange);
+            padding-left: var(--space-2);
         }
 
         .mobile-menu .btn {
-            margin-top: var(--space-4);
+            margin-top: var(--space-6);
             width: 100%;
         }
 
-        /* Journey Modal */
+        /* Journey Modal - Enhanced Design */
         .journey-modal {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
             z-index: 3000;
             display: flex;
             align-items: center;
@@ -373,14 +464,15 @@
 
         .journey-content {
             background: white;
-            padding: var(--space-8) var(--space-6);
-            border-radius: var(--radius-xl);
-            max-width: 720px;
+            padding: var(--space-10) var(--space-8);
+            border-radius: var(--radius-2xl);
+            max-width: 800px;
             width: 100%;
             text-align: center;
-            box-shadow: var(--shadow-xl);
-            transform: scale(0.95) translateY(20px);
+            box-shadow: var(--shadow-2xl);
+            transform: scale(0.95) translateY(30px);
             transition: transform var(--transition-slow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .journey-modal.active .journey-content {
@@ -390,68 +482,75 @@
         .journey-content h2 {
             font-size: var(--text-3xl);
             font-weight: 700;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-4);
             font-family: 'Poppins', sans-serif;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         .journey-content > p {
             color: var(--text-secondary);
-            margin-bottom: var(--space-8);
+            margin-bottom: var(--space-10);
             font-size: var(--text-lg);
-            max-width: 50ch;
+            max-width: 55ch;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .journey-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--space-4);
-            margin-bottom: var(--space-6);
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-bottom: var(--space-8);
         }
 
         .journey-option {
             background: var(--bg-secondary);
-            padding: var(--space-6) var(--space-4);
-            border-radius: var(--radius-lg);
+            padding: var(--space-8) var(--space-6);
+            border-radius: var(--radius-xl);
             cursor: pointer;
             transition: all var(--transition-base);
             border: 2px solid transparent;
             position: relative;
+            text-align: center;
         }
 
         .journey-option:hover {
             background: white;
-            border-color: var(--primary-orange);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-green);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
         }
 
         .journey-option:focus-visible {
-            outline: 2px solid var(--primary-green);
+            outline: 3px solid var(--primary-orange);
             outline-offset: 2px;
         }
 
         .journey-icon {
-            width: 64px;
-            height: 64px;
+            width: 72px;
+            height: 72px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto var(--space-4);
+            margin: 0 auto var(--space-5);
             font-size: var(--text-2xl);
             color: white;
-            box-shadow: 0 8px 20px rgba(0, 190, 100, 0.25);
+            box-shadow: 0 12px 24px rgba(0, 190, 100, 0.25);
+            transition: transform var(--transition-bounce);
+        }
+
+        .journey-option:hover .journey-icon {
+            transform: scale(1.1) rotate(-5deg);
         }
 
         .journey-option h3 {
-            font-size: var(--text-lg);
+            font-size: var(--text-xl);
             font-weight: 600;
-            margin-bottom: var(--space-2);
+            margin-bottom: var(--space-3);
             color: var(--text-primary);
             font-family: 'Poppins', sans-serif;
         }
@@ -460,24 +559,28 @@
             color: var(--text-secondary);
             font-size: var(--text-sm);
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .skip-option {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
             margin-top: var(--space-4);
             color: var(--text-tertiary);
             font-size: var(--text-sm);
             cursor: pointer;
             text-decoration: none;
-            padding: var(--space-2) var(--space-4);
-            border-radius: var(--radius-md);
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius-full);
             transition: all var(--transition-fast);
+            border: 1px solid transparent;
         }
 
         .skip-option:hover {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             background: var(--bg-secondary);
+            border-color: var(--border-light);
         }
 
         /* Patient/Professional Modes */
@@ -493,12 +596,15 @@
             display: block;
         }
 
-        /* Hero Section */
+        /* Hero Section - Enhanced with Mesh Gradient */
         .hero {
             position: relative;
-            padding: calc(var(--space-32) + 60px) 0 var(--space-24);
+            padding: calc(var(--space-24) + 80px) 0 var(--space-24);
             background: linear-gradient(180deg, rgba(0, 190, 100, 0.03) 0%, rgba(253, 145, 80, 0.03) 100%);
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero::before {
@@ -508,8 +614,10 @@
             left: -10%;
             width: 120%;
             height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 190, 100, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(253, 145, 80, 0.06) 0%, transparent 40%);
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 190, 100, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(253, 145, 80, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(0, 190, 100, 0.05) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -520,22 +628,36 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: var(--space-12);
+            gap: var(--space-16);
             position: relative;
             z-index: 2;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 640px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: rgba(0, 190, 100, 0.1);
+            border: 1px solid rgba(0, 190, 100, 0.2);
+            border-radius: var(--radius-full);
+            color: var(--dark-green);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-6);
         }
 
         .hero h1 {
             font-size: var(--text-5xl);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: var(--space-6);
             font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
         }
 
         .hero h1 span {
@@ -546,7 +668,7 @@
             font-size: var(--text-xl);
             color: var(--text-secondary);
             margin-bottom: var(--space-8);
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 400;
         }
 
@@ -570,29 +692,105 @@
 
         .phone-mockup {
             width: 100%;
-            max-width: 500px;
+            max-width: 480px;
             height: auto;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl), 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: perspective(1000px) rotateY(-8deg) rotateX(5deg);
-            transition: transform var(--transition-slow);
+            border-radius: var(--radius-2xl);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            transform: perspective(1000px) rotateY(-12deg) rotateX(5deg);
+            transition: all var(--transition-slow);
+            border: 8px solid white;
         }
 
         .phone-mockup:hover {
-            transform: perspective(1000px) rotateY(-4deg) rotateX(2deg) translateY(-10px);
+            transform: perspective(1000px) rotateY(-6deg) rotateX(3deg) translateY(-10px);
+            box-shadow: 
+                0 35px 60px -15px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
         }
 
-        /* Section Headers */
+        .hero-floating-card {
+            position: absolute;
+            background: white;
+            padding: var(--space-4) var(--space-5);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-floating-card.card-1 {
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .hero-floating-card.card-2 {
+            bottom: 15%;
+            right: -5%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--text-lg);
+        }
+
+        .floating-text {
+            text-align: left;
+        }
+
+        .floating-text div:first-child {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: var(--text-sm);
+        }
+
+        .floating-text div:last-child {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+        }
+
+        /* Section Headers - Enhanced */
         .section-header {
             text-align: center;
-            max-width: 680px;
-            margin: 0 auto var(--space-12);
+            max-width: 720px;
+            margin: 0 auto var(--space-16);
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.1), rgba(253, 145, 80, 0.1));
+            color: var(--dark-green);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-4);
+            border: 1px solid rgba(0, 190, 100, 0.2);
         }
 
         .section-title {
             font-size: var(--text-4xl);
             font-weight: 700;
-            margin-bottom: var(--space-4);
+            margin-bottom: var(--space-5);
             font-family: 'Poppins', sans-serif;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -601,12 +799,12 @@
         .section-subtitle {
             font-size: var(--text-lg);
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* Stats Section */
+        /* Stats Section - Enhanced */
         .stats {
-            padding: var(--space-24) 0;
+            padding: var(--space-20) 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             color: white;
             position: relative;
@@ -617,8 +815,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
         }
 
         .stats-container {
@@ -636,89 +834,63 @@
 
         .stats-header h2 {
             font-size: var(--text-3xl);
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-4);
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
         }
 
         .stats-header p {
             font-size: var(--text-lg);
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        .stats-scroll-container {
-            overflow: hidden;
-            position: relative;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            font-weight: 300;
         }
 
         .stats-grid {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: var(--space-6);
-            animation: scrollStats 40s linear infinite;
-            width: max-content;
-            padding: var(--space-4) 0;
-        }
-
-        .stats-scroll-container:hover .stats-grid {
-            animation-play-state: paused;
-        }
-
-        @keyframes scrollStats {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
         }
 
         .stat-item {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6) var(--space-8);
-            min-width: 220px;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8) var(--space-6);
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform var(--transition-base);
+            transition: all var(--transition-base);
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .stat-icon {
-            font-size: var(--text-2xl);
-            margin-bottom: var(--space-3);
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
             opacity: 0.9;
         }
 
         .stat-number {
             font-size: var(--text-3xl);
-            font-weight: 700;
-            margin-bottom: var(--space-1);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
             font-family: 'Poppins', sans-serif;
         }
 
         .stat-label {
             font-size: var(--text-sm);
-            opacity: 0.9;
+            opacity: 0.95;
             font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
-        .scroll-indicator {
-            text-align: center;
-            margin-top: var(--space-6);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: var(--text-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-2);
-        }
-
-        /* Features Grid */
+        /* Features Grid - Enhanced Cards */
         .features {
             padding: var(--space-24) 0;
             background: var(--bg-primary);
@@ -726,8 +898,8 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: var(--space-6);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
         }
 
         .feature-card {
@@ -741,6 +913,7 @@
             align-items: flex-start;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
 
         .feature-card::before {
@@ -758,7 +931,7 @@
         .feature-card:hover {
             border-color: transparent;
             box-shadow: var(--shadow-xl);
-            transform: translateY(-4px);
+            transform: translateY(-8px);
         }
 
         .feature-card:hover::before {
@@ -766,32 +939,38 @@
         }
 
         .feature-icon {
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: var(--space-6);
-            font-size: var(--text-xl);
+            font-size: var(--text-2xl);
             color: white;
-            box-shadow: 0 8px 20px rgba(0, 190, 100, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 190, 100, 0.25);
+            transition: transform var(--transition-bounce);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(-5deg);
         }
 
         .feature-card h3 {
             font-size: var(--text-xl);
             font-weight: 600;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-4);
             color: var(--text-primary);
             font-family: 'Poppins', sans-serif;
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: var(--space-6);
             flex-grow: 1;
+            font-size: var(--text-base);
         }
 
         .feature-link {
@@ -799,17 +978,33 @@
             text-decoration: none;
             font-weight: 600;
             font-size: var(--text-sm);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: var(--space-2);
-            transition: gap var(--transition-fast);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+
+        .feature-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width var(--transition-fast);
         }
 
         .feature-link:hover {
             gap: var(--space-3);
         }
 
-        /* Problem Section */
+        .feature-link:hover::after {
+            width: 100%;
+        }
+
+        /* Problem Section - Enhanced */
         .problem {
             padding: var(--space-24) 0;
             background: var(--bg-secondary);
@@ -818,22 +1013,23 @@
         .problem-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-16);
+            gap: var(--space-20);
             align-items: center;
         }
 
         .problem-text h2 {
-            font-size: var(--text-3xl);
+            font-size: var(--text-4xl);
             font-weight: 700;
             margin-bottom: var(--space-6);
             font-family: 'Poppins', sans-serif;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .problem-text > p {
             color: var(--text-secondary);
             margin-bottom: var(--space-8);
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: var(--text-lg);
         }
 
@@ -848,11 +1044,11 @@
             display: flex;
             align-items: flex-start;
             gap: var(--space-4);
-            padding: var(--space-4);
+            padding: var(--space-5);
             background: var(--bg-primary);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--primary-orange);
-            transition: transform var(--transition-base);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-orange);
+            transition: all var(--transition-base);
             box-shadow: var(--shadow-sm);
         }
 
@@ -863,16 +1059,22 @@
 
         .problem-list li i {
             color: var(--primary-orange);
-            font-size: var(--text-lg);
+            font-size: var(--text-xl);
             margin-top: 2px;
             flex-shrink: 0;
         }
 
+        .problem-list li span {
+            color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
         .problem-visual {
             position: relative;
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-2xl);
             overflow: hidden;
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-2xl);
             aspect-ratio: 4/3;
         }
 
@@ -885,7 +1087,7 @@
         .image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0, 190, 100, 0.85), rgba(253, 145, 80, 0.85));
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.9), rgba(253, 145, 80, 0.9));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -894,9 +1096,15 @@
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
             gap: var(--space-3);
+            opacity: 0;
+            transition: opacity var(--transition-base);
         }
 
-        /* How It Works */
+        .problem-visual:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* How It Works - Enhanced Timeline */
         .how-it-works {
             padding: var(--space-24) 0;
             background: var(--bg-primary);
@@ -904,32 +1112,28 @@
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--space-8);
-            margin-top: var(--space-12);
+            margin-top: var(--space-16);
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--border-light), var(--primary-green), var(--primary-orange), var(--border-light));
+            z-index: 0;
         }
 
         .step {
             text-align: center;
-            padding: var(--space-8) var(--space-6);
+            padding: var(--space-6);
             position: relative;
-        }
-
-        .step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 50px;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--border-light), transparent);
-            display: none;
-        }
-
-        @media (min-width: 769px) {
-            .step:not(:last-child)::after {
-                display: block;
-            }
+            z-index: 1;
         }
 
         .step-number {
@@ -947,6 +1151,11 @@
             box-shadow: var(--shadow-glow);
             position: relative;
             z-index: 2;
+            transition: transform var(--transition-bounce);
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.15);
         }
 
         .step h3 {
@@ -959,11 +1168,11 @@
 
         .step p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: var(--text-base);
         }
 
-        /* Stakeholders */
+        /* Stakeholders - Enhanced */
         .stakeholders {
             padding: var(--space-24) 0;
             background: var(--bg-secondary);
@@ -971,37 +1180,43 @@
 
         .stakeholders-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--space-6);
         }
 
         .stakeholder-card {
             background: var(--bg-primary);
-            padding: var(--space-8) var(--space-6);
+            padding: var(--space-10) var(--space-6);
             border-radius: var(--radius-xl);
             text-align: center;
             border: 1px solid var(--border-light);
             transition: all var(--transition-base);
+            box-shadow: var(--shadow-sm);
         }
 
         .stakeholder-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
             border-color: transparent;
         }
 
         .stakeholder-icon {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto var(--space-6);
-            font-size: var(--text-2xl);
+            font-size: var(--text-3xl);
             color: white;
-            box-shadow: 0 8px 24px rgba(0, 190, 100, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 190, 100, 0.25);
+            transition: transform var(--transition-bounce);
+        }
+
+        .stakeholder-card:hover .stakeholder-icon {
+            transform: scale(1.1) rotate(10deg);
         }
 
         .stakeholder-card h3 {
@@ -1014,11 +1229,11 @@
 
         .stakeholder-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: var(--text-base);
         }
 
-        /* Professional Benefits */
+        /* Professional Benefits - Enhanced */
         .professional-benefits {
             padding: var(--space-24) 0;
             background: var(--bg-primary);
@@ -1026,7 +1241,7 @@
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-6);
         }
 
@@ -1037,26 +1252,33 @@
             border: 1px solid var(--border-light);
             transition: all var(--transition-base);
             text-align: center;
+            box-shadow: var(--shadow-sm);
         }
 
         .benefit-card:hover {
             background: var(--bg-primary);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-6px);
+            border-color: transparent;
         }
 
         .benefit-icon {
-            width: 64px;
-            height: 64px;
+            width: 72px;
+            height: 72px;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto var(--space-6);
-            font-size: var(--text-xl);
+            font-size: var(--text-2xl);
             color: white;
-            box-shadow: 0 8px 24px rgba(0, 190, 100, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 190, 100, 0.25);
+            transition: transform var(--transition-bounce);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
         }
 
         .benefit-card h3 {
@@ -1069,11 +1291,11 @@
 
         .benefit-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: var(--text-sm);
+            line-height: 1.8;
+            font-size: var(--text-base);
         }
 
-        /* Testimonials */
+        /* Testimonials - Enhanced Cards */
         .testimonials {
             padding: var(--space-24) 0;
             background: var(--bg-primary);
@@ -1081,7 +1303,7 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-6);
         }
 
@@ -1091,33 +1313,37 @@
             border-radius: var(--radius-xl);
             border: 1px solid var(--border-light);
             transition: all var(--transition-base);
+            box-shadow: var(--shadow-sm);
+            position: relative;
         }
 
         .testimonial-card:hover {
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border-color: transparent;
+            transform: translateY(-4px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: var(--space-6);
+            right: var(--space-8);
+            font-size: 6rem;
+            color: var(--primary-green);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+            line-height: 1;
+            pointer-events: none;
         }
 
         .testimonial-content {
             font-style: italic;
             color: var(--text-primary);
-            margin-bottom: var(--space-6);
-            line-height: 1.8;
+            margin-bottom: var(--space-8);
+            line-height: 1.9;
             font-size: var(--text-lg);
             position: relative;
-            padding-top: var(--space-6);
-        }
-
-        .testimonial-content::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--primary-green);
-            opacity: 0.2;
-            position: absolute;
-            top: -10px;
-            left: -5px;
-            font-family: Georgia, serif;
-            line-height: 1;
+            padding-top: var(--space-4);
         }
 
         .testimonial-author {
@@ -1127,11 +1353,12 @@
         }
 
         .author-avatar {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             border-radius: var(--radius-full);
             object-fit: cover;
-            border: 2px solid var(--border-light);
+            border: 3px solid white;
+            box-shadow: var(--shadow-md);
         }
 
         .author-info h4 {
@@ -1150,9 +1377,10 @@
             color: var(--primary-orange);
             margin-top: var(--space-1);
             font-size: var(--text-sm);
+            letter-spacing: 2px;
         }
 
-        /* CTA Section */
+        /* CTA Section - Enhanced */
         .cta-section {
             padding: var(--space-24) 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
@@ -1172,24 +1400,26 @@
         .cta-container {
             position: relative;
             z-index: 2;
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 var(--space-6);
         }
 
         .cta-section h2 {
-            font-size: var(--text-4xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
             font-family: 'Poppins', sans-serif;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
 
         .cta-section > .cta-container > p {
             font-size: var(--text-xl);
-            margin-bottom: var(--space-8);
+            margin-bottom: var(--space-10);
             opacity: 0.95;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         .download-buttons {
@@ -1199,11 +1429,15 @@
             flex-wrap: wrap;
         }
 
-        /* Footer */
+        .download-btn {
+            min-width: 200px;
+        }
+
+        /* Footer - Enhanced */
         footer {
             background: var(--text-primary);
             color: white;
-            padding: var(--space-16) 0 var(--space-8);
+            padding: var(--space-20) 0 var(--space-8);
         }
 
         .footer-container {
@@ -1212,7 +1446,7 @@
             padding: 0 var(--space-6);
             display: grid;
             grid-template-columns: 2fr repeat(3, 1fr);
-            gap: var(--space-12);
+            gap: var(--space-16);
         }
 
         .footer-logo {
@@ -1223,22 +1457,26 @@
         }
 
         .footer-logo-img {
-            height: 40px;
+            height: 48px;
             width: auto;
         }
 
         .footer-logo-text {
             font-family: 'Poppins', sans-serif;
-            font-size: var(--text-xl);
+            font-size: var(--text-2xl);
             font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .footer-about p {
             opacity: 0.7;
-            line-height: 1.7;
-            margin-bottom: var(--space-6);
-            font-size: var(--text-sm);
-            max-width: 300px;
+            line-height: 1.8;
+            margin-bottom: var(--space-8);
+            font-size: var(--text-base);
+            max-width: 320px;
         }
 
         .social-links {
@@ -1247,8 +1485,8 @@
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: var(--radius-full);
             background: rgba(255, 255, 255, 0.1);
             display: flex;
@@ -1257,11 +1495,13 @@
             transition: all var(--transition-base);
             color: white;
             text-decoration: none;
+            font-size: var(--text-lg);
         }
 
         .social-link:hover {
             background: var(--primary-orange);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(253, 145, 80, 0.3);
         }
 
         .footer-links h3 {
@@ -1270,6 +1510,7 @@
             margin-bottom: var(--space-6);
             color: white;
             font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.05em;
         }
 
         .footer-links ul {
@@ -1277,14 +1518,14 @@
         }
 
         .footer-links li {
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-4);
         }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color var(--transition-fast);
-            font-size: var(--text-sm);
+            transition: all var(--transition-fast);
+            font-size: var(--text-base);
             display: inline-flex;
             align-items: center;
             gap: var(--space-2);
@@ -1292,42 +1533,44 @@
 
         .footer-links a:hover {
             color: var(--primary-green);
+            transform: translateX(4px);
         }
 
         .footer-contact p {
             display: flex;
             align-items: flex-start;
             gap: var(--space-3);
-            margin-bottom: var(--space-4);
+            margin-bottom: var(--space-5);
             opacity: 0.7;
-            line-height: 1.6;
-            font-size: var(--text-sm);
+            line-height: 1.7;
+            font-size: var(--text-base);
         }
 
         .footer-contact i {
             margin-top: 4px;
             color: var(--primary-green);
+            font-size: var(--text-base);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: var(--space-8);
-            margin-top: var(--space-12);
+            padding-top: var(--space-10);
+            margin-top: var(--space-16);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-bottom p {
             opacity: 0.5;
-            font-size: var(--text-xs);
+            font-size: var(--text-sm);
         }
 
-        /* Modal */
+        /* Modal - Enhanced */
         .modal {
             display: none;
             position: fixed;
             inset: 0;
             background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -1343,8 +1586,8 @@
 
         .modal-content {
             background: white;
-            padding: var(--space-8);
-            border-radius: var(--radius-xl);
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
             max-width: 560px;
             width: 100%;
             max-height: 90vh;
@@ -1352,7 +1595,8 @@
             position: relative;
             transform: scale(0.95) translateY(20px);
             transition: transform var(--transition-slow);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid var(--border-light);
         }
 
         .modal.active .modal-content {
@@ -1361,12 +1605,12 @@
 
         .modal-close {
             position: absolute;
-            top: var(--space-4);
-            right: var(--space-4);
+            top: var(--space-6);
+            right: var(--space-6);
             background: var(--bg-secondary);
             border: none;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-full);
             font-size: var(--text-xl);
             color: var(--text-secondary);
@@ -1384,9 +1628,10 @@
         }
 
         .modal-icon {
-            font-size: var(--text-3xl);
+            font-size: var(--text-4xl);
             color: var(--primary-orange);
             margin-bottom: var(--space-4);
+            display: inline-block;
         }
 
         .modal h2 {
@@ -1400,13 +1645,13 @@
             color: var(--text-secondary);
             margin-bottom: var(--space-8);
             font-size: var(--text-base);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .modal form {
             display: flex;
             flex-direction: column;
-            gap: var(--space-4);
+            gap: var(--space-5);
         }
 
         .form-group {
@@ -1415,24 +1660,39 @@
             gap: var(--space-2);
         }
 
+        .form-group label {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .required::after {
+            content: '*';
+            color: var(--primary-orange);
+        }
+
         .modal input,
         .modal select {
-            padding: var(--space-3) var(--space-4);
-            border: 1.5px solid var(--border-light);
-            border-radius: var(--radius-md);
+            padding: var(--space-4) var(--space-4);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-lg);
             font-size: var(--text-base);
             color: var(--text-primary);
             outline: none;
             transition: all var(--transition-fast);
             background: var(--bg-secondary);
             font-family: inherit;
+            width: 100%;
         }
 
         .modal input:focus,
         .modal select:focus {
             border-color: var(--primary-green);
             background: white;
-            box-shadow: 0 0 0 3px rgba(0, 190, 100, 0.1);
+            box-shadow: 0 0 0 4px rgba(0, 190, 100, 0.1);
         }
 
         .modal button[type="submit"] {
@@ -1440,37 +1700,62 @@
             color: white;
             padding: var(--space-4);
             border: none;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             font-weight: 600;
             cursor: pointer;
             transition: all var(--transition-base);
             font-size: var(--text-base);
             margin-top: var(--space-2);
+            box-shadow: 0 4px 14px rgba(253, 145, 80, 0.3);
         }
 
         .modal button[type="submit"]:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(253, 145, 80, 0.3);
+            box-shadow: 0 8px 25px rgba(253, 145, 80, 0.4);
+        }
+
+        .modal button[type="submit"]:active {
+            transform: translateY(0);
         }
 
         .modal .success-message,
         .modal .error-message {
             font-size: var(--text-sm);
-            margin-top: var(--space-3);
+            margin-top: var(--space-4);
             text-align: center;
-            padding: var(--space-3);
+            padding: var(--space-4);
             border-radius: var(--radius-md);
             display: none;
+            font-weight: 500;
         }
 
         .modal .success-message {
             color: var(--dark-green);
             background: rgba(0, 190, 100, 0.1);
+            border: 1px solid rgba(0, 190, 100, 0.2);
         }
 
         .modal .error-message {
             color: #dc2626;
             background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+            opacity: 0.6;
+            filter: grayscale(100%);
+        }
+
+        .trust-badges img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
         }
 
         /* Utilities */
@@ -1480,8 +1765,8 @@
 
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .animate-on-scroll.animated {
@@ -1489,7 +1774,13 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* Stagger animation delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Responsive - Comprehensive */
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -1506,6 +1797,10 @@
                 order: 1;
             }
 
+            .hero-floating-card {
+                display: none;
+            }
+
             .hero-buttons {
                 justify-content: center;
             }
@@ -1515,8 +1810,33 @@
                 gap: var(--space-12);
             }
 
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .stakeholders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-12);
             }
         }
 
@@ -1532,7 +1852,8 @@
             }
 
             .hero {
-                padding: calc(var(--space-24) + 40px) 0 var(--space-16);
+                padding: calc(var(--space-24) + 60px) 0 var(--space-16);
+                min-height: auto;
             }
 
             .section-title {
@@ -1540,17 +1861,15 @@
             }
 
             .features-grid,
-            .benefits-grid {
+            .benefits-grid,
+            .stakeholders-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
             .steps {
                 grid-template-columns: 1fr;
-                gap: var(--space-6);
-            }
-
-            .step:not(:last-child)::after {
-                display: none;
+                gap: var(--space-8);
             }
 
             .footer-container {
@@ -1562,14 +1881,28 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid {
-                animation-duration: 25s;
+            .phone-mockup {
+                max-width: 280px;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .download-btn {
+                width: 100%;
+            }
+
+            .cta-section h2 {
+                font-size: var(--text-3xl);
             }
         }
 
         @media (max-width: 480px) {
             :root {
                 --space-24: 4rem;
+                --space-20: 3.5rem;
                 --space-16: 3rem;
             }
 
@@ -1586,20 +1919,12 @@
                 width: 100%;
             }
 
-            .phone-mockup {
-                max-width: 280px;
-            }
-
-            .download-buttons {
-                flex-direction: column;
-            }
-
             .modal-content {
                 padding: var(--space-6);
             }
         }
 
-        /* Custom Scrollbar */
+        /* Custom Scrollbar - Enhanced */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -1615,7 +1940,32 @@
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-tertiary);
+            background: var(--text-muted);
+        }
+
+        /* Loading State */
+        .btn-loading {
+            position: relative;
+            color: transparent !important;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -1632,7 +1982,7 @@
                     <div class="journey-icon">
                         <i class="fas fa-user-injured" aria-hidden="true"></i>
                     </div>
-                    <h3>I'm a Patient / User</h3>
+                    <h3>I'm a Patient</h3>
                     <p>Seeking healthcare assistance, symptom checking, and medical support</p>
                 </button>
 
@@ -1645,7 +1995,10 @@
                 </button>
             </div>
 
-            <button class="skip-option" id="skip-journey" type="button">Continue without selecting</button>
+            <button class="skip-option" id="skip-journey" type="button">
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                Continue as Patient (Skip Selection)
+            </button>
         </div>
     </div>
 
@@ -1672,8 +2025,14 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <button class="mobile-menu-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
         <ul role="menubar">
             <li role="none"><a href="#home" role="menuitem">Home</a></li>
             <li role="none"><a href="#features" role="menuitem">Features</a></li>
@@ -1681,229 +2040,236 @@
             <li role="none"><a href="#stakeholders" role="menuitem">Services</a></li>
             <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
         </ul>
-        <a href="#download" class="btn btn-primary">Get Started</a>
+        <a href="#download" class="btn btn-primary btn-large">Get Started</a>
     </div>
 
     <!-- Waiting List Modal -->
     <div class="modal" id="waiting-list-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <i class="fas fa-rocket modal-icon"></i>
+            <div class="modal-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
             <h2 id="modal-title">Join the Revolution</h2>
             <p>Be among the first to experience AI-powered healthcare. Get early access and exclusive updates.</p>
             
             <form id="waiting-list-form" novalidate>
                 <div class="form-group">
-                    <input type="text" name="Name" placeholder="Full name" required aria-label="Full name">
+                    <label for="name" class="required">Full Name</label>
+                    <input type="text" id="name" name="Name" placeholder="John Doe" required aria-label="Full name">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="Email" placeholder="Email address" required aria-label="Email address">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="Email" placeholder="john@example.com" required aria-label="Email address">
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="WhatsApp" placeholder="WhatsApp (optional)" aria-label="WhatsApp number">
+                    <label for="whatsapp">WhatsApp (Optional)</label>
+                    <input type="tel" id="whatsapp" name="WhatsApp" placeholder="+1 234 567 8900" aria-label="WhatsApp number">
                 </div>
                 <div class="form-group">
-                    <select name="Country" required aria-label="Country">
-                    <option value="" disabled selected>Select your country</option>
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Armenia">Armenia</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Azerbaijan">Azerbaijan</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Bahrain">Bahrain</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="Barbados">Barbados</option>
-                    <option value="Belarus">Belarus</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Belize">Belize</option>
-                    <option value="Benin">Benin</option>
-                    <option value="Bhutan">Bhutan</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                    <option value="Botswana">Botswana</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Brunei">Brunei</option>
-                    <option value="Bulgaria">Bulgaria</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cabo Verde">Cabo Verde</option>
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Central African Republic">Central African Republic</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Chile">Chile</option>
-                    <option value="China">China</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Comoros">Comoros</option>
-                    <option value="Congo">Congo</option>
-                    <option value="Costa Rica">Costa Rica</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Cyprus">Cyprus</option>
-                    <option value="Czechia">Czechia</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="Djibouti">Djibouti</option>
-                    <option value="Dominica">Dominica</option>
-                    <option value="Dominican Republic">Dominican Republic</option>
-                    <option value="East Timor">East Timor</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="El Salvador">El Salvador</option>
-                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                    <option value="Eritrea">Eritrea</option>
-                    <option value="Estonia">Estonia</option>
-                    <option value="Eswatini">Eswatini</option>
-                    <option value="Ethiopia">Ethiopia</option>
-                    <option value="Fiji">Fiji</option>
-                    <option value="Finland">Finland</option>
-                    <option value="France">France</option>
-                    <option value="Gabon">Gabon</option>
-                    <option value="Gambia">Gambia</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Greece">Greece</option>
-                    <option value="Grenada">Grenada</option>
-                    <option value="Guatemala">Guatemala</option>
-                    <option value="Guinea">Guinea</option>
-                    <option value="Guinea-Bissau">Guinea-Bissau</option>
-                    <option value="Guyana">Guyana</option>
-                    <option value="Haiti">Haiti</option>
-                    <option value="Honduras">Honduras</option>
-                    <option value="Hungary">Hungary</option>
-                    <option value="Iceland">Iceland</option>
-                    <option value="India">India</option>
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Iran">Iran</option>
-                    <option value="Iraq">Iraq</option>
-                    <option value="Ireland">Ireland</option>
-                    <option value="Israel">Israel</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Jamaica">Jamaica</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Kazakhstan">Kazakhstan</option>
-                    <option value="Kenya">Kenya</option>
-                    <option value="Kiribati">Kiribati</option>
-                    <option value="Korea, North">Korea, North</option>
-                    <option value="Korea, South">Korea, South</option>
-                    <option value="Kosovo">Kosovo</option>
-                    <option value="Kuwait">Kuwait</option>
-                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                    <option value="Laos">Laos</option>
-                    <option value="Latvia">Latvia</option>
-                    <option value="Lebanon">Lebanon</option>
-                    <option value="Lesotho">Lesotho</option>
-                    <option value="Liberia">Liberia</option>
-                    <option value="Libya">Libya</option>
-                    <option value="Liechtenstein">Liechtenstein</option>
-                    <option value="Lithuania">Lithuania</option>
-                    <option value="Luxembourg">Luxembourg</option>
-                    <option value="Madagascar">Madagascar</option>
-                    <option value="Malawi">Malawi</div>
-                    <option value="Malaysia">Malaysia</option>
-                    <option value="Maldives">Maldives</option>
-                    <option value="Mali">Mali</option>
-                    <option value="Malta">Malta</option>
-                    <option value="Marshall Islands">Marshall Islands</option>
-                    <option value="Mauritania">Mauritania</option>
-                    <option value="Mauritius">Mauritius</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Micronesia">Micronesia</option>
-                    <option value="Moldova">Moldova</option>
-                    <option value="Monaco">Monaco</option>
-                    <option value="Mongolia">Mongolia</option>
-                    <option value="Montenegro">Montenegro</option>
-                    <option value="Morocco">Morocco</option>
-                    <option value="Mozambique">Mozambique</option>
-                    <option value="Myanmar">Myanmar</option>
-                    <option value="Namibia">Namibia</option>
-                    <option value="Nauru">Nauru</option>
-                    <option value="Nepal">Nepal</option>
-                    <option value="Netherlands">Netherlands</option>
-                    <option value="New Zealand">New Zealand</option>
-                    <option value="Nicaragua">Nicaragua</option>
-                    <option value="Niger">Niger</option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="North Macedonia">North Macedonia</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Oman">Oman</option>
-                    <option value="Pakistan">Pakistan</option>
-                    <option value="Palau">Palau</option>
-                    <option value="Panama">Panama</option>
-                    <option value="Papua New Guinea">Papua New Guinea</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Philippines">Philippines</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Russia">Russia</option>
-                    <option value="Rwanda">Rwanda</option>
-                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                    <option value="Saint Lucia">Saint Lucia</option>
-                    <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
-                    <option value="Samora">Samora</option>
-                    <option value="San Marino">San Marino</option>
-                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Senegal">Senegal</option>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Seychelles">Seychelles</option>
-                    <option value="Sierra Leone">Sierra Leone</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="Slovakia">Slovakia</option>
-                    <option value="Slovenia">Slovenia</option>
-                    <option value="Solomon Islands">Solomon Islands</option>
-                    <option value="Somalia">Somalia</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="South Sudan">South Sudan</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sri Lanka">Sri Lanka</option>
-                    <option value="Sudan">Sudan</option>
-                    <option value="Suriname">Suriname</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="Switzerland">Switzerland</option>
-                    <option value="Syria">Syria</option>
-                    <option value="Taiwan">Taiwan</option>
-                    <option value="Tajikistan">Tajikistan</option>
-                    <option value="Tazania">Tanzania</option>
-                    <option value="Thailand">Thailand</option>
-                    <option value="Togo">Togo</option>
-                    <option value="Tonga">Tonga</option>
-                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                    <option value="Tunisia">Tunisia</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="Turkmenistan">Turkmenistan</option>
-                    <option value="Tuvalu">Tuvalu</option>
-                    <option value="Uganda">Uganda</option>
-                    <option value="Ukraine">Ukraine</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United States">United States</option>
-                    <option value="Uruguay">Uruguay</option>
-                    <option value="Uzbekistan">Uzbekistan</option>
-                    <option value="Vanuatu">Vanuatu</option>
-                    <option value="Vatican City">Vatican City</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Vietnam">Vietnam</option>
-                    <option value="Yemen">Yemen</option>
-                    <option value="Zambia">Zambia</option>
-                    <option value="Zimbabwe">Zimbabwe</option>
-                </select>
+                    <label for="country" class="required">Country</label>
+                    <select id="country" name="Country" required aria-label="Country">
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cabo Verde">Cabo Verde</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czechia">Czechia</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="East Timor">East Timor</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Eswatini">Eswatini</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Korea, North">Korea, North</option>
+                        <option value="Korea, South">Korea, South</option>
+                        <option value="Kosovo">Kosovo</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Micronesia">Micronesia</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="North Macedonia">North Macedonia</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau">Palau</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                        <option value="Saint Lucia">Saint Lucia</option>
+                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Sudan">South Sudan</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Tuvalu">Tuvalu</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City">Vatican City</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <select name="UseCase" required aria-label="I am a">
-                        <option value="" disabled selected>I am a...</option>
+                    <label for="usecase" class="required">I am a...</label>
+                    <select id="usecase" name="UseCase" required aria-label="I am a">
+                        <option value="" disabled selected>Select your role</option>
                         <option value="Patient">Patient / User</option>
                         <option value="Doctor">Doctor</option>
                         <option value="Pharmacist">Pharmacist</option>
@@ -1911,9 +2277,18 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
-                <button type="submit">Join Waiting List</button>
-                <p class="success-message" id="success-message">Successfully joined! We'll be in touch soon.</p>
-                <p class="error-message" id="error-message">Please check your inputs and try again.</p>
+                <button type="submit" id="submit-btn">
+                    <span>Join Waiting List</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </button>
+                <p class="success-message" id="success-message">
+                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                    Successfully joined! We'll be in touch soon.
+                </p>
+                <p class="error-message" id="error-message">
+                    <i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>
+                    Please check your inputs and try again.
+                </p>
             </form>
         </div>
     </div>
@@ -1922,6 +2297,10 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge animate-on-scroll">
+                    <i class="fas fa-star" style="color: var(--primary-orange);"></i>
+                    <span>Trusted by 50,000+ patients worldwide</span>
+                </div>
                 <h1 class="animate-on-scroll">
                     <span>Connecting Patients,</span>
                     <span class="text-gradient">Accelerating Healing</span>
@@ -1930,16 +2309,47 @@
                     Your care begins with a simple conversation. <strong>DAS medhub</strong> uses AI to understand your symptoms and instantly connect you with verified doctors, hospitals, and pharmacies.
                 </p>
                 <div class="hero-buttons animate-on-scroll">
-                    <button class="btn btn-primary" data-modal="waiting-list-modal">
+                    <button class="btn btn-primary btn-large" data-modal="waiting-list-modal">
                         <i class="fas fa-rocket"></i> Join Waiting List
                     </button>
-                    <a href="https://platform.dasmedhub.com/" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <a href="https://platform.dasmedhub.com/" class="btn btn-secondary btn-large" target="_blank" rel="noopener">
                         <i class="fas fa-brain"></i> Try AI Models
                     </a>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="trust-badges animate-on-scroll">
+                    <div style="font-size: var(--text-sm); color: var(--text-muted); font-weight: 500;">Backed by:</div>
+                    <div style="display: flex; gap: var(--space-6); align-items: center;">
+                        <i class="fas fa-shield-alt" style="font-size: 24px;" title="HIPAA Compliant"></i>
+                        <i class="fas fa-lock" style="font-size: 24px;" title="End-to-End Encrypted"></i>
+                        <i class="fas fa-certificate" style="font-size: 24px;" title="ISO Certified"></i>
+                    </div>
                 </div>
             </div>
             <div class="hero-image animate-on-scroll">
                 <img src="images/perfect.png" alt="DAS MedHub App Interface" class="phone-mockup">
+                
+                <!-- Floating Cards -->
+                <div class="hero-floating-card card-1">
+                    <div class="floating-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="floating-text">
+                        <div>AI Verified</div>
+                        <div>98% Accuracy</div>
+                    </div>
+                </div>
+                
+                <div class="hero-floating-card card-2">
+                    <div class="floating-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="floating-text">
+                        <div>Instant</div>
+                        <div>Connection</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1953,74 +2363,27 @@
                     <p>Making quality healthcare accessible across Africa and beyond</p>
                 </div>
                 
-                <div class="stats-scroll-container">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-label">Patients Served</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Verified Doctors</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Satisfaction Rate</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Availability</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-procedures" aria-hidden="true"></i></div>
-                            <div class="stat-number">1.2K</div>
-                            <div class="stat-label">Hospitals</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-pills" aria-hidden="true"></i></div>
-                            <div class="stat-number">5K+</div>
-                            <div class="stat-label">Prescriptions</div>
-                        </div>
-                        <!-- Duplicate for infinite scroll -->
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-label">Patients Served</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Verified Doctors</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Satisfaction Rate</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Availability</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-procedures" aria-hidden="true"></i></div>
-                            <div class="stat-number">1.2K</div>
-                            <div class="stat-label">Hospitals</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-pills" aria-hidden="true"></i></div>
-                            <div class="stat-number">5K+</div>
-                            <div class="stat-label">Prescriptions</div>
-                        </div>
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll stagger-1">
+                        <div class="stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="50000">0</div>
+                        <div class="stat-label">Patients Served</div>
                     </div>
-                </div>
-                <div class="scroll-indicator">
-                    <i class="fas fa-arrows-alt-h" aria-hidden="true"></i>
-                    <span>Scroll to explore</span>
+                    <div class="stat-item animate-on-scroll stagger-2">
+                        <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Verified Doctors</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll stagger-3">
+                        <div class="stat-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Satisfaction Rate %</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll stagger-4">
+                        <div class="stat-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="1200">0</div>
+                        <div class="stat-label">Hospitals</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2029,6 +2392,7 @@
             <div class="container">
                 <div class="problem-content">
                     <div class="problem-text animate-on-scroll">
+                        <span class="section-label">The Challenge</span>
                         <h2 id="patient-challenges">Healthcare Shouldn't Be This Hard</h2>
                         <p>Millions face barriers to quality care. We're removing the friction between you and better health.</p>
                         <ul class="problem-list">
@@ -2074,69 +2438,26 @@
                     <p>Advanced tools to streamline your practice and improve patient outcomes</p>
                 </div>
                 
-                <div class="stats-scroll-container">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Medical Professionals</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                            <div class="stat-number">40%</div>
-                            <div class="stat-label">Time Saved</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                            <div class="stat-number">65%</div>
-                            <div class="stat-label">Patient Capacity</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-file-medical-alt" aria-hidden="true"></i></div>
-                            <div class="stat-number">12K+</div>
-                            <div class="stat-label">Records Managed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Diagnostic Accuracy</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
-                            <div class="stat-number">1.2K</div>
-                            <div class="stat-label">Facilities</div>
-                        </div>
-                        <!-- Duplicate for infinite scroll -->
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Medical Professionals</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                            <div class="stat-number">40%</div>
-                            <div class="stat-label">Time Saved</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                            <div class="stat-number">65%</div>
-                            <div class="stat-label">Patient Capacity</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-file-medical-alt" aria-hidden="true"></i></div>
-                            <div class="stat-number">12K+</div>
-                            <div class="stat-label">Records Managed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Diagnostic Accuracy</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
-                            <div class="stat-number">1.2K</div>
-                            <div class="stat-label">Facilities</div>
-                        </div>
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll stagger-1">
+                        <div class="stat-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Medical Professionals</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll stagger-2">
+                        <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="40">0</div>
+                        <div class="stat-label">Hours Saved Weekly</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll stagger-3">
+                        <div class="stat-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="65">0</div>
+                        <div class="stat-label">More Patient Capacity %</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll stagger-4">
+                        <div class="stat-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Diagnostic Accuracy %</div>
                     </div>
                 </div>
             </div>
@@ -2146,6 +2467,7 @@
             <div class="container">
                 <div class="problem-content">
                     <div class="problem-text animate-on-scroll">
+                        <span class="section-label">Provider Challenges</span>
                         <h2 id="provider-challenges">Practice Challenges We Solve</h2>
                         <p>Modern healthcare demands modern solutions. We help you focus on what matters: patient care.</p>
                         <ul class="problem-list">
@@ -2184,40 +2506,41 @@
         <section class="professional-benefits" aria-labelledby="provider-benefits">
             <div class="container">
                 <div class="section-header animate-on-scroll">
+                    <span class="section-label">Provider Solutions</span>
                     <h2 id="provider-benefits">Built for <span class="text-gradient">Healthcare Providers</span></h2>
                     <p>Streamline workflows, enhance care quality, and grow your practice with intelligent tools.</p>
                 </div>
                 
                 <div class="benefits-grid">
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-1">
                         <div class="benefit-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
                         <h3>AI-Assisted Diagnostics</h3>
-                        <p>Leverage advanced AI for preliminary assessments, allowing you to focus on complex cases and treatment planning.</p>
+                        <p>Leverage advanced AI for preliminary assessments, allowing you to focus on complex cases.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-2">
                         <div class="benefit-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
                         <h3>Smart Scheduling</h3>
-                        <p>AI-powered triage prioritizes urgent cases and optimizes your daily schedule automatically.</p>
+                        <p>AI-powered triage prioritizes urgent cases and optimizes your daily schedule.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-3">
                         <div class="benefit-icon"><i class="fas fa-file-medical-alt" aria-hidden="true"></i></div>
                         <h3>Unified Health Records</h3>
-                        <p>Access comprehensive patient histories and AI-generated summaries in one secure platform.</p>
+                        <p>Access comprehensive patient histories and AI-generated summaries securely.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-1">
                         <div class="benefit-icon"><i class="fas fa-comment-medical" aria-hidden="true"></i></div>
                         <h3>Seamless Communication</h3>
-                        <p>Integrated messaging and video tools for patient connection and provider collaboration.</p>
+                        <p>Integrated messaging and video tools for patient connection and collaboration.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-2">
                         <div class="benefit-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
                         <h3>Practice Analytics</h3>
-                        <p>Gain insights into performance, outcomes, and operational efficiency with detailed dashboards.</p>
+                        <p>Gain insights into performance, outcomes, and operational efficiency.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-card animate-on-scroll stagger-3">
                         <div class="benefit-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
                         <h3>HIPAA Compliant</h3>
-                        <p>Enterprise-grade security measures ensuring patient data protection and regulatory compliance.</p>
+                        <p>Enterprise-grade security ensuring patient data protection and compliance.</p>
                     </div>
                 </div>
             </div>
@@ -2228,47 +2551,48 @@
     <section id="features" class="features" aria-labelledby="features-heading">
         <div class="container">
             <div class="section-header animate-on-scroll">
+                <span class="section-label">Features</span>
                 <h2 id="features-heading">Comprehensive <span class="text-gradient">Healthcare Solutions</span></h2>
                 <p>AI technology combined with human expertise for complete care delivery</p>
             </div>
             
             <div class="features-grid">
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-1">
                     <div class="feature-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
                     <h3>AI Symptom Assessment</h3>
                     <p>Describe symptoms via text or voice. Our AI analyzes conditions and provides instant first aid guidance and pre-diagnosis.</p>
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-2">
                     <div class="feature-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
                     <h3>Virtual Consultations</h3>
                     <p>Connect with licensed doctors through secure video. Providers receive pre-analyzed data for efficient consultations.</p>
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-3">
                     <div class="feature-icon"><i class="fas fa-pills" aria-hidden="true"></i></div>
                     <h3>Smart Pharmacy</h3>
                     <p>Connect with verified pharmacists, receive AI-validated prescriptions, and get medications delivered to your door.</p>
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-1">
                     <div class="feature-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
                     <h3>Hospital Booking</h3>
                     <p>Book appointments at nearby hospitals based on your symptoms. Medical data is shared securely to reduce wait times.</p>
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-2">
                     <div class="feature-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
                     <h3>Predictive Diagnostics</h3>
                     <p>Advanced AI models for diabetes detection, microbiome analysis, cancer assessment, and chest abnormality detection.</p>
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll">
+                <article class="feature-card animate-on-scroll stagger-3">
                     <div class="feature-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
                     <h3>Privacy & Security</h3>
                     <p>HIPAA and GDPR compliant with encrypted data channels and consent-first design for maximum privacy protection.</p>
@@ -2282,27 +2606,28 @@
     <section id="how-it-works" class="how-it-works" aria-labelledby="how-it-works-heading">
         <div class="container">
             <div class="section-header animate-on-scroll">
+                <span class="section-label">Process</span>
                 <h2 id="how-it-works-heading">How <span class="text-gradient">DAS medhub</span> Works</h2>
                 <p>Simple steps to quality healthcare from anywhere</p>
             </div>
             
             <div class="steps">
-                <div class="step animate-on-scroll">
+                <div class="step animate-on-scroll stagger-1">
                     <div class="step-number">1</div>
                     <h3>Describe Symptoms</h3>
                     <p>Use voice or text to describe your symptoms. Our AI understands multiple languages.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step animate-on-scroll stagger-2">
                     <div class="step-number">2</div>
                     <h3>Get AI Assessment</h3>
                     <p>Receive instant analysis and recommendations: see a doctor, get medication, or visit a hospital.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step animate-on-scroll stagger-3">
                     <div class="step-number">3</div>
                     <h3>Connect Instantly</h3>
                     <p>Get matched with verified healthcare providers based on your assessment results.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step animate-on-scroll stagger-4">
                     <div class="step-number">4</div>
                     <h3>Receive Care</h3>
                     <p>Get your consultation, prescription, or appointment with data securely shared.</p>
@@ -2315,27 +2640,28 @@
     <section id="stakeholders" class="stakeholders" aria-labelledby="stakeholders-heading">
         <div class="container">
             <div class="section-header animate-on-scroll">
+                <span class="section-label">Ecosystem</span>
                 <h2 id="stakeholders-heading">For Every <span class="text-gradient">Healthcare Stakeholder</span></h2>
                 <p>Our platform benefits the entire healthcare ecosystem</p>
             </div>
             
             <div class="stakeholders-grid">
-                <article class="stakeholder-card animate-on-scroll">
+                <article class="stakeholder-card animate-on-scroll stagger-1">
                     <div class="stakeholder-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
                     <h3>For Doctors</h3>
                     <p>Pre-assessed patient data, streamlined appointments, and predictive diagnostic tools.</p>
                 </article>
-                <article class="stakeholder-card animate-on-scroll">
+                <article class="stakeholder-card animate-on-scroll stagger-2">
                     <div class="stakeholder-icon"><i class="fas fa-prescription-bottle-alt" aria-hidden="true"></i></div>
                     <h3>For Pharmacists</h3>
                     <p>AI-generated prescriptions, direct patient communication, and inventory management.</p>
                 </article>
-                <article class="stakeholder-card animate-on-scroll">
+                <article class="stakeholder-card animate-on-scroll stagger-3">
                     <div class="stakeholder-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
                     <h3>For Hospitals</h3>
                     <p>Early patient data access, smart triage, and integrated appointment management.</p>
                 </article>
-                <article class="stakeholder-card animate-on-scroll">
+                <article class="stakeholder-card animate-on-scroll stagger-4">
                     <div class="stakeholder-icon"><i class="fas fa-user-injured" aria-hidden="true"></i></div>
                     <h3>For Patients</h3>
                     <p>Fast AI-assisted triage, easy consultations, and seamless healthcare access.</p>
@@ -2348,14 +2674,15 @@
     <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading">
         <div class="container">
             <div class="section-header animate-on-scroll">
+                <span class="section-label">Testimonials</span>
                 <h2 id="testimonials-heading">Trusted by <span class="text-gradient">Thousands</span></h2>
                 <p>Hear from our community of patients and providers</p>
             </div>
             
             <div class="testimonials-grid">
-                <article class="testimonial-card animate-on-scroll">
+                <article class="testimonial-card animate-on-scroll stagger-1">
                     <div class="testimonial-content">
-                        <p>DAS medhub saved me hours of waiting at the hospital. The AI assessment was accurate and the doctor I connected with was extremely helpful.</p>
+                        <p>DAS MedHub saved me hours of waiting at the hospital. The AI assessment was accurate and the doctor I connected with was extremely helpful.</p>
                     </div>
                     <div class="testimonial-author">
                         <img src="images/female2.webp" alt="Amina O." class="author-avatar" loading="lazy">
@@ -2373,7 +2700,7 @@
                     </div>
                 </article>
 
-                <article class="testimonial-card animate-on-scroll">
+                <article class="testimonial-card animate-on-scroll stagger-2">
                     <div class="testimonial-content">
                         <p>As a doctor, I appreciate how the platform provides me with pre-analyzed patient data. It makes my consultations much more efficient.</p>
                     </div>
@@ -2393,7 +2720,7 @@
                     </div>
                 </article>
 
-                <article class="testimonial-card animate-on-scroll">
+                <article class="testimonial-card animate-on-scroll stagger-3">
                     <div class="testimonial-content">
                         <p>The medication delivery service has been a game-changer for our pharmacy. We can now serve more patients efficiently.</p>
                     </div>
@@ -2424,21 +2751,21 @@
             <p class="animate-on-scroll">Join thousands of users already experiencing better healthcare access with DAS medhub.</p>
             
             <div class="download-buttons animate-on-scroll">
-                <button class="btn btn-ghost" data-modal="waiting-list-modal">
+                <button class="btn btn-ghost download-btn" data-modal="waiting-list-modal">
                     <i class="fab fa-apple" aria-hidden="true"></i>
                     <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
                         <small style="font-size: 0.7rem; opacity: 0.8;">Download on</small>
                         <span>App Store</span>
                     </div>
                 </button>
-                <button class="btn btn-ghost" data-modal="waiting-list-modal">
+                <button class="btn btn-ghost download-btn" data-modal="waiting-list-modal">
                     <i class="fab fa-google-play" aria-hidden="true"></i>
                     <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
                         <small style="font-size: 0.7rem; opacity: 0.8;">Get it on</small>
                         <span>Google Play</span>
                     </div>
                 </button>
-                <a href="https://site.dasmedhub.com/" class="btn btn-ghost" target="_blank" rel="noopener">
+                <a href="https://site.dasmedhub.com/" class="btn btn-ghost download-btn" target="_blank" rel="noopener">
                     <i class="fas fa-globe" aria-hidden="true"></i>
                     <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
                         <small style="font-size: 0.7rem; opacity: 0.8;">Access via</small>
@@ -2517,7 +2844,7 @@
     </footer>
 
     <script>
-        // Journey Selection Logic
+        // Journey Selection Logic - Enhanced with Patient Default
         const journeyModal = document.getElementById('journey-modal');
         const journeyOptions = document.querySelectorAll('.journey-option');
         const skipJourney = document.getElementById('skip-journey');
@@ -2543,7 +2870,7 @@
                     openModal(waitingListModal);
                     localStorage.setItem('waitingListShown', 'true');
                 }
-            }, 1000);
+            }, 800);
         }
         
         journeyOptions.forEach(option => {
@@ -2562,12 +2889,15 @@
             });
         });
         
+        // Skip button now defaults to patient mode with clear UI indication
         skipJourney.addEventListener('click', () => {
-            journeyModal.classList.remove('active');
-            localStorage.setItem('userJourney', 'default');
+            // Default to patient mode when skipping
+            selectJourney('patient');
+            // Store that user skipped explicitly but defaulted to patient
+            localStorage.setItem('journeySkipped', 'true');
         });
 
-        // Navigation scroll effect
+        // Navigation scroll effect - Enhanced
         const navbar = document.getElementById('navbar');
         let lastScroll = 0;
         
@@ -2583,26 +2913,36 @@
             lastScroll = currentScroll;
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle - Enhanced
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
         
-        mobileMenuToggle.addEventListener('click', () => {
-            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('active');
-            mobileMenu.setAttribute('aria-hidden', isExpanded);
-        });
-
+        function openMobileMenu() {
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
 
-        // Modal functionality
+        // Modal functionality - Enhanced
         const modalCloseButtons = document.querySelectorAll('.modal-close');
         const openModalButtons = document.querySelectorAll('[data-modal]');
         
@@ -2658,10 +2998,11 @@
             }
         });
 
-        // Form submission
+        // Form submission - Enhanced with loading state
         const waitingListForm = document.getElementById('waiting-list-form');
         const successMessage = document.getElementById('success-message');
         const errorMessage = document.getElementById('error-message');
+        const submitBtn = document.getElementById('submit-btn');
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwI3-qxc-Ugc65VBZ3xRx01CrpkLy4IL1ILHO7UgEuVeAWymIRIBjTZRtRrywZ-xMg/exec';
         
         waitingListForm.addEventListener('submit', async (e) => {
@@ -2669,20 +3010,28 @@
             errorMessage.style.display = 'none';
             successMessage.style.display = 'none';
             
+            // Add loading state
+            submitBtn.classList.add('btn-loading');
+            submitBtn.disabled = true;
+            
             const formData = new FormData(waitingListForm);
             const data = Object.fromEntries(formData);
             
             // Basic validation
             if (!data.Name || !data.Email || !data.Country || !data.UseCase) {
-                errorMessage.textContent = 'Please fill in all required fields.';
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i> Please fill in all required fields.';
                 errorMessage.style.display = 'block';
+                submitBtn.classList.remove('btn-loading');
+                submitBtn.disabled = false;
                 return;
             }
             
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.Email)) {
-                errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i> Please enter a valid email address.';
                 errorMessage.style.display = 'block';
+                submitBtn.classList.remove('btn-loading');
+                submitBtn.disabled = false;
                 return;
             }
             
@@ -2697,20 +3046,24 @@
                 if (result.result === 'success') {
                     successMessage.style.display = 'block';
                     waitingListForm.reset();
+                    submitBtn.classList.remove('btn-loading');
+                    submitBtn.disabled = false;
                     setTimeout(() => {
                         closeModal(waitingListModal);
                         successMessage.style.display = 'none';
-                    }, 2000);
+                    }, 2500);
                 } else {
                     throw new Error(result.error || 'Submission failed');
                 }
             } catch (error) {
-                errorMessage.textContent = 'Error: ' + error.message;
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i> Error: ' + error.message;
                 errorMessage.style.display = 'block';
+                submitBtn.classList.remove('btn-loading');
+                submitBtn.disabled = false;
             }
         });
 
-        // Scroll animations
+        // Scroll animations - Enhanced with Intersection Observer
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -2720,6 +3073,14 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
+                    
+                    // Trigger counter animation if stat item
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber && !statNumber.classList.contains('counted')) {
+                        animateCounter(statNumber);
+                        statNumber.classList.add('counted');
+                    }
+                    
                     observer.unobserve(entry.target);
                 }
             });
@@ -2729,13 +3090,31 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for anchor links
+        // Counter animation function
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + (target > 100 ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Smooth scroll for anchor links - Enhanced
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 80;
+                    const headerOffset = 100;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
@@ -2747,23 +3126,15 @@
             });
         });
 
-        // Stats animation pause on touch devices
-        const statsGrid = document.querySelector('.stats-grid');
-        if (statsGrid && 'ontouchstart' in window) {
-            let touchStartX = 0;
-            const statsContainer = document.querySelector('.stats-scroll-container');
-            
-            statsContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-                statsGrid.style.animationPlayState = 'paused';
+        // Add touch feedback for mobile
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
             });
-            
-            statsContainer.addEventListener('touchend', () => {
-                setTimeout(() => {
-                    statsGrid.style.animationPlayState = 'running';
-                }, 1000);
+            el.addEventListener('touchend', function() {
+                this.style.transform = '';
             });
-        }
+        });
     </script>
 </body>
 </html>
