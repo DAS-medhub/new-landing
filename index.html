@@ -2112,6 +2112,178 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
+
+        /* Clinical Documentation Section */
+        .clinical-docs {
+            padding: var(--space-24) 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 190, 100, 0.03), transparent);
+        }
+
+        .clinical-content {
+            margin-top: var(--space-12);
+        }
+
+        .clinical-intro {
+            max-width: 900px;
+            margin: 0 auto var(--space-16);
+            text-align: center;
+        }
+
+        .clinical-intro h3 {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-6);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .clinical-intro p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-6);
+            margin-bottom: var(--space-20);
+        }
+
+        .doc-step {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .doc-step:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-green);
+        }
+
+        .doc-step-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-5);
+            font-size: var(--text-2xl);
+            color: white;
+            box-shadow: 0 12px 30px rgba(0, 190, 100, 0.25);
+        }
+
+        .doc-step h4 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .doc-step p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .provider-benefits {
+            margin-top: var(--space-20);
+        }
+
+        .provider-benefits > h3 {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-12);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .benefits-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+
+        .provider-benefit-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: all var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .provider-benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-orange);
+        }
+
+        .pb-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-5);
+            font-size: var(--text-xl);
+            color: white;
+            box-shadow: 0 10px 25px rgba(253, 145, 80, 0.3);
+        }
+
+        .provider-benefit-card h4 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .provider-benefit-card p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1024px) {
+            .how-it-works-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .benefits-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .clinical-intro h3 {
+                font-size: var(--text-xl);
+            }
+            
+            .provider-benefits > h3 {
+                font-size: var(--text-2xl);
+            }
+        }
     </style>
 </head>
 <body>
@@ -2136,6 +2308,7 @@
                 <li role="none"><a href="#home" role="menuitem">Home</a></li>
                 <li role="none"><a href="#features" role="menuitem">Features</a></li>
                 <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="#clinical-docs" role="menuitem">Clinical Docs</a></li>
                 <li role="none"><a href="#stakeholders" role="menuitem">Services</a></li>
                 <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
             </ul>
@@ -2160,6 +2333,7 @@
             <li role="none"><a href="#home" role="menuitem">Home</a></li>
             <li role="none"><a href="#features" role="menuitem">Features</a></li>
             <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+            <li role="none"><a href="#clinical-docs" role="menuitem">Clinical Docs</a></li>
             <li role="none"><a href="#stakeholders" role="menuitem">Services</a></li>
             <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
         </ul>
@@ -2396,6 +2570,10 @@
                             <span>AI-assisted diagnostics and patient triage</span>
                         </li>
                         <li>
+                            <i class="fas fa-file-medical" aria-hidden="true"></i>
+                            <span>Automated clinical documentation & ICD-11 coding</span>
+                        </li>
+                        <li>
                             <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             <span>Smart scheduling with pre-analyzed patient data</span>
                         </li>
@@ -2509,7 +2687,14 @@
                     <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
 
-                <article class="feature-card animate-on-scroll stagger-3">
+                <article class="feature-card animate-on-scroll stagger-1">
+                    <div class="feature-icon"><i class="fas fa-file-medical-alt" aria-hidden="true"></i></div>
+                    <h3>Automated Clinical Documentation</h3>
+                    <p>Transform handwritten OPD and IPD notes into structured digital formats. Auto-generate discharge summaries, SOAP notes, and pharmacovigilance reports with SNOMED CT mapping and ICD-11 coding.</p>
+                    <a href="#clinical-docs" class="feature-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="feature-card animate-on-scroll stagger-2">
                     <div class="feature-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
                     <h3>Privacy & Security</h3>
                     <p>HIPAA and GDPR compliant with encrypted data channels and consent-first design for maximum privacy protection.</p>
@@ -2553,6 +2738,73 @@
         </div>
     </section>
 
+    <!-- Clinical Documentation Section -->
+    <section id="clinical-docs" class="clinical-docs" aria-labelledby="clinical-docs-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Pillar Two</span>
+                <h2 id="clinical-docs-heading">Automated <span class="text-gradient">Clinical Documentation</span></h2>
+                <p>From triage to treatment: securing and structuring the complete diagnostic journey</p>
+            </div>
+            
+            <div class="clinical-content">
+                <div class="clinical-intro animate-on-scroll">
+                    <h3>Intelligent Documentation Layer</h3>
+                    <p>Building on our AI-powered triage foundation, Pillar Two transforms handwritten OPD and IPD notes into structured digital formats automatically. Where Rose (our AI avatar) captures initial symptoms, our documentation engine secures and structures the entire diagnostic journey—eliminating manual data entry while improving diagnostic accuracy and care continuity.</p>
+                </div>
+
+                <div class="how-it-works-grid">
+                    <div class="doc-step animate-on-scroll stagger-1">
+                        <div class="doc-step-icon"><i class="fas fa-file-signature"></i></div>
+                        <h4>Capture</h4>
+                        <p>Handwritten clinical notes are scanned or photographed via mobile app or integrated scanner</p>
+                    </div>
+                    <div class="doc-step animate-on-scroll stagger-2">
+                        <div class="doc-step-icon"><i class="fas fa-microchip"></i></div>
+                        <h4>Process</h4>
+                        <p>Our Advanced OCR and NLP models extract text, identify medical terminology, and parse clinical context</p>
+                    </div>
+                    <div class="doc-step animate-on-scroll stagger-3">
+                        <div class="doc-step-icon"><i class="fas fa-code"></i></div>
+                        <h4>Structure</h4>
+                        <p>Automatic SNOMED CT mapping and ICD-11 coding transforms unstructured notes into standardized formats</p>
+                    </div>
+                    <div class="doc-step animate-on-scroll stagger-4">
+                        <div class="doc-step-icon"><i class="fas fa-file-export"></i></div>
+                        <h4>Generate</h4>
+                        <p>Discharge summaries, SOAP notes, and pharmacovigilance reports are auto-generated and ready for review</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="provider-benefits animate-on-scroll">
+                <h3>Benefits for Providers</h3>
+                <div class="benefits-cards">
+                    <div class="provider-benefit-card">
+                        <div class="pb-icon"><i class="fas fa-brain"></i></div>
+                        <h4>Seamless Triage Integration</h4>
+                        <p>Initial symptom data from Rose flows directly into clinical documentation, creating a complete patient narrative from first contact to discharge—no redundant data entry.</p>
+                    </div>
+                    <div class="provider-benefit-card">
+                        <div class="pb-icon"><i class="fas fa-user-shield"></i></div>
+                        <h4>Reduce Administrative Burnout</h4>
+                        <p>Eliminate hours of manual charting. Focus on patient care while our AI handles documentation, coding, and report generation automatically.</p>
+                    </div>
+                    <div class="provider-benefit-card">
+                        <div class="pb-icon"><i class="fas fa-check-double"></i></div>
+                        <h4>Improve Diagnostic Accuracy</h4>
+                        <p>Standardized SNOMED CT and ICD-11 coding reduces errors, ensures consistency across providers, and supports better clinical decision-making.</p>
+                    </div>
+                    <div class="provider-benefit-card">
+                        <div class="pb-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h4>Continuity of Care</h4>
+                        <p>Structured digital records travel with patients across facilities, enabling seamless handoffs and informed follow-up care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stakeholders -->
     <section id="stakeholders" class="stakeholders" aria-labelledby="stakeholders-heading">
         <div class="container">
@@ -2566,7 +2818,7 @@
                 <article class="stakeholder-card animate-on-scroll stagger-1">
                     <div class="stakeholder-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
                     <h3>For Doctors</h3>
-                    <p>Pre-assessed patient data, streamlined appointments, and predictive diagnostic tools.</p>
+                    <p>Pre-assessed patient data, automated clinical documentation, ICD-11 coding, and predictive diagnostic tools—reducing administrative burden by 70%.</p>
                 </article>
                 <article class="stakeholder-card animate-on-scroll stagger-2">
                     <div class="stakeholder-icon"><i class="fas fa-prescription-bottle-alt" aria-hidden="true"></i></div>
