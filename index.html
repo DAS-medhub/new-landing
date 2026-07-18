@@ -2199,6 +2199,116 @@
             margin-top: var(--space-20);
         }
 
+        /* Pharmacovigilance Section Styles */
+        .pharmacovigilance-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            padding: var(--space-12);
+            margin-bottom: var(--space-16);
+        }
+
+        .pharmacovigilance-section h3 {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .pv-intro {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-10);
+        }
+
+        .pv-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+            margin-bottom: var(--space-10);
+        }
+
+        .pv-feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .pv-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-green);
+        }
+
+        .pv-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-5);
+            font-size: var(--text-xl);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 190, 100, 0.3);
+        }
+
+        .pv-feature-card h4 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pv-feature-card p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .pv-value-prop {
+            background: linear-gradient(135deg, rgba(0, 190, 100, 0.08), rgba(253, 145, 80, 0.08));
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            border: 1px solid var(--glass-border);
+        }
+
+        .pv-value-prop p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: center;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .pv-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pv-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pharmacovigilance-section {
+                padding: var(--space-8);
+            }
+        }
+
         .provider-benefits > h3 {
             font-size: var(--text-3xl);
             font-weight: 700;
@@ -2393,7 +2503,7 @@
                     </select>
                 </div>
                 <button type="submit" id="submit-btn">
-                    <span>Join Waiting List</span>
+                    <span>Join Us Now</span>
                     <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                 </button>
                 <p class="success-message" id="success-message">
@@ -2425,7 +2535,7 @@
                 </p>
                 <div class="hero-buttons animate-on-scroll">
                     <button class="btn btn-primary btn-large" data-modal="waiting-list-modal">
-                        <i class="fas fa-rocket"></i> Join Waiting List
+                        <i class="fas fa-rocket"></i> Join Us Now
                     </button>
                     <a href="https://platform.dasmedhub.com/" class="btn btn-secondary btn-large" target="_blank" rel="noopener">
                         <i class="fas fa-brain"></i> Try AI Models
@@ -2743,14 +2853,42 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <span class="section-label">Pillar Two</span>
-                <h2 id="clinical-docs-heading">Automated <span class="text-gradient">Clinical Documentation</span></h2>
+                <h2 id="clinical-docs-heading">Clinova: Intelligent Clinical Documentation &amp; Pharmacovigilance</h2>
                 <p>From triage to treatment: securing and structuring the complete diagnostic journey</p>
             </div>
             
             <div class="clinical-content">
                 <div class="clinical-intro animate-on-scroll">
                     <h3>Intelligent Documentation Layer</h3>
-                    <p>Building on our AI-powered triage foundation, Pillar Two transforms handwritten OPD and IPD notes into structured digital formats automatically. Where Rose (our AI avatar) captures initial symptoms, our documentation engine secures and structures the entire diagnostic journey—eliminating manual data entry while improving diagnostic accuracy and care continuity.</p>
+                    <p>Clinova is our production-ready AI engine that bridges the gap between manual clinical documentation and real-time patient safety. By leveraging a unified processing pipeline, we transform raw clinical data—including handwritten IPD/OPD notes and printed documents—into structured, actionable intelligence.</p>
+                </div>
+
+                <!-- Pharmacovigilance Integration -->
+                <div class="pharmacovigilance-section animate-on-scroll">
+                    <h3>Integrated Pharmacovigilance</h3>
+                    <p class="pv-intro">Beyond standard documentation, Clinova now features integrated, document-native pharmacovigilance. By extracting clinical data directly from source documents, our system performs real-time drug-safety analysis, including:</p>
+                    
+                    <div class="pv-features-grid">
+                        <div class="pv-feature-card stagger-1">
+                            <div class="pv-icon"><i class="fas fa-pills"></i></div>
+                            <h4>Drug-to-Drug Interaction Detection</h4>
+                            <p>Automatically flagging potential conflicts within polypharmacy regimens.</p>
+                        </div>
+                        <div class="pv-feature-card stagger-2">
+                            <div class="pv-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h4>Adverse Event Monitoring</h4>
+                            <p>Identifying and alerting clinicians to potential adverse drug reactions (ADRs) during the documentation phase.</p>
+                        </div>
+                        <div class="pv-feature-card stagger-3">
+                            <div class="pv-icon"><i class="fas fa-barcode"></i></div>
+                            <h4>Standardized Clinical Mapping</h4>
+                            <p>Utilizing SNOMED CT and ICD-11 coding to ensure that safety insights are consistent with global regulatory standards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pv-value-prop">
+                        <p>This integration removes the administrative burden of manual drug-safety entry. With Clinova, pharmacovigilance is not a separate step; it is an intelligent byproduct of the documentation process, ensuring safer patient outcomes and higher clinical efficiency.</p>
+                    </div>
                 </div>
 
                 <div class="how-it-works-grid">
@@ -2762,7 +2900,7 @@
                     <div class="doc-step animate-on-scroll stagger-2">
                         <div class="doc-step-icon"><i class="fas fa-microchip"></i></div>
                         <h4>Process</h4>
-                        <p>Our Advanced OCR and NLP models extract text, identify medical terminology, and parse clinical context</p>
+                        <p>Advanced OCR and NLP models extract text, identify medical terminology, and parse clinical context</p>
                     </div>
                     <div class="doc-step animate-on-scroll stagger-3">
                         <div class="doc-step-icon"><i class="fas fa-code"></i></div>
@@ -2823,7 +2961,7 @@
                 <article class="stakeholder-card animate-on-scroll stagger-2">
                     <div class="stakeholder-icon"><i class="fas fa-prescription-bottle-alt" aria-hidden="true"></i></div>
                     <h3>For Pharmacists</h3>
-                    <p>AI-generated prescriptions, direct patient communication, and inventory management.</p>
+                    <p>AI-generated prescriptions, direct patient communication, inventory management and Pharmacovigilance.</p>
                 </article>
                 <article class="stakeholder-card animate-on-scroll stagger-3">
                     <div class="stakeholder-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
